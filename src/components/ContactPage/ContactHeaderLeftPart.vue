@@ -1,0 +1,210 @@
+<template>
+    <div>
+      <b-card  class="card-wrapp">
+        <span @click="closeForm" class="form-close"><img src="../../assets/icons/close.png" alt="close"></span>
+        <p class="card-text item-title">Neem contact met ons op!</p>
+        <hr>
+        <div class="div-form">
+          <div class="input-item-wrapp input-class">
+            <input type="text" placeholder="Voor- en achternaam*" class="inputDark" v-model="contactName">
+            <span class="valid-error">{{validMess.name}}</span>
+          </div>
+          <div class="input-item-wrapp input-class">
+            <input type="email" placeholder="E-mailadres" class="inputDark" v-model="contactEmail">
+            <span class="valid-error">{{validMess.email}}</span>
+          </div>
+          <div class="input-item-wrapp input-class">
+            <input type="text" placeholder="Telefoonnummer" class="inputDark" v-model="contactPhone">
+            <span class="valid-error">{{validMess.phone}}</span>
+          </div>
+          <div class="input-item-wrapp input-class">
+            <input type="text" placeholder="Uw vraag" class="inputDark" v-model="contactQuestion">
+            <span class="valid-error">{{validMess.question}}</span>
+          </div>
+        </div>
+        <div class="btnCustom">
+          <Button btnText="VERSTUUR"
+                  btnClass="btnOrangeNav"
+                  v-on:click-login="activContactForm()"
+                  :disabled="(contactName && contactEmail && contactPhone && contactQuestion) ===''"></Button>
+        </div>
+      </b-card>
+
+</div>
+</template>
+
+<script>
+
+  import Button from '../Button';
+
+  export default {
+    data(){
+      return {
+        contactName: '',
+        contactEmail: '',
+        contactPhone: '',
+        contactQuestion:'',
+        valid: {},
+        validMess: {
+          name:'',
+          email:'',
+          phone:'',
+          question:'',
+        },
+      }
+    },
+
+
+    components:{
+      Button
+    },
+    methods: {
+      closeForm() {
+        this.$emit('closed-form');
+      },
+      activContactForm(){
+        console.log('--------activ------------')
+        const patternEmail =/.+@.+\..+/i;
+        const patternPhone = /^\d+$/;
+
+
+        if(!patternEmail.test(this.contactEmail)) {
+          this.validContactForm.email = 'error Email';
+          this.contactEmail = '';
+
+        }
+        else {
+          this.validContactForm.email = '';
+          this.valid.email = '1';
+        };
+
+        if(this.contactName.length < 3) {
+          this.validContactForm.name = 'enter your name (3+)';
+          this.contactName = '';
+
+        }
+        else {
+          this.validContactForm.name = '';
+          this.valid.name = '1';
+        };
+
+        if(!patternPhone.test(this.contactPhone) || this.contactPhone.length <=5) {
+          this.validContactForm.phone = 'must be only number(6+)';
+          this.contactPhone = '';
+
+        }
+        else {
+          this.validContactForm.phone = '';
+          this.valid.phone = '1';
+        };
+
+        if(this.contactQuestion.length <= 6) {
+          this.validContactForm.question = 'enter your question(6+)';
+          this.contactQuestion = '';
+        }
+        else {
+          this.validContactForm.question = '';
+          this.valid.question = '1';
+        };
+
+        if (Object.keys(this.valid).length === 4) {
+            this.contactName = '';
+            this.contactEmail = '';
+            this.contactPhone = '';
+            this.contactQuestion ='';
+        }
+      }
+    }
+  }
+
+</script>
+
+<style scoped lang="scss">
+  .valid-error {
+    color: #f97e7e;
+  }
+  .input-item-wrapp {
+    width: 95%;
+  }
+  .input-class {
+    margin-bottom: 8%;
+  }
+  .inputDark{
+    color: #646464;
+    border-bottom: 2px solid #b7b7b7;
+    font-size: 1.7vw;
+    padding: 0px 0 0 10px;
+    margin-bottom: 20px;
+    &::placeholder{
+      color: #646464;
+    }
+  }
+  .div-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 6.5%;
+    padding-left: 6%;
+  }
+  input{
+    width: 100%;
+    &::placeholder{
+      letter-spacing:-0.5px;
+    }
+    font-family: GolanoRegular;
+    margin-bottom: 6%;
+    font-size:2vw;
+    padding: 12px 19px;
+    outline: none;
+    background: transparent;
+    border: none;
+  }
+  hr {
+    border-top: 2px solid #d7d7d7;
+    width: 96%;
+    margin-left: 20px;
+    margin-bottom: 10%;
+  }
+  .card-wrapp{
+    position: relative;
+    border: 2px solid #d7d7d7;
+  }
+  .form-close{
+    position: absolute;
+    right: 20px;
+    img {
+      cursor: pointer;
+    }
+    hr {
+      border-top: 2px solid #d7d7d7;
+      width: 96%;
+      margin-left: 20px;
+      margin-bottom: 10%;
+    }
+  }
+  .item-title{
+    color: #00c8d7;
+    font-family: GolanoSemi;
+    font-size: 70px;
+    font-weight: 400;
+    line-height: 70px;
+    padding: 8% 8% 7% 8%;
+  }
+  .input-class{
+    margin-bottom: 58px;
+
+  }
+  .btnCustom{
+    margin: 4% 0;
+    margin-top: -5px;
+    text-align: center;
+
+    button{
+      cursor: pointer;
+      width: 280px;
+      font-size: 1.24vw;
+      padding: 3% 5%;
+    }
+  }
+</style>

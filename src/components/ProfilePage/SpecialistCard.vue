@@ -1,0 +1,358 @@
+<template>
+    <div class="wrapp">
+      <div class="left-part">
+        <div class="up">
+          <div class="up-left">
+            <img src="../../assets/profile/photo2.png" alt="photo">
+          </div>
+          <div class="up-right">
+            <div class="wrap-item name">
+              <div class="name-first">
+                <p>Lionel</p>
+                <span>In-house</span>
+                <span>Remote</span>
+              </div>
+              <div class="name-last">
+                <p><span>€30,- </span> per uur</p>
+              </div>
+            </div>
+            <div class="specialty">
+              <p>Grafisch vormgever</p>
+              <div class="rating-stars">
+                <img src="../../assets/icons/star-active.png" alt="">
+                <img src="../../assets/icons/star-active.png" alt="">
+                <img src="../../assets/icons/star-active.png" alt="">
+                <img src="../../assets/icons/star-active.png" alt="">
+                <img src="../../assets/icons/star-active.png" alt="">
+              </div>
+            </div>
+            <hr>
+            <div class="wrap-item availability">
+              <div class="availability-first">
+                <p><span>Beschikbaar</span> 30 uur p/w</p>
+                <div class="point">MA</div>
+                <div class="point">DI</div>
+                <div class="point">WO</div>
+              </div>
+              <div class="availability-last">
+                <p> <span>Rating</span>  8/10</p>
+              </div>
+            </div>
+            <div class="btnCustom">
+
+                <Button btnText="VRAAG DEZE SPECIALIST AAN"
+                        btnClass="btnOrangeNav">
+                </Button>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="skills">
+          <h2>Vaardigheden</h2>
+          <div class="skills-items">
+            <div class="skills-item" v-for="(list, index) in skillList" v-bind:key="list + Math.random()">{{list}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-part">
+        <h2>Diploma’s</h2>
+        <div class="mbo-items">
+          <div class="mbo-item">MBO4</div>
+          <div class="mbo-item">MBO3</div>
+          <div class="mbo-item">VMBO</div>
+        </div>
+        <hr>
+        <p><span>Interne opleidingen</span></p>
+        <hr class="hr-down">
+        <p><span>Rijbewijs</span> Ja</p>
+
+      </div>
+    </div>
+</template>
+
+<script>
+  import Button from '../Button';
+    export default {
+        components: {
+          Button
+        },
+      data() {
+          return {
+            skillList: [
+              'Photoshop',
+              'Illustrator',
+              'Sales',
+              'E-commerce',
+              'Photoshop',
+              'Photoshop',
+              'Illustrator',
+              'Sales',
+              'E-commerce',
+              'Photoshop',
+              'Photoshop',
+              'Illustrator',
+              'Sales',
+              'E-commerce',
+              'Photoshop',
+
+            ]
+          }
+      }
+
+    }
+</script>
+
+<style scoped lang="scss">
+  p {
+    font-family: GolanoRegular;
+  }
+  .wrapp {
+    padding-left: 9%;
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    margin-top: 5%;
+  }
+  .left-part {
+    width: 64%;
+    border: 2px solid #d7d7d7;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2%;
+  }
+  .right-part {
+    width: 34%;
+    border: 2px solid #d7d7d7;
+    background-color: #ffffff;
+  }
+  .up {
+    width: 100%;
+    display: flex;
+  }
+  .up-left {
+    width: 29%;
+    text-align: center;
+    padding-top: 3%;
+  }
+  .up-right {
+    width: 70%;
+    hr {
+      border: 1px solid #d7d7d7;
+      background-color: #ffffff;
+      width: 97%;
+      margin-top: 4%;
+      margin-left: -1%;
+    }
+  }
+  .wrap-item {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .name-first {
+    display: flex;
+    align-items: flex-start;
+    width: 70%;
+    margin-top: 10%;
+    p {
+      font-family: GolanoSemi;
+      font-size: 2.2vw;
+      font-weight: 600;
+      margin-bottom: 0;
+      width: 25%;
+      line-height: 35px;
+    }
+    span {
+      border-radius: 4px;
+      background-color: #ff8400;
+      margin-left: 3%;
+      color: white;
+      font-size: 20px;
+      padding: 2px 10px 0 2%;
+      width: 25%;
+    }
+  }
+  .name-last {
+    width: 30%;
+    p{
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 35px;
+      color: #646464;
+      margin-top: 37%;
+      margin-left: 17%;
+      margin-bottom: 0;
+      span {
+        color: #00c7d6;
+        font-family: GolanoSemi;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .specialty{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    p{
+      font-size: 27px;
+      font-weight: 400;
+      line-height: 20px;
+      color: #646464;
+      margin-top: 1px;
+      margin-bottom: 0;
+    }
+  }
+  .rating-stars {
+    width: 23%;
+    img {
+      width: 15%;
+    }
+  }
+
+  .availability {
+    margin-top: 6%;
+  }
+
+  .availability-first {
+    display: flex;
+    width: 70%;
+    p {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 35px;
+      color: #646464;
+      margin-top: 1px;
+      margin-bottom: 0;
+      margin-right: 10%;
+    }
+    span {
+      font-family: GolanoSemi;
+    }
+  }
+  .point {
+    width: 35px;
+    height: 35px;
+    background-color: #2ad0e1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-right: 2%;
+    font-size: 15px;
+  }
+  .availability-last {
+    width: 30%;
+    padding-left: 5%;
+    p {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 35px;
+      color: #646464;
+      margin-top: 1px;
+      margin-bottom: 0;
+      margin-right: 10%;
+    }
+    span {
+      font-family: GolanoSemi;
+    }
+  }
+
+  .btnCustom{
+    margin: 4% 0;
+    button{
+      width: 451px;
+      font-size: 1.24vw;
+      padding: 1.5% 0;
+    }
+  }
+
+  hr {
+    height: 2px;
+    background-color: #d7d7d7;
+    width: 93%;
+    margin-top: 3%;
+  }
+
+  .skills {
+    margin-top: 2%;
+    margin-left: 3%;
+    h2 {
+      color: #646464;
+      font-family: GolanoSemi;
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 35px;
+    }
+  }
+  .skills-items {
+    width: 97%;
+    margin-top: 2%;
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+  .skills-item {
+    width: 19%;
+    border-radius: 5px;
+    border: 1px solid #c8c8c8;
+    margin-right: 1%;
+    margin-bottom: 1.5%;
+    padding: 1.5% 0;
+    text-align: center;
+    color: #484755;
+    font-family: GolanoRegular;
+    font-size: 17px;
+  }
+
+  .right-part {
+    padding: 2%;
+    h2 {
+      color: #646464;
+      font-family: GolanoSemi;
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 35px;
+    }
+    p {
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 35px;
+      color: #646464;
+      margin-top: 9%;
+      margin-left: -1%;
+      margin-bottom: 0;
+    }
+    span {
+      font-family: GolanoSemi;
+      margin-right: 10%;
+    }
+  }
+  .mbo-items {
+    display: flex;
+    width: 100%;
+    margin-top: 4%;
+    margin-bottom: 35%;
+  }
+  .hr-down {
+    margin-top: 27%;
+  }
+  .mbo-item {
+    width: 28%;
+    margin-right: 5%;
+    padding: 13% 0;
+    border-radius: 5px;
+    border: 1px solid #d7d7d7;
+    color: #484755;
+    font-family: GolanoRegular;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 25px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+</style>
