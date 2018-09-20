@@ -3,6 +3,7 @@ import Home from '../components/HomePage/index';
 import OnsVerhaal from '../components/OnsVerhaalPage/index';
 import OnsWerk from '../components/OurWerkPage/index';
 import Contact from '../components/ContactPage/index';
+// const Contact = () => { import('../components/ContactPage/index')} // lazzy mode add
 import RegistrationSpecialist from '../components/RegistrationSpecialistPage/index';
 import Specialist from '../components/SpecialistsPage/index';
 import Profile from '../components/ProfilePage/index';

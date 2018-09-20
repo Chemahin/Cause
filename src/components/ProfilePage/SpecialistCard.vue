@@ -6,7 +6,7 @@
             <img src="../../assets/profile/photo2.png" alt="photo">
           </div>
           <div class="up-right">
-            <div class="wrap-item name">
+            <div class="wrap-item">
               <div class="name-first">
                 <p>Lionel</p>
                 <span>In-house</span>
@@ -50,7 +50,7 @@
         <div class="skills">
           <h2>Vaardigheden</h2>
           <div class="skills-items">
-            <div class="skills-item" v-for="(list, index) in skillList" v-bind:key="list + Math.random()">{{list}}</div>
+            <div class="skills-item" v-for="(list) in skillList" v-bind:key="list + Math.random()">{{list}}</div>
           </div>
         </div>
       </div>

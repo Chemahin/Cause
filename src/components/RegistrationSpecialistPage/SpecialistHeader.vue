@@ -106,7 +106,12 @@ import NavigationMenu from '../NavigationMenu'
   .wrappHead{
     height: 1216px;
     background: #f5f4f2;
-    padding: 0 10%;
+    padding: 0 9%;
+  }
+  .log-form-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   .lineBetween{
     width: 1px;

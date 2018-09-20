@@ -11,25 +11,30 @@
                               <!--img="photo2.png">-->
       <!--</ConfirmationSpecialist>-->
 
+      <OrderSpecialist></OrderSpecialist>
+
 
     </div>
 </template>
 <script>
   // import AppointmentSpecialist from './AppointmentSpecialist';
   // import ConfirmationSpecialist from './ConfirmationSpecialist';
+  import OrderSpecialist from './OrderSpecialistPage/index';
 
   export default {
 
     components: {
       // AppointmentSpecialist,
       // ConfirmationSpecialist
+      OrderSpecialist
     },
 
     data() {
       return {
-        selectedValue: new Date(),
-      };
-    },
+        myDate: {},
+      }
+    }
+
 
 
 
@@ -37,7 +42,6 @@
 </script>
 <style scoped lang="scss">
   .main {
-    background: lightblue;
     width: 100%;
   }
 
