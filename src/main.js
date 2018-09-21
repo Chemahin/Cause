@@ -5,6 +5,9 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import Routes from './routers/router';
 
+import * as uiv from 'uiv'
+
+Vue.use(uiv)
 Vue.use(VueRouter)
 //add bootstrap grid and registrate him gor Vue
 Vue.use(BootstrapVue);

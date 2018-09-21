@@ -1,6 +1,7 @@
 <template>
     <div>
       <div class="order-left">
+        <span class="form-close"><img src="../../assets/icons/close.png" alt="close" @click="closeForm"></span>
         <div class="left-up">
           <div class="up-left">
             <img src="../../assets/profile/photo2.png" alt="photo">
@@ -52,7 +53,11 @@
 
 <script>
     export default {
-
+      methods: {
+        closeForm() {
+          this.$emit('closed-form');
+        },
+      }
     }
 </script>
 
@@ -63,6 +68,7 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 2%;
+    position: relative;
   }
   .left-up {
     width: 100%;
@@ -197,5 +203,13 @@
     background-color: #d7d7d7;
     width: 93%;
     margin-top: 3%;
+  }
+  .form-close{
+    position: absolute;
+    right: 25px;
+    top: 25px;;
+    img {
+      cursor: pointer;
+    }
   }
 </style>

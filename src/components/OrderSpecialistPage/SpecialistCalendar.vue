@@ -72,7 +72,7 @@
       padding: 2%;
       width: 35%;
       &:hover {
-        box-shadow: 0px 4px 3px -2px #ff840082;
+        color: black;
       }
     }
     .active {

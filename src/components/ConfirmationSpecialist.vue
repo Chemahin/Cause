@@ -1,6 +1,6 @@
 <template>
   <div class="wrapp">
-    <span class="form-close"><img src="../assets/icons/close.png" alt="close"></span>
+    <span class="form-close"><img src="../assets/icons/close.png" alt="close" @click="closeForm"></span>
     <div class="img">
       <img
         :src="require(`../assets/profile/${img}`)"
@@ -97,9 +97,9 @@
       }
     },
     methods: {
-      // closeForm() {
-      //   this.$emit('closed-form');
-      // },
+      closeForm() {
+        this.$emit('closed-form');
+      },
       activContactForm(){
 
         const patternEmail =/.+@.+\..+/i;

@@ -19,6 +19,7 @@
 <style scoped lang="scss">
   .order-main {
     width: 55%;
+    padding-bottom: 5%;
   }
 
 </style>
