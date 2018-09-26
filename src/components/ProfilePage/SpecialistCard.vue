@@ -30,13 +30,15 @@
             <div class="wrap-item availability">
               <div class="availability-first">
                 <p><span>Beschikbaar</span> 30 uur p/w</p>
-                <div class="point">MA</div>
-                <div class="point">DI</div>
-                <div class="point">WO</div>
+                <div class="point-items">
+                  <div class="point">MA</div>
+                  <div class="point">DI</div>
+                  <div class="point">WO</div></div>
+
               </div>
-              <div class="availability-last">
-                <p> <span>Rating</span>  8/10</p>
-              </div>
+                <div class="availability-last">
+                  <p> <span>Rating</span>  8/10</p>
+                </div>
             </div>
             <div class="btnCustom">
 
@@ -63,9 +65,9 @@
           <div class="mbo-item">VMBO</div>
         </div>
         <hr>
-        <p><span>Interne opleidingen</span></p>
+        <h2>Interne opleidingen</h2>
         <hr class="hr-down">
-        <p><span>Rijbewijs</span> Ja</p>
+        <p class="rjb"><span>Rijbewijs</span> Ja</p>
 
       </div>
     </div>
@@ -106,6 +108,9 @@
 <style scoped lang="scss">
   p {
     font-family: GolanoRegular;
+  }
+  .point-items {
+    display: flex;
   }
   .wrapp {
     padding-left: 9%;
@@ -233,7 +238,7 @@
     }
   }
   .point {
-    width: 35px;
+    width: 40px;
     height: 35px;
     background-color: #2ad0e1;
     border-radius: 50%;
@@ -325,6 +330,7 @@
       margin-top: 9%;
       margin-left: -1%;
       margin-bottom: 0;
+      padding-left: 1%;
     }
     span {
       font-family: GolanoSemi;
@@ -354,5 +360,188 @@
     text-transform: uppercase;
     text-align: center;
   }
-
+  @media screen and (max-width: 1698px){
+    .name-last p {
+      margin-left: 7%;
+    }
+  }
+  @media screen and (max-width: 1520px){
+    .name-last p {
+      margin-left: 1%;
+    }
+    .btnCustom button {
+      width: 80%;
+    }
+  }
+  @media screen and (max-width: 1425px){
+    .up *{
+      font-size: 1.2rem;
+    }
+    .up-left {
+      img {
+        width: 80%;
+      }
+    }
+    .name-last p {
+      font-size: 1.4rem;
+    }
+    .name-first p {
+      font-size: 1.7rem;
+      width: 27%;
+    }
+    .name-first span {
+      font-size: 1.1rem;
+      width: 27%;
+    }
+    .availability-first p {
+      margin-right: 1%;
+    }
+    .availability-last {
+      padding: 0;
+    }
+    .up-right hr {
+      margin-left: 0;
+      width: 80%;
+    }
+    .availability-first p {
+      font-size: 1.3rem;
+    }
+  }
+  @media screen and (max-width: 1200px){
+    .up * {
+      font-size: 1.5rem;
+    }
+    .point {
+      width: 45px;
+      height: 45px;
+    }
+    .wrapp {
+      flex-direction: column;
+    }
+    .left-part {
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid #d7d7d7;
+    }
+    .right-part {
+      width: 100%;
+      border: none;
+      padding: 0;
+      margin-top: 4%;
+      margin-bottom: 5%;
+    }
+    .mbo-items {
+      margin-bottom: 5%;
+    }
+    .hr-down {
+      margin-top: 15%;
+    }
+    hr {
+      width: 100%;
+      height: 1px;
+    }
+    .mbo-item {
+      width: 18%;
+      padding: 9% 0;
+    }
+    .name-first span {
+      display: none;
+    }
+    .name-last {
+      display: none;
+    }
+    .btnCustom {
+      display: none;
+    }
+    .up-right hr {
+      width: 96%;
+    }
+    .specialty {
+      width: 100%;
+      p {
+        width: 60%;
+      }
+      .rating-stars {
+        width: 30%;
+      }
+    }
+  }
+  @media screen and (max-width: 720px){
+    hr {
+      width: 100%;
+    }
+    .up {
+      flex-direction: column;
+      justify-content: center;
+    }
+    .up-left {
+      width: 100%;
+      img {
+        width: 40%;
+      }
+    }
+    .up-right {
+      width: 100%;
+      hr {
+        width: 100%;
+      }
+    }
+    .wrap-item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .availability-first {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    .point-items {
+      justify-content: center;
+    }
+    .availability-last {
+      width: 100%;
+      text-align: center;
+    }
+    .skills-items {
+      width: 100%;
+    }
+    .skills-item {
+      width: 49%;
+    }
+    .specialty p {
+      width: 50%;
+    }
+    .specialty .rating-stars {
+      width: 45%;
+    }
+    .mbo-item {
+      font-size: 20px;
+    }
+    .rjb {
+      display: none;
+    }
+    h2 {
+      text-align: center;
+    }
+  }
+  @media screen and (max-width: 320px){
+    .specialty {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      p {
+        width: 100%;
+      }
+      .rating-stars {
+        width: 100%;
+      }
+    }
+    .name-first {
+      width: 100%;
+      justify-content: center;
+    }
+  }
 </style>

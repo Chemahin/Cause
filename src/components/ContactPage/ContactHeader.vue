@@ -3,7 +3,7 @@
     <div class="fon-filter">
       <b-container fluid>
 
-        <b-row>
+        <b-row class="mav-menu">
           <b-col>
             <NavigationMenu itemColor="itemMenuWhite"
                             borderItem="borderItemWhite"
@@ -69,6 +69,28 @@
   @media screen  and (max-width: 991px){
     .fon-filter{
       padding-top: 0;
+    }
+  }
+  @media screen  and (max-width: 540px){
+    .wrappHead {
+      height: 1080px;
+    }
+    .fon-filter{
+      height: 1080px;
+      padding: 10px 0;
+    }
+    .mav-menu {
+      padding: 0;
+      margin-bottom: 8%;
+    }
+
+  }
+  @media screen  and (max-width: 320px){
+    .wrappHead {
+      height: 830px;
+    }
+    .fon-filter{
+      height: 830px;
     }
   }
 

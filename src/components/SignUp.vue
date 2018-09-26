@@ -118,7 +118,8 @@
     font-size: 40px;
     font-weight: 400;
     line-height: 50px;
-    padding: 7% 0% 6% 24%;
+    margin-top: 7%;
+    text-align: center;
   }
   .div-form {
     margin: 8% 1% 10% 6%;
@@ -167,6 +168,49 @@
       font-size: 1.24vw;
       padding: 2% 5%;
       width: 50%;
+    }
+  }
+  @media screen and (max-width: 1200px){
+    .item-title {
+      font-size: 2rem;
+    }
+    .inputDark {
+      font-size: 2rem;
+    }
+    .btnCustom button {
+      font-size: 1.7rem;
+    }
+  }
+  @media screen and (max-width: 900px){
+    .item-title {
+      padding: 0;
+      margin-top: 10%;
+      text-align: center;
+      line-height: 40px;
+    }
+    .inputDark {
+      font-size: 1.7rem;
+    }
+    .btnCustom button {
+      font-size: 1.4rem;
+      width: 60%;
+    }
+    .wrapper {
+      width: 80%;
+    }
+  }
+  @media screen and (max-width: 450px){
+    .wrapper {
+      width: 100%;
+    }
+    .item-title {
+      font-size: 1.6rem;
+    }
+    .inputDark {
+      font-size: 1.4rem;
+    }
+    .btnCustom button {
+      font-size: 1.2rem;
     }
   }
 </style>

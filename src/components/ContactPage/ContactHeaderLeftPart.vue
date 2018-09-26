@@ -63,47 +63,47 @@
         this.$emit('closed-form');
       },
       activContactForm(){
-        console.log('--------activ------------')
+        console.log('--------activ------------');
         const patternEmail =/.+@.+\..+/i;
         const patternPhone = /^\d+$/;
 
 
         if(!patternEmail.test(this.contactEmail)) {
-          this.validContactForm.email = 'error Email';
+          this.validMess.email = 'error Email';
           this.contactEmail = '';
 
         }
         else {
-          this.validContactForm.email = '';
+          this.validMess.email = '';
           this.valid.email = '1';
         };
 
         if(this.contactName.length < 3) {
-          this.validContactForm.name = 'enter your name (3+)';
+          this.validMess.name = 'enter your name (3+)';
           this.contactName = '';
 
         }
         else {
-          this.validContactForm.name = '';
+          this.validMess.name = '';
           this.valid.name = '1';
         };
 
         if(!patternPhone.test(this.contactPhone) || this.contactPhone.length <=5) {
-          this.validContactForm.phone = 'must be only number(6+)';
+          this.validMess.phone = 'must be only number(6+)';
           this.contactPhone = '';
 
         }
         else {
-          this.validContactForm.phone = '';
+          this.validMess.phone = '';
           this.valid.phone = '1';
         };
 
         if(this.contactQuestion.length <= 6) {
-          this.validContactForm.question = 'enter your question(6+)';
+          this.validMess.question = 'enter your question(6+)';
           this.contactQuestion = '';
         }
         else {
-          this.validContactForm.question = '';
+          this.validMess.question = '';
           this.valid.question = '1';
         };
 
@@ -206,5 +206,68 @@
       font-size: 1.24vw;
       padding: 3% 5%;
     }
+  }
+  @media screen  and (max-width: 1200px){
+    .item-title{
+      font-size: 4rem;
+    }
+  }
+  @media screen  and (max-width: 991px){
+    .inputDark{
+      font-size: 1.8rem;
+    }
+    .btnCustom{
+      button{
+        font-size: 3vw;
+      }
+    }
+  }
+  @media screen  and (max-width: 540px){
+    .item-title{
+      font-size: 2.5rem;
+      line-height: 45px;
+    }
+    .input-class {
+      margin-bottom: 40px;
+    }
+    .btnCustom{
+      button{
+        font-size: 4vw;
+      }
+    }
+
+
+  }
+  @media screen  and (max-width: 320px){
+    .card-body {
+      padding: 0;
+    }
+    .item-title{
+      padding: 6%;
+      font-size: 2.3rem;
+      line-height: 45px;
+    }
+    .form-close {
+      display: none;
+    }
+    hr {
+      margin-bottom: 15%;
+      margin-left: 5px;
+    }
+    .inputDark{
+      font-size: 1.4rem;
+    }
+    .input-class {
+      margin-bottom: 15px;
+    }
+    .btnCustom{
+      margin: 7% 0;
+      button{
+        font-size: 5vw;
+        width: 220px;
+      }
+    }
+
+
   }
 </style>

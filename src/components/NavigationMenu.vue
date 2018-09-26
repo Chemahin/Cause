@@ -228,7 +228,7 @@
       .logoItem{
         width: 35%;
         img {
-          width: 80%;
+          width: 81%;
         }
       }
     }
@@ -265,7 +265,7 @@
       .logoItem {
         width: 33%;
         img {
-          width: 75%;
+          width: 80%;
         }
       }
       .itemMenuDark, .itemMenuWhite {
@@ -349,6 +349,8 @@
   @media screen  and (max-width: 540px){
     .form-inline input {
       right: -32px;
+      font-size: 20px;
+
     }
     .toggle-menu{
       right: -9px;

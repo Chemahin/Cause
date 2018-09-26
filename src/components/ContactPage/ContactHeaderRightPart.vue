@@ -1,11 +1,11 @@
 <template>
   <div class="item-wrapp">
     <div class="contact-item">
-      <img src="../../assets/icons/email.png" alt="email">
+      <i class="fas fa-envelope"></i>
       <h3>hello@causeffect.nl</h3>
     </div>
     <div class="contact-item">
-      <img class="phone" src="../../assets/icons/phone.png" alt="phone">
+      <i class="fas fa-phone phone"></i>
       <h3>020 26 11 813</h3>
     </div>
     
@@ -31,24 +31,51 @@
     font-weight: 400;
     line-height: 70px;
     margin-bottom: 35px;
-    img {
-      width: 7%;
-      height: 25px;
-      margin-right: 55px;
+    position: relative;
+    i {
+      font-size: 2.2rem;
+      position: absolute;
     }
+
     .phone {
-      height: 30px;
+      transform: rotate(80deg);
     }
     h3 {
       font-size: 2.2vw;
-      margin-top: -10px;
-      margin-left: -10px;
+      margin-left: 14%;
     }
 
   }
+  @media screen  and (max-width: 1200px){
+    .contact-item {
+      i {
+        font-size: 2rem;
+      }
+
+    }
+  }
   @media screen  and (max-width: 991px){
     .item-wrapp {
-      padding-top: 10%;
+      padding-top: 3%;
+    }
+    .contact-item {
+      margin-bottom: 5px;
+      h3 {
+        font-size: 3.2vw;
+      }
+
+    }
+  }
+  @media screen  and (max-width: 540px){
+    .item-wrapp {
+      padding-top: 3%;
+    }
+    .contact-item {
+      margin-bottom: 5%;
+      h3 {
+        font-size: 6.2vw;
+      }
+
     }
   }
 </style>

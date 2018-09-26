@@ -167,6 +167,9 @@
       }
     }
   }
+  @media screen  and (max-width: 1200px){
+
+  }
   @media screen  and (max-width: 991px){
     .wrapperLink{
       display: none;

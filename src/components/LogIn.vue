@@ -127,4 +127,48 @@
       width: 50%;
     }
   }
+  @media screen and (max-width: 1200px){
+    .item-title {
+      padding-left: 10%;
+      font-size: 2rem;
+    }
+    .inputDark {
+      font-size: 2rem;
+    }
+    .btnCustom button {
+      font-size: 1.7rem;
+    }
+  }
+  @media screen and (max-width: 900px){
+    .item-title {
+      padding: 0;
+      margin-top: 10%;
+      text-align: center;
+      line-height: 40px;
+    }
+    .inputDark {
+      font-size: 1.7rem;
+    }
+    .btnCustom button {
+      font-size: 1.4rem;
+      width: 60%;
+    }
+    .wrapper {
+      width: 80%;
+    }
+  }
+  @media screen and (max-width: 450px){
+    .wrapper {
+      width: 100%;
+    }
+    .item-title {
+      font-size: 1.6rem;
+    }
+    .inputDark {
+      font-size: 1.4rem;
+    }
+    .btnCustom button {
+      font-size: 1.2rem;
+    }
+  }
 </style>

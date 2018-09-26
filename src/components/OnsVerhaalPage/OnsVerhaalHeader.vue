@@ -300,7 +300,10 @@
       height: 5px;
     }
     .navbar {
-      margin-top: 6%;
+      margin-top: 4%;
+    }
+    .container-fluid {
+      padding-right: 0;
     }
   }
 

@@ -72,5 +72,39 @@
     }
   }
 
+  @media screen  and (max-width: 1200px){
+    h2{
+      font-size: 3.5rem;
+    }
+  }
+  @media screen  and (max-width: 540px){
+    h2{
+      font-size: 2.5rem;
+      line-height: 45px;
+    }
+  }
+  @media screen  and (max-width: 320px){
+    h2{
+      font-size: 2rem;
+      line-height: 35px;
+      margin-bottom: 0;
+    }
+    hr {
+      width: 79.4%;
+      height: 4px;
+      margin-top: 30px;
+    }
+    .address-item {
+      padding: 10% 0 0 0%;
+    }
+    .map-item {
+      margin-top: 40px;
+      padding-left: 3%;
+      img {
+        width: 98%;
+      }
+    }
+  }
+
 
 </style>

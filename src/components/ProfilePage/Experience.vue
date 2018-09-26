@@ -167,5 +167,87 @@
   .content {
     margin-top: 2.5%;
   }
+  @media screen and (max-width: 1200px){
+    .experience-main {
+      flex-direction: column;
+    }
+    .experience-items {
+      width: 90%;
+    }
+    .video-item {
+      width: 92%;
+      margin-top: 5%;
+    }
+  }
+  @media screen and (max-width: 720px){
+    h2 {
+      text-align: center;
+    }
+    .experience-items {
+      margin: 0;
+    }
+    .shout-item {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10%;
+    }
+    .content-title {
+      p {
+        font-size: 1.5rem;
+      }
+      span {
+        font-size: 1.5rem;
+      }
+    }
+    .content {
+      font-size: 1.5rem;
+      line-height: 30px;
+    }
+  }
+  @media screen and (max-width: 720px){
+    h2 {
+      font-size: 3rem;
+    }
+    .shout-item-img {
+      width: 18%;
+      height: 75px;
+      background-position: center;
+      background-size: contain;
+    }
+    .shout-item-img:after {
+      top: 4.7rem;
+      left: 3.1rem;
+    }
+  }
+  @media screen and (max-width: 500px){
+    .experience-main {
+      padding: 0;
+      width: 100%;
+    }
+    .experience-items {
+      width: 100%;
+    }
+    .shout-item-content {
+      border: 0;
+    }
+    .shout-item-img{
+      width: 17%;
+      height: 62px;
+    }
+    .shout-item-img:after {
+      top: 3.7rem;
+      left: 2.1rem;
+      font-size: 20px;
+    }
+    .content-title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .video-item {
+      width: 98%;
+    }
+  }
 
 </style>
+
