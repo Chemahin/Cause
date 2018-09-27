@@ -1,7 +1,10 @@
 <template>
+  <div>
+    <h2>Reviews</h2>
     <div class="reviews-main">
+
       <div class="reviews-items">
-        <h2>Reviews</h2>
+
         <div class="reviews-item-content">
           <span class="user-name"> John Doe</span>
           <div class="reviews-title">
@@ -30,7 +33,7 @@
         </div>
       </div>
     </div>
-
+  </div>
 </template>
 
 <script>
@@ -55,6 +58,7 @@
     width: 60%
   }
   h2 {
+    margin-top: 10%;
     color: #00c8d7;
     font-family: GolanoSemi;
     font-size: 50px;
@@ -119,6 +123,71 @@
       width: 100%;
       font-size: 1.24vw;
       padding: 2.5% 0;
+    }
+  }
+  @media screen and (max-width: 720px){
+    .reviews-main {
+      margin-top: 5%;
+      width: 95%;
+    }
+    h2 {
+      text-align: center;
+    }
+    .reviews-items {
+      width: 92%;
+    }
+    .btn-item {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 520px){
+    .reviews-title {
+      width: 100%;
+      p {
+        width: 50%;
+      }
+    }
+    .rating-stars {
+      width: 50%;
+    }
+    p {
+      line-height: 1.2;
+    }
+  }
+  @media screen and (max-width: 400px){
+    h2 {
+      font-size: 2.5rem;
+    }
+    .reviews-main {
+      width: 100%;
+      padding: 0;
+    }
+    .reviews-items {
+      width: 96%;
+    }
+    .rating-stars {
+      img {
+        width: 10%;
+      }
+    }
+    .reviews-title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .reviews-title {
+      p {
+        width: 100%;
+      }
+    }
+    .rating-stars {
+      width: 100%;
+    }
+    .reviews-item-content {
+      text-align: center;
+    }
+    .reviews-content {
+      font-size: 1.2rem;
     }
   }
 </style>

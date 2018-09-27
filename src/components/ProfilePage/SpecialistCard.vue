@@ -527,6 +527,16 @@
       text-align: center;
     }
   }
+  @media screen and (max-width: 450px){
+    .mbo-items {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .mbo-item {
+      width: 23%;
+      font-size: 17px;
+    }
+  }
   @media screen and (max-width: 320px){
     .specialty {
       display: flex;

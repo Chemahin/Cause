@@ -26,6 +26,7 @@
 
 <script>
   import Button from './Button';
+  // import axios from 'axios'
 
 
     export default {
@@ -40,12 +41,19 @@
       },
       methods: {
         activLogIn(){
-          console.log('-----------Email------------', this.logInEmail);
-          console.log('-----------Pass------------', this.logInPass);
+          // console.log('-----------Email------------', this.logInEmail);
+          // console.log('-----------Pass------------', this.logInPass);
+          console.log('-----------STORE------------', this.$store.state.login.authenticated);
+
+          this.$store.dispatch('login/checkoutLog',{
+            email: this.logInEmail,
+            password: this.logInPass
+          });
           this.logInEmail = '';
           this.logInPass = '';
 
         },
+
         closeLoginCard(){
           const bodyEl = document.getElementsByTagName('html')[0];
           bodyEl.style.overflowY= "scroll";

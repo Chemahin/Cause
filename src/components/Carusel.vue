@@ -56,7 +56,8 @@
                 const last = this.slides.pop()
                 this.slides = [last].concat(this.slides)
             }
-        }
+        },
+      props: ['portfolio'],
     }
 </script>
 <style scoped>

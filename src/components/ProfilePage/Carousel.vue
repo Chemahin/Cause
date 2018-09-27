@@ -1,36 +1,48 @@
 <template>
     <div class="portfolio-main">
       <h2>Portfolio</h2>
-      <Carousel>
+      <Carousel class="catousel-pos">
         <div class="carousel-portfolio">
-          <img :src="images[0]" alt="lala">
+          <img :src="images[0]" alt="item">
         </div>
         <div class="carousel-portfolio">
-          <img :src="images[1]" alt="lala">
+          <img :src="images[1]" alt="item">
         </div>
         <div class="carousel-portfolio">
-          <img :src="images[2]" alt="lala">
+          <img :src="images[2]" alt="item">
         </div>
         <div class="carousel-portfolio">
-          <img :src="images[3]" alt="lala">
+          <img :src="images[3]" alt="item">
         </div>
         <div class="carousel-portfolio">
-          <img :src="images[4]" alt="lala">
+          <img :src="images[4]" alt="item">
         </div>
-
-
       </Carousel>
+      <div class="portfolio-items">
+        <div class="portfolio-item" v-for="image in images">
+          <img :src="image" alt="item">
+        </div>
+        <div class="btnCustom">
+
+          <Button btnText="VRAAG DEZE SPECIALIST AAN"
+                  btnClass="btnOrangeNav">
+          </Button>
+          <Button btnText="VERGELIJK MET ANDERE SPECIALIST"
+                  btnClass="btnOrangeNav">
+          </Button>
+        </div>
+      </div>
+
     </div>
 </template>
 
 <script>
   import Carousel from '../CaruselSpecialists';
+  import Button from '../Button';
 
     export default {
       data() {
         return {
-          url: "",
-          index: 0,
           images: [
             require('../../assets/profile/portfolio_images1.png'),
             require('../../assets/profile/portfolio_images2.png'),
@@ -46,7 +58,8 @@
       methods: {
       },
       components: {
-        Carousel
+        Carousel,
+        Button
       },
     }
 </script>
@@ -68,6 +81,9 @@
   .carousel-portfolio {
     margin-top: 10%;
     margin-left: 2%;
+    img {
+      width: 95%;
+    }
   }
 
   .slick-slider {
@@ -76,5 +92,68 @@
     margin-left: -4%;
 
   }
+  .portfolio-items {
+    display: none;
+  }
+  @media screen and (max-width: 720px){
+    h2{
+      text-align: center;
+    }
+    .portfolio-main {
+      margin-top: 10%;
+      width: 90%;
+    }
+  }
 
+  @media screen and (max-width: 520px){
+    .portfolio-main {
+      h2{
+        margin: 10% 0;
+        text-align: center;
+        font-size: 2.5rem;
+      }
+    }
+    .catousel-pos {
+      display: none;
+    }
+    .portfolio-items {
+      display: flex;
+      width: 100;
+      flex-direction: column;
+    }
+    .portfolio-item {
+      width: 92%;
+      margin-bottom: 5%;
+      img {
+        width: 100%;
+      }
+    }
+    .btnCustom {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      button {
+        width: 96%;
+        font-size: 1.1rem;
+        margin-bottom: 5%;
+      }
+    }
+  }
+  @media screen and (max-width: 320px){
+    .portfolio-main {
+      padding: 0;
+      margin-left: 2%;
+      width: 100%;
+    }
+    .portfolio-item {
+      width: 96%;
+    }
+    .btnCustom button {
+      width: 93%;
+      font-size: 13px;
+      margin-bottom: 5%;
+      padding: 5% 0;
+    }
+  }
 </style>

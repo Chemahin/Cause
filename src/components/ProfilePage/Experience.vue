@@ -218,8 +218,18 @@
       top: 4.7rem;
       left: 3.1rem;
     }
+    .experience-video {
+      margin: 0;
+      margin-top: 10%;
+    }
+    .video-item {
+      width: 90%;
+    }
   }
   @media screen and (max-width: 500px){
+    h2 {
+      font-size: 2.5rem;
+    }
     .experience-main {
       padding: 0;
       width: 100%;
@@ -246,6 +256,11 @@
     }
     .video-item {
       width: 98%;
+    }
+  }
+  @media screen and (max-width: 440px){
+    .shout-item-img:after {
+      left: 42%;
     }
   }
 
