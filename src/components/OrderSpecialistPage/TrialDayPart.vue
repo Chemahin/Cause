@@ -5,14 +5,19 @@
     </div>
     <hr>
     <div class="time-items">
-      <p class="time-text" @click="getStartTime('start')">Begintijd</p>
-      <div class="time-selected">
-        <TimePicker class="time-item" v-model="timeStart" :show-meridian="false"></TimePicker>
+      <div class="time-group">
+        <p class="time-text" @click="getStartTime('start')">Begintijd</p>
+        <div class="time-selected">
+          <TimePicker class="time-item" v-model="timeStart" :show-meridian="false"></TimePicker>
+        </div>
       </div>
-      <p class="time-text" @click="getStartTime('end')">Eindtijd</p>
-      <div class="time-selected">
-        <TimePicker class="time-item" v-model="timeEnd" :show-meridian="false"></TimePicker>
+      <div class="time-group">
+        <p class="time-text" @click="getStartTime('end')">Eindtijd</p>
+        <div class="time-selected">
+          <TimePicker class="time-item" v-model="timeEnd" :show-meridian="false"></TimePicker>
+        </div>
       </div>
+
 
     </div>
     <hr>
@@ -105,7 +110,10 @@
     margin-top: 5%;
   }
 
-
+  .time-group {
+    width: 50%;
+    display: flex;
+  }
   .time-items {
     display: flex;
     margin: 7% 0;
@@ -126,13 +134,71 @@
   .footer {
     width: 100%;
     margin-top: 4%;
-    margin-left: 21%;
     display: flex;
+    justify-content: center;
     button{
-      font-size: 24px;
-      width: 27%;
+      font-size: 1.2rem;
+      width: 30%;
       padding: 2% 0;
       margin-right: 4%;
+    }
+  }
+  @media screen  and (max-width: 1630px){
+    .time-items {
+      padding: 0;
+      justify-content: center;
+    }
+    .time-group {
+      width: 30%;
+      margin-right: 2%;
+    }
+  }
+  @media screen  and (max-width: 1500px){
+    .time-items {
+      padding: 0;
+      justify-content: space-around;
+    }
+  }
+  @media screen  and (max-width: 1260px){
+    h2 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.6rem;
+    }
+    .footer button {
+      font-size: 1rem;
+      width: 40%;
+    }
+  }
+  @media screen  and (max-width: 1100px){
+    .time-group {
+      width: 40%;
+    }
+    .time-item {
+      padding: 0;
+    }
+  }
+  @media screen  and (max-width: 960px){
+    p {
+      font-size: 1.5rem;
+    }
+  }
+  @media screen  and (max-width: 460px){
+    h2 {
+      font-size: 1.7rem;
+    }
+    .time-group {
+      flex-direction: column;
+    }
+    .footer {
+      flex-direction: column;
+      align-items: center;
+      button {
+        width: 70%;
+        margin-bottom: 3%;
+        font-size: 1.3rem;
+      }
     }
   }
 

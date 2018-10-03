@@ -76,27 +76,49 @@
     align-items: center;
     display: flex;
   }
+  @media screen and (max-width: 1200px) {
+    h3{
+      font-size: 1.7rem;
+    }
+    p{
+      font-size: 1.7rem;
+    }
+    .footer p{
+      font-size: 1.5rem;
+    }
+  }
   @media screen and (max-width: 637px) {
     .wrapper{
       margin-bottom: 5%;
     }
     .header{
-      padding: 10% 25% 0 25%;
+      padding: 5% 0;
     }
-    h3{
-      font-size: 3vw;
-    }
-    p{
-      font-size: 2vw;
+    p {
+      font-size: 1.2rem;
     }
     .footer button{
-      font-size: 1.5vw;
+      font-size: 1.5rem;
       border-radius: 5px;
       border-width: 2px;
       padding: 5px 5px;
       img{
         width: 50% !important;
       }
+    }
+    .footer p {
+      font-size: 1.4rem;
+    }
+
+  }
+  @media screen and (max-width: 575px) {
+    .wrapper {
+      width: 97%;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .wrapper {
+      width: 100%;
     }
   }
 </style>

@@ -184,7 +184,8 @@
     text-align: center;
     padding-top: 2%;
     position: relative;
-
+    margin-bottom: 10%;
+    padding-bottom: 5%;
   }
   .confirmation {
     margin-top: 3%;
@@ -360,6 +361,59 @@
     display: inline-block;
     padding-left: 1%;
     padding-top: 1%;
+  }
+  @media screen  and (max-width: 1735px){
+    .container p {
+      margin-left: -10%;
+    }
+  }
+  @media screen  and (max-width: 1355px){
+    .container p {
+      margin-left: 0;
+    }
+  }
+  @media screen  and (max-width: 1355px){
+    .container p {
+      line-height: 1;
+      padding-top: 3%;
+    }
+  }
+  @media screen  and (max-width: 880px){
+    .confirmation h2 {
+      font-size: 1.7rem;
+    }
+    .confirmation span {
+      font-size: 1.9rem;
+    }
+    .confirmation p {
+      font-size: 1.7rem;
+    }
+    .inputDark {
+      font-size: 1.5rem;
+    }
+    .btnCustom button {
+      font-size: 1.3rem;
+    }
+  }
+  @media screen  and (max-width: 620px){
+    .wrapp {
+      width: 100%;
+    }
+    .form-wrapp {
+      margin: 0;
+      padding: 7% 0 0 6%;
+    }
+  }
+  @media screen  and (max-width: 340px){
+    .container p {
+      margin-left: 10%;
+    }
+    .confirmation h2 {
+      font-size: 1.5rem;
+    }
+    .confirmation p {
+      font-size: 1.5rem;
+    }
   }
 
 

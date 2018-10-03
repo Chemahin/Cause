@@ -46,4 +46,9 @@
         tr.text-center {
           display: none;
         }
+        @media screen and (max-width:320px ){
+          body {
+            overflow-x: hidden;
+          }
+        }
 </style>

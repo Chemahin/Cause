@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 const state = {
-  authenticated: false,
+  contact: null,
 }
 
 // getters
@@ -19,13 +19,13 @@ const state = {
 // actions
 const actions = {
 
-  checkoutLog ({ commit }, date) {
+  contactForm ({ commit }, date) {
     let  headers = {
       'Content-Type': 'application/json',
     };
     axios
-      .post('http://134.249.133.123/api/user_create.php', date, headers)
-      .then(commit('login', true));
+      .post('http://134.249.133.123/api/feedback_form.php', date, headers)
+      .then(commit('contactMut', date));
     console.log('----------ACTIONS--------',date)
 
   }
@@ -33,9 +33,9 @@ const actions = {
 //
 // // mutations
 const mutations = {
-  login (state, data) {
-    state.authenticated = data;
-    console.log('----------MUTATIONS--------')
+  contactMut (state, data) {
+    state.contact = data;
+    console.log('----------MUTATIONS--------', state)
   }
 }
 

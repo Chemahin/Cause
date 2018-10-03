@@ -93,13 +93,16 @@
   .mobile-posts {
     display: none;
   }
+  .container-fluid {
+    padding: 0;
+  }
   .wrappHead{
     height: 1216px;
     background: url("../../assets/contact_up_bg.png");
   }
   .fon-filter {
     height: 1216px;
-    padding: 83px 9%;
+    padding: 81px 9%;
     background: #19cddac4;
   }
   .content {

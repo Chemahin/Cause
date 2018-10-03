@@ -24,7 +24,7 @@
             ></Anketa>
         </CaruselSpecialists>
       </b-col>
-      <b-col class="noneCarusel" v-for="profile in profiles" :key="profile.name + Math.random()" sm="6" cols="6" >
+      <b-col class="noneCarusel" v-for="profile in profiles" :key="profile.name + Math.random()" sm="6" cols="12" >
         <Anketa
           :key="profile.name + Math.random()"
           :name="profile.name"
@@ -95,17 +95,23 @@
   }
 </script>
 <style scoped lang="scss">
+  h3 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.7rem;
+  }
   .first{
     margin: 8.3% 0 5% 11%;
     h2{
-      word-break: break-word  ;
+      word-break: break-word;
       color: #00c8d7;
       font-family: GolanoSemi;
       font-size: 3.82vw;
       font-weight: 400;
       width: 50%;
       letter-spacing: -2px;
-      margin-bottom: 2.6%;
+      margin-bottom: 3%;
     }
     hr{
       margin:29px 0 29px 0;
@@ -130,6 +136,14 @@
     display: none;
     padding: 0px;
   }
+
+
+  @media screen and (max-width:720px ){
+    .first h2{
+      font-size: 3rem;
+      width: 100%;
+    }
+  }
   @media screen and (max-width:637px ){
     .caruselMy{
       display: none;
@@ -143,8 +157,23 @@
       border-width: 2px;
       padding: 15px;
     }
-
-
-
+  }
+  @media screen and (max-width:530px ){
+    .first {
+      margin: 10% 0;
+      text-align: center;
+      h2{
+        font-size: 8vw;
+        width: 100%;
+      }
+      hr {
+        width: 100%;
+      }
+    }
+  }
+  @media screen and (max-width:320px ){
+    .first h2{
+        font-size: 2.5rem;
+      }
   }
 </style>

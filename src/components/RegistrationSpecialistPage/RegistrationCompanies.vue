@@ -12,7 +12,7 @@
         oplossingen voor MKB bedrijven.</p>
       <b-container fluid class="companies">
         <b-row>
-          <b-col md="2" cols="6" v-for="n in 10" :key="n +Math.random()">
+          <b-col lg="2" md="6" sm="12" v-for="n in 10" :key="n +Math.random()">
             <img :src="sourceImages(n)"
                  :alt="'portfolio intem №'+n">
           </b-col>
@@ -89,7 +89,7 @@
     width: 43%;
     color: #969696;
     font-family: GolanoRegular;
-    font-size: 1.535vw;
+    font-size: 1.7rem;
     font-weight: 400;
     line-height: 1.6;
     letter-spacing: -0.9px;
@@ -104,8 +104,8 @@
     padding-right: 2%;
   }
   img{
-    width: 275px;
-    max-width: 100%;
+    width: 100%;
+    margin-bottom: 5%;
   }
 
   @media screen and (max-width: 767px){
@@ -142,6 +142,36 @@
 
     .hideButton{
       display: block;
+    }
+  }
+  @media screen and (max-width: 530px) {
+    .main-companies {
+      margin-left: 0;
+    }
+    .first {
+      margin-left: 0;
+      text-align: center;
+      hr {
+        width: 100%;
+      }
+    }
+    p {
+      width: 100%;
+      padding: 0;
+      text-align: center;
+      line-height: 1.5;
+      font-size: 1.5rem;
+    }
+    .hideButton button {
+      width: 90%;
+      font-size: 1.4rem;
+    }
+
+  }
+  @media screen and (max-width: 320px) {
+    .first h2 {
+      width: 100%;
+      font-size: 2.5rem;
     }
   }
 </style>

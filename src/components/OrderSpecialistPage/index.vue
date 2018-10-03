@@ -20,6 +20,13 @@
   .order-main {
     width: 55%;
     padding-bottom: 5%;
+    background: white;
+  }
+
+  @media screen  and (max-width: 800px) {
+    .order-main {
+      width: 100%;
+    }
   }
 
 </style>

@@ -18,14 +18,19 @@
       </div>
       <hr>
       <div class="time-items">
-        <p class="time-text" @click="getStartTime('start')">Begintijd</p>
-        <div class="time-selected">
-          <TimePicker class="time-item" v-model="timeStart" :show-meridian="false"></TimePicker>
+        <div class="time-group">
+          <p class="time-text" @click="getStartTime('start')">Begintijd</p>
+          <div class="time-selected">
+            <TimePicker class="time-item" v-model="timeStart" :show-meridian="false"></TimePicker>
+          </div>
         </div>
-        <p class="time-text" @click="getStartTime('end')">Eindtijd</p>
-        <div class="time-selected">
-          <TimePicker class="time-item" v-model="timeEnd" :show-meridian="false"></TimePicker>
+        <div class="time-group">
+          <p class="time-text" @click="getStartTime('end')">Eindtijd</p>
+          <div class="time-selected">
+            <TimePicker class="time-item" v-model="timeEnd" :show-meridian="false"></TimePicker>
+          </div>
         </div>
+
 
       </div>
       <hr>
@@ -74,15 +79,15 @@
         },
         getStartTime(pos){
             if(pos === 'start'){
-            let mi = this.timeStart.getHours();
-            let se = this.timeStart.getMinutes();
-            let tt = String(mi) +':' + String(se) ;
+            let h = this.timeStart.getHours();
+            let m = this.timeStart.getMinutes();
+            let tt = String(h) +':' + String(m) ;
             console.log('---------------start------------', tt)
           }
           else {
-              let mi = this.timeEnd.getHours();
-              let se = this.timeEnd.getMinutes();
-              let tt = String(mi) +':' + String(se) ;
+              let h = this.timeEnd.getHours();
+              let m = this.timeEnd.getMinutes();
+              let tt = String(h) +':' + String(m) ;
               console.log('---------------end------------', tt)
             }
         }
@@ -155,6 +160,10 @@
     padding: 0 20%;
     width: 100%;
   }
+  .time-group {
+    width: 50%;
+    display: flex;
+  }
   .time-item {
     border-radius: 10px;
     border: 2px solid #d7d7d7;
@@ -169,14 +178,78 @@
   .footer {
     width: 100%;
     margin-top: 4%;
-    margin-left: 21%;
     display: flex;
+    justify-content: center;
     button{
-      font-size: 24px;
-      width: 27%;
+      font-size: 1.2rem;
+      width: 30%;
       padding: 2% 0;
       margin-right: 4%;
     }
   }
-
+  @media screen  and (max-width: 1630px){
+    .time-items {
+      padding: 0;
+      justify-content: center;
+    }
+    .time-group {
+      width: 30%;
+      margin-right: 2%;
+    }
+  }
+  @media screen  and (max-width: 1500px){
+    .time-items {
+      padding: 0;
+      justify-content: space-around;
+    }
+  }
+  @media screen  and (max-width: 1260px){
+    .hour-item {
+      padding: 3% 2% 1px 1%;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.6rem;
+    }
+    .footer button {
+      font-size: 1rem;
+      width: 40%;
+    }
+  }
+  @media screen  and (max-width: 1100px){
+    .time-item {
+      padding: 0;
+    }
+    .time-group {
+      width: 40%;
+    }
+  }
+  @media screen  and (max-width: 960px){
+    p {
+      font-size: 1.5rem;
+    }
+  }
+  @media screen  and (max-width: 460px){
+    .hour-item {
+      text-align: center;
+      padding: 2%;
+    }
+    h2 {
+      font-size: 1.7rem;
+    }
+    .time-group {
+      flex-direction: column;
+    }
+    .footer {
+      flex-direction: column;
+      align-items: center;
+      button {
+        width: 70%;
+        margin-bottom: 3%;
+        font-size: 1.3rem;
+      }
+    }
+  }
 </style>

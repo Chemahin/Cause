@@ -11,8 +11,8 @@
           <img src="../../assets/registrationSpecialist/work_img_1.png" alt="image">
         </div>
         <div class="item-content">
-          <h2>Krijg uitdagende opdrachten</h2>
-          <ul>
+            <h2 @click="onClick1()">Krijg uitdagende opdrachten <span class="content-title-arrow"><img src="../../assets/icons/er_down.png" alt="down"></span></h2>
+          <ul :class="{'clicked-item': clicked1}">
             <li><span class="dot"></span><p>Causeffect is een online platform waar freelance specialisten zich kunnen aanmelden.</p></li>
             <li><span class="dot"></span><p>Je hoeft niet langer op zoek naar opdrachtgevers. Zij vinden jou!</p></li>
             <li><span class="dot"></span><p>Door een profiel aan te maken ben je zichtbaar voor verschillende opdrachtgevers.</p></li>
@@ -23,8 +23,8 @@
 
       <div class="content-item">
         <div class="item-content left">
-          <h2>Krijg uitdagende opdrachten</h2>
-          <ul>
+          <h2 @click="onClick2()">Krijg uitdagende opdrachten <span class="content-title-arrow"><img src="../../assets/icons/er_down.png" alt="down"></span></h2>
+          <ul :class="{'clicked-item': clicked2}">
             <li><span class="dot"></span><p>Causeffect On Demand maakt het gemakkelijk voor freelancers om te connecten
               met opdrachtgevers om zo geweldige opdrachten te krijgen.</p></li>
             <li><span class="dot"></span><p>Doordat je bij het aanmelden direct aangeeft wat jouw specialiteiten zijn zal je altijd
@@ -44,8 +44,8 @@
           <img src="../../assets/registrationSpecialist/work_img_3.png" alt="image">
         </div>
         <div class="item-content right">
-          <h2>Krijg uitdagende opdrachten</h2>
-          <ul>
+          <h2 @click="onClick3()">Krijg uitdagende opdrachten <span class="content-title-arrow"><img src="../../assets/icons/er_down.png" alt="down"></span></h2>
+          <ul :class="{'clicked-item': clicked3}">
             <li><span class="dot"></span><p>De opdrachtgevers hebben van tevoren al gekeken wat jouw specialiteiten zijn, dus
               je zal altijd een uitdagende opdracht krijgen binnen jouw expertise.</p></li>
             <li><span class="dot"></span><p>Causeffect On Demand doet de onderhandelingen zodat jij altijd precies weet wat
@@ -63,8 +63,8 @@
 
       <div class="content-item">
         <div class="item-content left">
-          <h2>Krijg uitdagende opdrachten</h2>
-          <ul>
+          <h2 @click="onClick4()">Krijg uitdagende opdrachten <span class="content-title-arrow"><img src="../../assets/icons/er_down.png" alt="down"></span></h2>
+          <ul :class="{'clicked-item': clicked4}">
             <li><span class="dot"></span><p>Bij Causeffect On Demand is altijd duidelijk wat je voor vergoeding krijgt.
               Causeffect hanteert een vast uurtarief dat stijgt naarmate je meer verschillende
               werkzaamheden voor ons kan verrichten. </p></li>
@@ -87,11 +87,35 @@
 
 <script>
     export default {
-
+      data() {
+        return {
+          clicked1: false,
+          clicked2: false,
+          clicked3: false,
+          clicked4: false,
+        }
+      },
+      methods: {
+        onClick1(){
+          this.clicked1 = !this.clicked1;
+        },
+        onClick2(){
+          this.clicked2 = !this.clicked2;
+        },
+        onClick3(){
+          this.clicked3 = !this.clicked3;
+        },
+        onClick4(){
+          this.clicked4 = !this.clicked4;
+        },
+      }
     }
 </script>
 
 <style scoped lang="scss">
+  .content-title-arrow {
+    display: none;
+  }
   ul {
     list-style: none;
     padding: 0;
@@ -186,5 +210,95 @@
         }
       }
     }
+  @media screen and (max-width: 991px) {
+    li {
+      font-size: 20px;
+    }
+  }
 
+  @media screen and (max-width: 720px) {
+    .content-item {
+      margin-bottom: 10%;
+    }
+    .item-content h2 {
+      font-size: 2.3rem;
+    }
+    .content-title-arrow{
+      display: inline-block;
+      margin-left: 14%;
+    }
+    ul {
+      display: none;
+    }
+    .clicked-item {
+      display: block;
+    }
+    .left ul li {
+      line-height: 1.5;
+    }
+    .right ul li {
+      line-height: 1.5;
+    }
+    .first h2 {
+      font-size: 3rem;
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 530px) {
+    .first {
+      margin-left: 0;
+      text-align: center;
+      hr {
+        width: 100%;
+      }
+    }
+    li {
+      line-height: 1.5;
+    }
+    .content {
+      margin-left: 0;
+    }
+    .content-item {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    .item-img {
+      width: 100%;
+      order: 0;
+      img {
+        width: 30%;
+      }
+    }
+    .item-content {
+      width: 100%;
+      margin-left: 0;
+      order: 1;
+      h2 {
+        font-size: 1.7rem;
+      }
+    }
+    .clicked-item {
+      padding: 1% 0 0 5%;
+      text-align: left;
+    }
+    .content-title-arrow {
+      margin-left: 2%;
+      line-height: 1.5;
+    }
+  }
+  @media screen and (max-width: 440px) {
+    .item-content h2 {
+      font-size: 1.4rem;
+    }
+    .first h2 {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media screen and (max-width: 370px) {
+    .item-content h2 {
+      font-size: 1.2rem;
+    }
+  }
 </style>

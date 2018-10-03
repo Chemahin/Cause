@@ -70,7 +70,7 @@
       line-height: 35.24px;
       cursor: pointer;
       padding: 2%;
-      width: 35%;
+      padding: 2% 4%;
       &:hover {
         color: black;
       }
@@ -81,7 +81,7 @@
     }
     :first-child {
       margin-right: 5%;
-      width: 30%;
+      padding: 2% 4%;
     }
 
   }
@@ -91,8 +91,39 @@
     width: 93%;
     margin-top: 3%;
   }
-
-
-
+  @media screen  and (max-width: 1230px){
+    .btn-items div {
+      font-size: 1.5rem;
+    }
+  }
+  @media screen  and (max-width: 990px){
+    .btn-items div {
+      font-size: 1.3rem;
+      padding: 1% 2%;
+    }
+  }
+  @media screen  and (max-width: 820px){
+    .btn-items div {
+      font-size: 1.2rem;
+      padding: 1%;
+    }
+  }
+  @media screen  and (max-width: 410px){
+    .btn-items div {
+      font-size: 1.1rem;
+      padding: 1%;
+    }
+  }
+  @media screen  and (max-width: 380px){
+    .btn-items {
+      flex-direction: column;
+      padding: 2%;
+      div {
+        text-align: center;
+        margin-bottom: 5%;
+        font-size: 1.5rem;
+      }
+    }
+  }
 
 </style>

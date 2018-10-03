@@ -108,6 +108,12 @@
         };
 
         if (Object.keys(this.valid).length === 4) {
+          this.$store.dispatch('contact/contactForm',{
+            name: this.contactName,
+            email: this.contactEmail,
+            phone: this.contactPhone,
+            question: this.contactQuestion,
+          });
             this.contactName = '';
             this.contactEmail = '';
             this.contactPhone = '';

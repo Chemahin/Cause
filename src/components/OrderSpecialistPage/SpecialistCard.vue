@@ -42,11 +42,6 @@
           </div>
         </div>
         <hr>
-
-      </div>
-
-      <div class="right-part">
-
       </div>
     </div>
 </template>
@@ -92,11 +87,12 @@
   .wrap-item {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
   }
   .name-first {
     display: flex;
     align-items: flex-start;
-    width: 70%;
+    width: 50%;
     margin-top: 10%;
     p {
       font-family: GolanoSemi;
@@ -108,13 +104,13 @@
     }
   }
   .name-last {
-    width: 30%;
+    width: 45%;
+    display: flex;
+    justify-content: flex-end;
     p{
       font-size: 25px;
       line-height: 35px;
       color: #646464;
-      margin-top: 37%;
-      margin-left: 17%;
       margin-bottom: 0;
       span {
         color: #00c7d6;
@@ -210,6 +206,73 @@
     top: 25px;;
     img {
       cursor: pointer;
+    }
+  }
+  @media screen  and (max-width: 1410px){
+    .left-up {
+      flex-direction: column;
+      justify-content: center;
+    }
+    .up-left {
+      width: 100%;
+    }
+    .up-right {
+      width: 100%;
+      padding: 2% 5%;
+      hr {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+    .point-items {
+      width: 100%;
+    }
+  }
+  @media screen  and (max-width: 800px){
+    .name-first p {
+      font-size: 2rem;
+    }
+    .availability-first {
+      width: 60%;
+    }
+    .availability-last {
+      width: 35%;
+      padding: 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  @media screen  and (max-width: 520px){
+    .name-last {
+      display: none;
+    }
+    .name-first {
+      width: 100%;
+      justify-content: center;
+    }
+    .specialty {
+      flex-direction: column;
+      text-align: center;
+    }
+    .rating-stars {
+      width: 100%;
+      img {
+        width: 10%;
+      }
+    }
+    .availability {
+      flex-direction: column;
+      text-align: center;
+    }
+    .availability-first {
+      width: 100%;
+    }
+    .availability-last {
+      width: 100%;
+      justify-content: center;
+      p {
+        margin: 0;
+      }
     }
   }
 </style>

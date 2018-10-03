@@ -39,7 +39,7 @@
       <Button
         btnText="MAAK ACCOUNT AAN"
         btnClass="btnOrangeNav"
-        stylesImg="width:15px"></Button>
+        stylesImg="width:8%"></Button>
     </div>
 
 
@@ -48,7 +48,7 @@
 <script>
   import Button from './Button';
   export default {
-    props: ['name', 'img', 'specialistText', 'orderText', 'cooperationText'],
+    props: ['name', 'img'],
     components: {
       Button,
     }
@@ -61,6 +61,7 @@
     text-align: center;
     padding-top: 2%;
     position: relative;
+    margin-bottom: 10%;
 
   }
   .confirmation {
@@ -104,7 +105,7 @@
     p {
       color: #969696;
       font-family: GolanoRegular;
-      font-size: 25px;
+      font-size: 1.5rem;
       font-weight: 400;
       line-height: 51.69px;
       margin: 3% 14% -8px 14%;
@@ -128,8 +129,8 @@
     margin-top: 3%;
     margin-bottom: 7%;
     button {
-      width: 42%;
-      font-size: 24px;
+      width: 43%;
+      font-size: 1.5rem;
       font-weight: 400;
       line-height: 60.72px;
       letter-spacing: 1px;
@@ -148,6 +149,64 @@
       cursor: pointer;
     }
   }
+  @media screen  and (max-width: 1400px){
+    .btn button {
+      width: 55%;
+      font-size: 1.2rem;
+    }
+  }
+  @media screen  and (max-width: 930px){
+    .btn button {
+      width: 60%;
+      font-size: 1.2rem;
+    }
+    .confirmation h2 {
+      font-size: 1.7rem;
+      line-height: 1;
+    }
+    .confirmation span {
+      font-size: 2rem;
+    }
+    .information-item p {
+      line-height: 1.5;
+    }
+    .information-item h2 {
+      font-size: 2rem;
+    }
+    img {
+      width: 20%;
+    }
+    .gratitude h2 {
+      font-size: 2rem;
+    }
+    .img img {
+      width: 45%;
+    }
+    .form-close {
+      right: -15px;
+      width: 20%;
+    }
+  }
+  @media screen  and (max-width: 830px){
+    .btn button {
+      width: 85%;
+      padding: 1%;
+    }
 
+  }
+  @media screen  and (max-width: 690px){
+    .wrapp {
+      width: 100%;
+    }
+    .btn button {
+      width: 60%;
+    }
+
+  }
+  @media screen  and (max-width: 460px){
+    .btn button {
+      width: 93%;
+    }
+  }
 
 </style>

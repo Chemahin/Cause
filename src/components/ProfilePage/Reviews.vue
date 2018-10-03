@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="reviews-wrapp">
     <h2>Reviews</h2>
     <div class="reviews-main">
 
@@ -46,9 +46,11 @@
 </script>
 
 <style scoped lang="scss">
+  .reviews-wrapp {
+    padding-left: 9%;
+  }
   .reviews-main {
     display: flex;
-    padding-left: 9%;
     padding-bottom: 5%;
     width: 100%;
   }
@@ -59,6 +61,7 @@
   }
   h2 {
     margin-top: 10%;
+    padding-left: 2%;
     color: #00c8d7;
     font-family: GolanoSemi;
     font-size: 50px;
@@ -115,7 +118,7 @@
   .btn-item {
     margin-top: 6.4%;
     margin-left: 2%;
-    width: 29%;;
+    width: 29%;
   }
   .btnCustom{
     margin: 4% 0;
@@ -188,6 +191,11 @@
     }
     .reviews-content {
       font-size: 1.2rem;
+    }
+  }
+  @media screen and (max-width: 320px){
+    .reviews-wrapp {
+      padding: 0;
     }
   }
 </style>

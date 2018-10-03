@@ -38,9 +38,12 @@
     height: 1216px;
     background: url("../../assets/contact_up_bg.png");
   }
+  .container-fluid {
+    padding: 0;
+  }
   .fon-filter {
     height: 1216px;
-    padding: 83px 9%;
+    padding: 81px 9%;
     background: #19cddac4;
   }
   @media screen  and (max-width: 991px){

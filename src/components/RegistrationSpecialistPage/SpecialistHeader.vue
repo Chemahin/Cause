@@ -18,16 +18,16 @@
         </div>
       </b-col>
     </b-row>
-    <b-row>
+    <b-row class="menu">
       <b-col>
         <NavigationMenu itemColor="itemMenuDark" borderItem="borderItemDark" searchItem="searchDark" logoColor="logo" ></NavigationMenu>
       </b-col>
     </b-row>
     <b-row>
-      <b-col md="6" v-show="!closed">
+      <b-col lg="6" v-show="!closed">
         <leftPart v-on:closed-form="closedForm()"></leftPart>
       </b-col>
-      <b-col md="6" >
+      <b-col lg="6" class="carusel-wrapp">
         <Carusel></Carusel>
       </b-col>
     </b-row>
@@ -159,6 +159,21 @@ import NavigationMenu from '../NavigationMenu'
   @media screen  and (max-width: 991px){
     .wrapperLink{
       display: none;
+    }
+    .carusel-wrapp {
+      display: none;
+    }
+  }
+  @media screen  and (max-width: 570px) {
+    .col-lg-6 {
+      padding: 0;
+    }
+    .wrappHead{
+      padding: 0;
+      height: auto;
+    }
+    .menu {
+      padding: 0 22px 0 9%;
     }
   }
 </style>

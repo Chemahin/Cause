@@ -341,5 +341,103 @@
       padding: 3% 5%;
     }
   }
+  @media screen and (max-width:1440px ){
+    .card-body {
+      padding: 1%;
+    }
+    .item-title {
+      padding: 0;
+      margin-top: 10%;
+      font-size: 3rem;
+    }
+    .input-class {
+      margin-bottom: 8%;
+    }
+    .upload-item {
+      width: 25%;
+    }
+    .container {
+      padding-left: 17%;
+      padding-top: 2%;
+      margin-top: 0px;
+      line-height: 1;
+    }
+  }
+  @media screen and (max-width:1200px ){
+    .upload-item p {
+      font-size: 16px;
+      line-height: 1;
+    }
+    .inputDark {
+      font-size: 1.6rem;
+    }
+  }
+  @media screen  and (max-width: 991px){
+    .card-wrapp {
+      margin-top: 8.5%;
+      width: 100%;
+       margin-left: 0;
+    }
+    .item-title {
+      text-align: center;
+    }
+    .form-close {
+      display: none;
+    }
+    .btnCustom button {
+      width: 65%;
+      font-size: 1.7rem;
+      padding: 2% 5%;
+    }
+    .upload-item p {
+      font-size: 1.2rem;
+    }
+  }
+  @media screen  and (max-width: 570px){
+    .col-lg-6 {
+      padding: 0;
+    }
+    .div-form {
+      padding: 0;
+    }
+    hr {
+      width: 100%;
+      margin-left: 0;
+    }
+    .card-body {
+      padding: 1% 6%;
+      margin-top: 5%;
+    }
+    .card-wrapp {
+      border: none;
+    }
+    .item-title {
+      font-size: 2rem;
+      line-height: 1;
+    }
+    .upload-items {
+      justify-content: center;
+      p {
+        font-size: 1rem;
+      }
+    }
+    .btnCustom button {
+      font-size: 1rem;
+    }
+    .container {
+      font-size: 1.3rem;
+      padding-left: 20%;
+    }
+  }
+  @media screen  and (max-width: 320px){
+    .upload-item {
+      width: 30%;
+    }
+    .btnCustom button {
+      font-size: 1.3rem;
+      width: 100%;
+      margin-top: 10%;
+    }
+  }
 </style>
 
