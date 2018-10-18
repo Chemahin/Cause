@@ -2,17 +2,17 @@
     <div class="wrapp">
       <div class="price-items">
         <div class="price-item">
-          <img src="../../assets/semi.png" alt="image">
+          <img v-lazy="mysrc1" alt="image">
           <h2>Semi Pro</h2>
           <span>&#8364; 30 p.u</span>
         </div>
         <div class="price-item">
-          <img src="../../assets/pro.png" alt="image">
+          <img v-lazy="mysrc2" alt="image">
           <h2>Pro</h2>
           <span>&#8364; 45 p.u</span>
         </div>
         <div class="price-item">
-          <img src="../../assets/expert.png" alt="image">
+          <img v-lazy="mysrc3" alt="image">
           <h2>Expert</h2>
           <span>&#8364; 55 p.u</span>
         </div>
@@ -98,72 +98,75 @@
     export default {
       data() {
         return {
-          filterFirst: '',
-          filterSecond: '',
-          filterThird: '',
-          profiles:[
-            {
-              img:'photo1.png',
-              name:'Lionel',
-              text:'Grafisch vormgever',
-              stars:5
-            },
-            {
-              img:'photo2.png',
-              name:'Thijs',
-              text:'Copywriter',
-              stars:5
-            },
-            {
-              img:'photo3.png',
-              name:'Jochem',
-              text:'Grafisch vormgever',
-              stars:5
-            },
-            {
-              img:'photo1.png',
-              name:'Lionel',
-              text:'Grafisch vormgever',
-              stars:5
-            },
-            {
-              img:'photo2.png',
-              name:'Thijs',
-              text:'Copywriter',
-              stars:5
-            },
-            {
-              img:'photo3.png',
-              name:'Jochem',
-              text:'Grafisch vormgever',
-              stars:5
-            },
-          ],
-          closedAccounts:[
-            {
-              img:'photo1.png',
-              name:'Lionel',
-              text:'Grafisch vormgever',
-              textBody: 'Beschikbaar vanaf',
-              date: '01-01-18'
-            },
-            {
-              img:'photo3.png',
-              name:'Jochem',
-              text:'Grafisch vormgever',
-              textBody: 'Beschikbaar vanaf',
-              date: '01-01-18'
-            },
-          ],
-          inConversation: [
-            {
-              img:'photo2.png',
-              name:'Thijs',
-              text:'Copywriter',
-              stars:5
-            },
-          ]
-        }
+            mysrc1:require(`../../assets/semi.png`),
+            mysrc2:require(`../../assets/pro.png`),
+            mysrc3:require(`../../assets/expert.png`),
+            filterFirst: '',
+            filterSecond: '',
+            filterThird: '',
+            profiles:[
+              {
+                img:'photo1.png',
+                name:'Lionel',
+                text:'Grafisch vormgever',
+                stars:5
+              },
+              {
+                img:'photo2.png',
+                name:'Thijs',
+                text:'Copywriter',
+                stars:5
+              },
+              {
+                img:'photo3.png',
+                name:'Jochem',
+                text:'Grafisch vormgever',
+                stars:5
+              },
+              {
+                img:'photo1.png',
+                name:'Lionel',
+                text:'Grafisch vormgever',
+                stars:5
+              },
+              {
+                img:'photo2.png',
+                name:'Thijs',
+                text:'Copywriter',
+                stars:5
+              },
+              {
+                img:'photo3.png',
+                name:'Jochem',
+                text:'Grafisch vormgever',
+                stars:5
+              },
+            ],
+            closedAccounts:[
+              {
+                img:'photo1.png',
+                name:'Lionel',
+                text:'Grafisch vormgever',
+                textBody: 'Beschikbaar vanaf',
+                date: '01-01-18'
+              },
+              {
+                img:'photo3.png',
+                name:'Jochem',
+                text:'Grafisch vormgever',
+                textBody: 'Beschikbaar vanaf',
+                date: '01-01-18'
+              },
+            ],
+            inConversation: [
+              {
+                img:'photo2.png',
+                name:'Thijs',
+                text:'Copywriter',
+                stars:5
+              },
+            ]
+          }
       },
 
       components: {

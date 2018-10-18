@@ -62,7 +62,7 @@
   }
   .fon-filter {
     height: 1216px;
-    padding: 81px 9%;
+    padding: 2% 9%;
     background: #19cddac4;
   }
   .part-wrapp {
@@ -70,7 +70,7 @@
   }
   @media screen  and (max-width: 991px){
     .fon-filter{
-      padding-top: 0;
+      padding-top: 2% 9%;
     }
   }
   @media screen  and (max-width: 540px){
@@ -79,11 +79,14 @@
     }
     .fon-filter{
       height: 1080px;
-      padding: 10px 0;
+      padding: 0;
     }
     .mav-menu {
-      padding: 0;
+      padding: 0 9%;
       margin-bottom: 8%;
+    }
+    .part-wrapp{
+      padding: 0;
     }
 
   }

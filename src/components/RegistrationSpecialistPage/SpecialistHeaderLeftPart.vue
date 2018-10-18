@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-card  class="card-wrapp">
-      <span @click="closeForm" class="form-close"><img src="../../assets/icons/close.png" alt="close"></span>
+      <span @click="closeForm" class="form-close"><img v-lazy="mysrc1" alt="close"></span>
       <p class="card-text item-title">Meld je aan als specialist!</p>
       <hr>
       <div class="div-form">
@@ -55,18 +55,19 @@
   export default {
     data(){
       return {
-        contactName: '',
-        contactEmail: '',
-        contactPhone: '',
-        contactWeb:'',
-        checked: false,
-        valid: {},
-        validMess: {
-          name:'',
-          email:'',
-          phone:'',
-          web:'',
-        },
+          mysrc1:require(`../../assets/icons/close.png`),
+          contactName: '',
+          contactEmail: '',
+          contactPhone: '',
+          contactWeb:'',
+          checked: false,
+          valid: {},
+          validMess: {
+            name:'',
+            email:'',
+            phone:'',
+            web:'',
+          },
       }
     },
 

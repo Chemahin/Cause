@@ -3,24 +3,24 @@
       <h2>Portfolio</h2>
       <Carousel class="catousel-pos">
         <div class="carousel-portfolio">
-          <img :src="images[0]" alt="item">
+          <img v-lazy="images[0]" alt="item">
         </div>
         <div class="carousel-portfolio">
-          <img :src="images[1]" alt="item">
+          <img v-lazy="images[1]" alt="item">
         </div>
         <div class="carousel-portfolio">
-          <img :src="images[2]" alt="item">
+          <img v-lazy="images[2]" alt="item">
         </div>
         <div class="carousel-portfolio">
-          <img :src="images[3]" alt="item">
+          <img v-lazy="images[3]" alt="item">
         </div>
         <div class="carousel-portfolio">
-          <img :src="images[4]" alt="item">
+          <img v-lazy="images[4]" alt="item">
         </div>
       </Carousel>
       <div class="portfolio-items">
         <div class="portfolio-item" v-for="image in images">
-          <img :src="image" alt="item">
+          <img v-lazy="image" alt="item">
         </div>
         <div class="btnCustom">
 

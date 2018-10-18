@@ -2,22 +2,22 @@
     <b-container fluid class="mBottmMainBlock">
         <b-row class="wrapper">
             <b-col md="6">
-                <img src="../../assets/video-background.png" alt="blue background" class="blueBackground">
+                <img v-lazy="mysrc1" alt="blue background" class="blueBackground">
             </b-col>
             <b-col class="qItems" md="6">
                 <div class="qItem">
-                    <img src="../../assets/icons/plus.png" alt="plus"  class="backgroundPLus white">
-                  <img src="../../assets/icons/plusColor.png" alt="plus"  class="backgroundPLus color">
+                    <img v-lazy="mysrc2" alt="plus"  class="backgroundPLus white">
+                  <img v-lazy="mysrc3" alt="plus"  class="backgroundPLus color">
                     <p class="m-0">Wie zijn wij?</p>
                 </div>
                 <div class="qItem">
-                    <img src="../../assets/icons/plus.png" alt="plus"  class="backgroundPLus white">
-                  <img src="../../assets/icons/plusColor.png" alt="plus"  class="backgroundPLus color">
+                    <img v-lazy="mysrc2" alt="plus"  class="backgroundPLus white">
+                  <img v-lazy="mysrc3" alt="plus"  class="backgroundPLus color">
                     <p class="m-0">Hoe werken wij?</p>
                 </div>
                 <div class="qItem">
-                    <img src="../../assets/icons/plus.png" alt="plus" class="backgroundPLus white">
-                  <img src="../../assets/icons/plusColor.png" alt="plus"  class="backgroundPLus color">
+                    <img v-lazy="mysrc2" alt="plus" class="backgroundPLus white">
+                  <img v-lazy="mysrc3" alt="plus"  class="backgroundPLus color">
 
                     <p class="m-0">Wat kunnen wij?</p>
                 </div>
@@ -26,7 +26,16 @@
     </b-container>
 </template>
 <script>
+    export default {
+        data(){
+            return {
+                mysrc1:require(`../../assets/video-background.png`),
+                mysrc2:require(`../../assets/icons/plus.png`),
+                mysrc3:require(`../../assets/icons/plusColor.png`),
+            }
+        },
 
+    }
 </script>
 <style scoped lang="scss">
     .backgroundPLus{

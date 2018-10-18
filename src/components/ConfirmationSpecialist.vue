@@ -1,9 +1,9 @@
 <template>
   <div class="wrapp">
-    <span class="form-close"><img src="../assets/icons/close.png" alt="close" @click="closeForm"></span>
+    <span class="form-close"><img v-lazy="mysrc1" alt="close" @click="closeForm"></span>
     <div class="img">
       <img
-        :src="require(`../assets/profile/${img}`)"
+          v-lazy="require(`../assets/profile/${img}`)"
         alt="first">
     </div>
     <div class="confirmation">
@@ -75,6 +75,7 @@
     },
     data(){
       return {
+          mysrc1:require(`../assets/icons/close.png`),
         companyName: '',
         contactName: '',
         contactEmail: '',

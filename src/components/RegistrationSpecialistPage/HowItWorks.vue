@@ -8,10 +8,10 @@
 
       <div class="content-item">
         <div class="item-img">
-          <img src="../../assets/registrationSpecialist/work_img_1.png" alt="image">
+          <img v-lazy="mysrc1" alt="image">
         </div>
         <div class="item-content">
-            <h2 @click="onClick1()">Krijg uitdagende opdrachten <span class="content-title-arrow"><img src="../../assets/icons/er_down.png" alt="down"></span></h2>
+            <h2 @click="onClick1()">Krijg uitdagende opdrachten <span class="content-title-arrow"><img v-lazy="mysrc5" alt="down"></span></h2>
           <ul :class="{'clicked-item': clicked1}">
             <li><span class="dot"></span><p>Causeffect is een online platform waar freelance specialisten zich kunnen aanmelden.</p></li>
             <li><span class="dot"></span><p>Je hoeft niet langer op zoek naar opdrachtgevers. Zij vinden jou!</p></li>
@@ -23,7 +23,7 @@
 
       <div class="content-item">
         <div class="item-content left">
-          <h2 @click="onClick2()">Krijg uitdagende opdrachten <span class="content-title-arrow"><img src="../../assets/icons/er_down.png" alt="down"></span></h2>
+          <h2 @click="onClick2()">Krijg uitdagende opdrachten <span class="content-title-arrow"><img v-lazy="mysrc5" alt="down"></span></h2>
           <ul :class="{'clicked-item': clicked2}">
             <li><span class="dot"></span><p>Causeffect On Demand maakt het gemakkelijk voor freelancers om te connecten
               met opdrachtgevers om zo geweldige opdrachten te krijgen.</p></li>
@@ -35,16 +35,16 @@
           </ul>
         </div>
         <div class="item-img">
-          <img src="../../assets/registrationSpecialist/work_img_2.png" alt="image">
+          <img v-lazy="mysrc2" alt="image">
         </div>
       </div>
 
       <div class="content-item">
         <div class="item-img">
-          <img src="../../assets/registrationSpecialist/work_img_3.png" alt="image">
+          <img v-lazy="mysrc3" alt="image">
         </div>
         <div class="item-content right">
-          <h2 @click="onClick3()">Krijg uitdagende opdrachten <span class="content-title-arrow"><img src="../../assets/icons/er_down.png" alt="down"></span></h2>
+          <h2 @click="onClick3()">Krijg uitdagende opdrachten <span class="content-title-arrow"><img v-lazy="mysrc5" alt="down"></span></h2>
           <ul :class="{'clicked-item': clicked3}">
             <li><span class="dot"></span><p>De opdrachtgevers hebben van tevoren al gekeken wat jouw specialiteiten zijn, dus
               je zal altijd een uitdagende opdracht krijgen binnen jouw expertise.</p></li>
@@ -63,7 +63,7 @@
 
       <div class="content-item">
         <div class="item-content left">
-          <h2 @click="onClick4()">Krijg uitdagende opdrachten <span class="content-title-arrow"><img src="../../assets/icons/er_down.png" alt="down"></span></h2>
+          <h2 @click="onClick4()">Krijg uitdagende opdrachten <span class="content-title-arrow"><img v-lazy="mysrc5" alt="down"></span></h2>
           <ul :class="{'clicked-item': clicked4}">
             <li><span class="dot"></span><p>Bij Causeffect On Demand is altijd duidelijk wat je voor vergoeding krijgt.
               Causeffect hanteert een vast uurtarief dat stijgt naarmate je meer verschillende
@@ -76,7 +76,7 @@
           </ul>
         </div>
         <div class="item-img">
-          <img src="../../assets/registrationSpecialist/work_img_4.png" alt="image">
+          <img v-lazy="mysrc4" alt="image">
         </div>
       </div>
 
@@ -93,6 +93,12 @@
           clicked2: false,
           clicked3: false,
           clicked4: false,
+          mysrc1:require(`../../assets/registrationSpecialist/work_img_1.png`),
+          mysrc2:require(`../../assets/registrationSpecialist/work_img_2.png`),
+          mysrc3:require(`../../assets/registrationSpecialist/work_img_3.png`),
+          mysrc4:require(`../../assets/registrationSpecialist/work_img_4.png`),
+          mysrc5:require(`../../assets/icons/er_down.png`),
+
         }
       },
       methods: {

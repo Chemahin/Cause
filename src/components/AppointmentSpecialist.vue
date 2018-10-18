@@ -1,9 +1,9 @@
 <template>
   <div class="wrapp">
-    <span class="form-close"><img src="../assets/icons/close.png" alt="close"></span>
+    <span class="form-close"><img v-lazy="mysrc" alt="close"></span>
     <div class="img">
       <img
-        :src="require(`../assets/profile/${img}`)"
+          v-lazy="require(`../assets/profile/${img}`)"
         alt="first">
     </div>
     <div class="confirmation">
@@ -12,19 +12,19 @@
     </div>
     <hr>
     <div class="information-item">
-      <img src="../assets/object_1.png" alt="image">
+      <img v-lazy="mysrc1" alt="image">
       <h2>Maak kennis met je specialist</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
         sed do eiusmod tempor inci didunt ut labore et dolore.</p>
     </div>
     <div class="information-item">
-      <img src="../assets/object_2.png" alt="image">
+      <img v-lazy="mysrc2" alt="image">
       <h2>Vertel je specialist over je verwachtingen</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
         sed do eiusmod tempor inci didunt ut labore et dolore.</p>
     </div>
     <div class="information-item">
-      <img src="../assets/object_3.png" alt="image">
+      <img v-lazy="mysrc3" alt="image">
       <h2>De voorbereiding op de samenwerking</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
         sed do eiusmod tempor inci didunt ut labore et dolore.</p>
@@ -48,6 +48,14 @@
 <script>
   import Button from './Button';
   export default {
+      data(){
+          return {
+              mysrc:require(`../assets/icons/close.png`),
+              mysrc1:require(`../assets/object_1.png`),
+              mysrc2:require(`../assets/object_2.png`),
+              mysrc3:require(`../assets/object_3.png`),
+          }
+      },
     props: ['name', 'img'],
     components: {
       Button,

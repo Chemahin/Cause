@@ -6,15 +6,15 @@
             <div v-for="slide in slides"
                  class='slide'
                  :key="slide.id">
-                <img src="../assets/header-illustration.png" alt="slieImg">
+                <img v-lazy="mysrc1" alt="slieImg">
             </div>
         </transition-group>
         <div class='carousel-controls'>
             <button class='carousel-controls__button' @click="previous">
-                <img src="../assets/icons/left.png" alt="left">
+                <img v-lazy="mysrc2" alt="left">
             </button>
             <button class='carousel-controls__button' @click="next">
-                <img src="../assets/icons/right.png" alt="left">
+                <img v-lazy="mysrc3" alt="left">
             </button>
         </div>
     </div>
@@ -23,6 +23,9 @@
     export default {
         data () {
             return {
+                mysrc1:require(`../assets/header-illustration.png`),
+                mysrc2:require(`../assets/icons/left.png`),
+                mysrc3:require(`../assets/icons/right.png`),
                 slides: [
                     {
                         img: 'development.png',

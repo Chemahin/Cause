@@ -4,17 +4,16 @@
       <div class="header">
         <img src="../../assets/tape.png" alt="tape" class="tape">
         <img
-          :src="require(`../../assets/profile/${img}`)"
+            v-lazy="require(`../../assets/profile/${img}`)"
           alt="first">
         <h3>{{name}}</h3>
         <p>{{text}}</p>
       </div>
       <div class="body">
         <img
-
           v-for="star in stars"
           :key="Math.random()+star"
-          src="../../assets/icons/star-active.png"
+          v-lazy="mysrc1"
           alt="star">
       </div>
       <div class="footer">
@@ -37,6 +36,11 @@
   import Button from '../Button';
 
   export default {
+      data(){
+          return {
+              mysrc1: require(`../../assets/icons/star-active.png`),
+          }
+      },
     components:{
       Button
     },

@@ -1,10 +1,10 @@
 <template>
     <div>
       <div class="order-left">
-        <span class="form-close"><img src="../../assets/icons/close.png" alt="close" @click="closeForm"></span>
+        <span class="form-close"><img v-lazy="mysrc1" alt="close" @click="closeForm"></span>
         <div class="left-up">
           <div class="up-left">
-            <img src="../../assets/profile/photo2.png" alt="photo">
+            <img v-lazy="mysrc2" alt="photo">
           </div>
           <div class="up-right">
             <div class="wrap-item">
@@ -18,11 +18,11 @@
             <div class="specialty">
               <p>Grafisch vormgever</p>
               <div class="rating-stars">
-                <img src="../../assets/icons/star-active.png" alt="">
-                <img src="../../assets/icons/star-active.png" alt="">
-                <img src="../../assets/icons/star-active.png" alt="">
-                <img src="../../assets/icons/star-active.png" alt="">
-                <img src="../../assets/icons/star-active.png" alt="">
+                <img v-lazy="mysrc3" alt="">
+                <img v-lazy="mysrc3" alt="">
+                <img v-lazy="mysrc3" alt="">
+                <img v-lazy="mysrc3" alt="">
+                <img v-lazy="mysrc3" alt="">
               </div>
             </div>
             <hr>
@@ -48,6 +48,13 @@
 
 <script>
     export default {
+        data(){
+            return {
+                mysrc1:require(`../../assets/icons/close.png`),
+                mysrc2:require(`../../assets/profile/photo2.png`),
+                mysrc3:require(`../../assets/icons/star-active.png`),
+            }
+        },
       methods: {
         closeForm() {
           this.$emit('closed-form');

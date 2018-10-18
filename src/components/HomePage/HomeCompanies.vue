@@ -13,9 +13,9 @@
                 gefocust op resultaatgerichte online marketing
                 oplossingen voor MKB bedrijven.</p>
             <b-container fluid class="companies">
-                <b-row>
-                    <b-col md="2" cols="6" v-for="n in 10" :key="n +Math.random()">
-                        <img :src="sourceImages(n)"
+                <b-row class="companies-items">
+                    <b-col md="2" sm="4" cols="12" v-for="n in 10" :key="n +Math.random()">
+                        <img v-lazy="sourceImages(n)"
                              :alt="'portfolio intem №'+n">
                     </b-col>
                 </b-row>
@@ -114,32 +114,42 @@
         margin-top: 5.5%;
     }
     @media screen and (max-width: 767px){
-        .first h2{
-            font-size: 8vw;
-            width: 100%;
-        }
-        .row{
-            margin: 0px;
-        }
-        hr{
-            width: 10%;
-            font-size: 1vw;
-        }
-        .middle{
-            background: white;
-        }
-        p{
-            padding-left: 15%;
-            font-size: 3.5vw;
-            width: 90%;
-        }
-        .col-6{
-            text-align: center;
-            margin: 0px;
-            padding: 0px 0px 20px 15px;
-            &:nth-child(n+5){
-                display: none;
-            }
+      .first {
+        margin: 0;
+      }
+      .main {
+        padding-left: 11%;
+        padding-right: 12%;
+      }
+
+      h2{
+        font-size: 4rem;
+        width: 100%;
+        text-align: center;
+      }
+      .row{
+          margin: 0px;
+      }
+      hr{
+          width: 10%;
+          font-size: 1vw;
+      }
+      .middle{
+          background: white;
+      }
+      p{
+        margin: 0;
+        text-align: center;
+          font-size: 2rem;
+          width: 100%;
+      }
+      .col-6{
+          text-align: center;
+          margin: 0px;
+          padding: 0px 0px 20px 15px;
+          &:nth-child(n+5){
+              display: none;
+          }
         }
         .middle{
             padding-left: 0px;
@@ -154,6 +164,33 @@
         .hideButton{
             display: block;
         }
+      .hideButton button {
+        width: 60%;
+        font-size: 1.2rem;
+      }
+      .companies-items {
+        display: flex;
+        justify-content: center;
+      }
+    }
+    @media screen and (max-width: 414px) {
+      h2 {
+        font-size: 2.7rem;
+      }
+      p {
+        font-size: 1.7rem;
+      }
+      hr {
+        margin-left: 1%;
+        width: 14%;
+        height: 0.5vw;
+        max-height: 100%;
+      }
+      .hideButton button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 3% 0;
+      }
     }
 
     @media screen and (max-width: 320px){
@@ -162,9 +199,9 @@
         margin-left: -6px;
       }
       .hideButton button {
-        width: 90%;
-        padding: 1%;
-        font-size: 4vh;
+        padding: 5% 0;
+        width: 96%;
+        font-size: 4.2vw;
       }
       .first{
         h2 {
@@ -180,5 +217,6 @@
           font-size: 6.5vw;
         }
       }
+
     }
 </style>

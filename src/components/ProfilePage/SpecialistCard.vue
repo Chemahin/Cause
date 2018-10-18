@@ -3,7 +3,7 @@
       <div class="left-part">
         <div class="up">
           <div class="up-left">
-            <img src="../../assets/profile/photo2.png" alt="photo">
+            <img v-lazy="mysrc1" alt="photo">
           </div>
           <div class="up-right">
             <div class="wrap-item">
@@ -19,11 +19,11 @@
             <div class="specialty">
               <p>Grafisch vormgever</p>
               <div class="rating-stars">
-                <img src="../../assets/icons/star-active.png" alt="">
-                <img src="../../assets/icons/star-active.png" alt="">
-                <img src="../../assets/icons/star-active.png" alt="">
-                <img src="../../assets/icons/star-active.png" alt="">
-                <img src="../../assets/icons/star-active.png" alt="">
+                <img v-lazy="mysrc2" alt="rating">
+                <img v-lazy="mysrc2" alt="rating">
+                <img v-lazy="mysrc2" alt="rating">
+                <img v-lazy="mysrc2" alt="rating">
+                <img v-lazy="mysrc2" alt="rating">
               </div>
             </div>
             <hr>
@@ -81,24 +81,26 @@
         },
       data() {
           return {
-            skillList: [
-              'Photoshop',
-              'Illustrator',
-              'Sales',
-              'E-commerce',
-              'Photoshop',
-              'Photoshop',
-              'Illustrator',
-              'Sales',
-              'E-commerce',
-              'Photoshop',
-              'Photoshop',
-              'Illustrator',
-              'Sales',
-              'E-commerce',
-              'Photoshop',
+              mysrc1:require(`../../assets/profile/photo2.png`),
+              mysrc2:require(`../../assets/icons/star-active.png`),
+              skillList: [
+                'Photoshop',
+                'Illustrator',
+                'Sales',
+                'E-commerce',
+                'Photoshop',
+                'Photoshop',
+                'Illustrator',
+                'Sales',
+                'E-commerce',
+                'Photoshop',
+                'Photoshop',
+                'Illustrator',
+                'Sales',
+                'E-commerce',
+                'Photoshop',
 
-            ]
+              ]
           }
       }
 

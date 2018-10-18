@@ -118,6 +118,33 @@
         margin-top: 4%;
         border: 1px solid #cacaca;
     }
+    @media screen and (max-width: 767px){
+      h2{
+        text-align: center;
+        font-size: 4rem;
+      }
+      p{
+        font-size: 2rem;
+        text-align: center;
+      }
+      .btnWhite{
+        width: 60%;
+        padding: 3% 0;
+        font-size: 1.2rem;
+      }
+    }
+    @media screen and (max-width: 414px){
+      h2{
+        font-size: 2.7rem;
+      }
+      p{
+        font-size: 1.7rem;
+      }
+      .btnWhite{
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
     @media screen and (max-width:320px){
       .wrappHead {
         padding: 0;

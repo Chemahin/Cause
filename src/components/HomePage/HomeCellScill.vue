@@ -2,7 +2,7 @@
     <b-col md="4" sm="6" cols="12" class="cellScill"
          @mouseenter="isHover = ! isHover"
          @mouseleave="isHover = ! isHover">
-        <img :src="isHover ? hoverImg : mysrc"
+        <img v-lazy="isHover ? hoverImg : mysrc"
              :alt="text">
         <hr>
         <p>{{text}}</p>
@@ -65,7 +65,7 @@
     }
     @media screen and (max-width: 767px){
         p{
-            font-size: 4.3vw;
+          font-size: 2rem;
         }
         .cellScill img{
             max-width: 40%;

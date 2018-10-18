@@ -1,15 +1,15 @@
 <template>
     <button @click="logIn" type="button" :class="btnClass">
         {{btnText}}
-        <img src="../assets/icons/arrow-short.png"
+        <img v-lazy="mysrc1"
              alt="arrow"
              v-if="arrow==='short'"
              :style="stylesImg!==''?stylesImg:''">
-        <img src="../assets/icons/arrow-long-white.png"
+        <img v-lazy="mysrc2"
              alt="arrow"
              v-else-if="btnClass==='btnOrangeNav'"
              :style="stylesImg!==''?stylesImg:''">
-        <img src="../assets/icons/arrow-long-orange.png"
+        <img v-lazy="mysrc3"
              alt="arrow"
              :style="stylesImg!==''?stylesImg:''"
              v-else>
@@ -17,6 +17,13 @@
 </template>
 <script>
     export default {
+        data(){
+            return {
+                mysrc1:require(`../assets/icons/arrow-short.png`),
+                mysrc2:require(`../assets/icons/arrow-long-white.png`),
+                mysrc3:require(`../assets/icons/arrow-long-orange.png`),
+            }
+        },
         props:{
             btnText:'',
             arrow:'',
@@ -65,4 +72,5 @@
       background: #ff84009c;
       border: 3px solid #ff840024;
     }
+
 </style>

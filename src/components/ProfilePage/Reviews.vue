@@ -10,11 +10,11 @@
           <div class="reviews-title">
             <p>Style Italy</p>
             <div class="rating-stars">
-              <img src="../../assets/icons/star-active.png" alt="">
-              <img src="../../assets/icons/star-active.png" alt="">
-              <img src="../../assets/icons/star-active.png" alt="">
-              <img src="../../assets/icons/star-active.png" alt="">
-              <img src="../../assets/icons/star-active.png" alt="">
+              <img v-lazy="mysrc1" alt="rating">
+              <img v-lazy="mysrc1" alt="rating">
+              <img v-lazy="mysrc1" alt="rating">
+              <img v-lazy="mysrc1" alt="rating">
+              <img v-lazy="mysrc1" alt="rating">
             </div>
           </div>
           <hr>
@@ -39,6 +39,11 @@
 <script>
   import Button from '../Button';
   export default {
+      data(){
+          return {
+              mysrc1:require(`../../assets/icons/star-active.png`),
+          }
+      },
     components: {
       Button
     },

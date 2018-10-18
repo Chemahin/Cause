@@ -13,7 +13,7 @@
       <b-container fluid class="companies">
         <b-row>
           <b-col lg="2" md="6" sm="12" v-for="n in 10" :key="n +Math.random()">
-            <img :src="sourceImages(n)"
+            <img v-lazy="sourceImages(n)"
                  :alt="'portfolio intem №'+n">
           </b-col>
         </b-row>

@@ -22,7 +22,7 @@
                     <button @click="onClick"
                             :disabled="regName==='' || regEmail ===''">
                         AANVRAGEN
-                        <img src="../../assets/icons/arrow-long-white.png" alt="arrowWhite">
+                        <img v-lazy="mysrc" alt="arrowWhite">
                     </button>
               </div>
             </b-col>
@@ -53,7 +53,8 @@
           validRegForm: {
             name: '',
             email: '',
-          }
+          },
+            mysrc:require(`../../assets/icons/arrow-long-white.png`),
         }
       },
       methods: {

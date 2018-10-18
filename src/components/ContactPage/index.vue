@@ -6,7 +6,7 @@
       <hr>
     </div>
     <div class="map-item">
-      <img src="../../assets/icons/map.png" alt="map">
+      <img v-lazy="mysrc1" alt="map">
     </div>
 
 
@@ -19,6 +19,11 @@
 
 
   export default {
+      data(){
+          return {
+              mysrc1:require(`../../assets/icons/map.png`),
+          }
+      },
     components: {
       ContactHeader,
 
@@ -78,10 +83,26 @@
     }
   }
   @media screen  and (max-width: 540px){
+    .address-item {
+      padding: 0;
+      margin-top: 10%;
+    }
     h2{
       font-size: 2.5rem;
       line-height: 45px;
+      text-align: center;
     }
+    .map-item {
+      padding-left: 0;
+      img {
+        width: 100%;
+      }
+    }
+    hr {
+      width: 10%;
+      font-size: 1vw;
+    }
+
   }
   @media screen  and (max-width: 320px){
     h2{

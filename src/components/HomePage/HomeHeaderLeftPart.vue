@@ -95,18 +95,38 @@
       }
     }
     @media screen and (max-width: 767px){
-        h2{
-            font-size: 4.5vw;
-        }
-        p{
-            font-size: 2.5vw;
-        }
-        .btnCustom button{
-          border-radius: 5px;
-          padding: 3% 0;
-          width: 60%;
-          font-size: 2.2vw;
-        }
+      .leftHome {
+        text-align: center;
+      }
+      h2{
+        text-align: center;
+        font-size: 4rem;
+      }
+      p{
+        font-size: 2rem;
+        text-align: center;
+      }
+      .btnCustom button{
+        border-radius: 5px;
+        padding: 3% 0;
+        width: 60%;
+        font-size: 1.2rem;
+      }
+    }
+    @media screen and (max-width: 414px){
+      h2{
+        font-size: 2.7rem;
+      }
+      p{
+        font-size: 1.7rem;
+      }
+      .btnCustom {
+        margin-top: 20px;
+      }
+      .btnCustom button {
+        width: 100%;
+        font-size: 1rem;
+      }
     }
     @media screen and (max-width: 320px){
 

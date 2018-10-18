@@ -4,7 +4,7 @@
     <div class="main">
       <div class="header">
         <img
-          :src="require(`../../assets/profile/${img}`)"
+            v-lazy="require(`../../assets/profile/${img}`)"
           alt="first">
         <h3>{{name}}</h3>
         <p>{{text}}</p>

@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
     entry: './src/main.js',
@@ -89,7 +90,7 @@ module.exports = {
     },
     devtool: '#eval-source-map'
 }
-
+/*
 if (process.env.NODE_ENV === 'production') {
     module.exports.devtool = '#source-map'
     // http://vue-loader.vuejs.org/en/workflow/production.html
@@ -105,6 +106,61 @@ if (process.env.NODE_ENV === 'production') {
                 warnings: false
             }
         }),
+        new webpack.LoaderOptionsPlugin({
+            minimize: true
+        })
+    ])
+}
+
+*/
+
+
+
+if (process.env.NODE_ENV === 'production') {
+    module.exports.devtool = '#source-map'
+    // http://vue-loader.vuejs.org/en/workflow/production.html
+    module.exports.plugins = (module.exports.plugins || []).concat([
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: '"production"'
+            }
+        }),
+
+        // new HtmlWebpackPlugin({
+        //   template: 'index.html',
+        //   filename: path.resolve(__dirname, 'dist/index.html')
+        // }),
+
+        // new PrerenderSpaPlugin(
+        //   path.resolve(__dirname, './dist/'),
+        //   ['/', '/login', '/users', '/news'],
+        //   {
+        //     postProcessHtml: function(context) {
+        //       var titles = {
+        //         '/': 'My home page',
+        //         '/login': 'Login page',
+        //         '/users': 'User search',
+        //         '/news': 'News',
+        //       }
+        //       return context.html.replace(
+        //         /<title>[^<]*<\/title>/i,
+        //         '<title>' + titles[context.route] + '</title>'
+        //       )
+        //     }
+        //   }
+        // ),
+        new UglifyJsPlugin({
+            uglifyOptions: {
+                ecma: 8
+            }
+        }),
+
+        // new webpack.optimize.UglifyJsPlugin({
+        //   sourceMap: true,
+        //   compress: {
+        //     warnings: false
+        //   }
+        // }),
         new webpack.LoaderOptionsPlugin({
             minimize: true
         })

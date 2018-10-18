@@ -94,6 +94,13 @@
         display: none;
         padding: 0px;
     }
+    @media screen and (max-width: 767px) {
+      .btnCenter button{
+        width: 50%;
+        font-size: 1.2rem;
+        padding: 2% 3%;
+      }
+    }
     @media screen and (max-width:637px ){
         .caruselMy{
             display: none;
@@ -108,10 +115,17 @@
           padding: 15px;
         }
     }
+    @media screen and (max-width: 414px) {
+      .btnCenter button{
+        width: 80%;
+        font-size: 1rem;
+      }
+    }
     @media screen and (max-width: 320px ){
       .btnCenter button{
-        font-size: 4.5vw;
-        padding: 5% 4%;
+        padding: 5% 0;
+        width: 100%;
+        font-size: 4.2vw;
         margin: 12% 0;
 
       }

@@ -36,7 +36,7 @@
         </div>
       </div>
       <div class="middle-img">
-        <img src="../../assets/icons/slice.png" alt="slice">
+        <img v-lazy="mysrc1" alt="slice">
       </div>
       <div class="right-post">
         <div class="post-item">
@@ -82,6 +82,11 @@
   import OnsWerkTeam from './OnsVerhaalTeam';
 
     export default {
+        data(){
+            return {
+                mysrc1:require(`../../assets/icons/slice.png`),
+            }
+        },
       components: {
         NavigationMenu,
         OnsWerkTeam
@@ -102,7 +107,7 @@
   }
   .fon-filter {
     height: 1216px;
-    padding: 81px 9%;
+    padding: 2% 9%;
     background: #19cddac4;
   }
   .content {
@@ -225,7 +230,7 @@
   }
   @media screen  and (max-width: 991px){
     .fon-filter{
-      padding: 0 10%;
+      padding: 2% 9%;
     }
   }
   @media screen  and (max-width: 840px){

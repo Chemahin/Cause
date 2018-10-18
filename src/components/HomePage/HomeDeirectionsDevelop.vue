@@ -3,8 +3,8 @@
         <b-row>
             <b-col class="firstRow">
                 <div class="imgBlock">
-                    <img src="../../assets/homepage/business-card.png" alt="Business card" class="img-responsive">
-                    <img src="../../assets/homepage/fresh-packaging.png" alt="Fresh" class="img-responsive">
+                    <img v-lazy="mysrc1" alt="Business card" class="img-responsive">
+                    <img v-lazy="mysrc2" alt="Fresh" class="img-responsive">
                 </div>
                 <div>
                     <img src="../../assets/homepage/juicy-bottles.png" alt="Juicy" class="img-responsive">
@@ -33,14 +33,23 @@
             </b-col>
             <b-col md="6">
                 <div class="wrapImage">
-                    <img src="../../assets/homepage/development-image.png" alt="development" class="img-responsive">
+                    <img v-lazy="mysrc3" alt="development" class="img-responsive">
                 </div>
             </b-col>
         </b-row>
     </b-container>
 </template>
 <script>
+    export default {
+        data(){
+            return {
+                mysrc1:require(`../../assets/homepage/business-card.png`),
+                mysrc2:require(`../../assets/homepage/fresh-packaging.png`),
+                mysrc3:require(`../../assets/homepage/development-image.png`),
+            }
+        },
 
+    }
 </script>
 <style scoped lang="scss">
     img{

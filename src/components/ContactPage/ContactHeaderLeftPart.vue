@@ -1,7 +1,7 @@
 <template>
     <div>
       <b-card  class="card-wrapp">
-        <span @click="closeForm" class="form-close"><img src="../../assets/icons/close.png" alt="close"></span>
+        <span @click="closeForm" class="form-close"><img v-lazy="mysrc1" alt="close"></span>
         <p class="card-text item-title">Neem contact met ons op!</p>
         <hr>
         <div class="div-form">
@@ -40,17 +40,18 @@
   export default {
     data(){
       return {
-        contactName: '',
-        contactEmail: '',
-        contactPhone: '',
-        contactQuestion:'',
-        valid: {},
-        validMess: {
-          name:'',
-          email:'',
-          phone:'',
-          question:'',
-        },
+          mysrc1:require(`../../assets/icons/close.png`),
+          contactName: '',
+          contactEmail: '',
+          contactPhone: '',
+          contactQuestion:'',
+          valid: {},
+          validMess: {
+            name:'',
+            email:'',
+            phone:'',
+            question:'',
+          },
       }
     },
 
@@ -228,10 +229,16 @@
       }
     }
   }
+  @media screen  and (max-width: 767px){
+    .card-wrapp {
+      margin-top: 10%;
+    }
+  }
   @media screen  and (max-width: 540px){
     .item-title{
       font-size: 2.5rem;
       line-height: 45px;
+      text-align: center;
     }
     .input-class {
       margin-bottom: 40px;
@@ -241,8 +248,9 @@
         font-size: 4vw;
       }
     }
-
-
+    .card-wrapp {
+      margin-top: 3%;
+    }
   }
   @media screen  and (max-width: 320px){
     .card-body {

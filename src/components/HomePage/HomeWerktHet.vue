@@ -121,9 +121,6 @@
         .square{
             border: none;
         }
-        h2{
-            font-size: 7vw;
-        }
         hr{
             width: 10%;
             height: 6px;
@@ -135,11 +132,17 @@
             padding-left: 4%;
         }
         h3{
-            font-size: 4vw;
+            font-size: 2.8rem;
+          text-align: center;
         }
-        p{
-            font-size: 2.5vw;
-        }
+      h2{
+        text-align: center;
+        font-size: 4rem;
+      }
+      p{
+        font-size: 2rem;
+        text-align: center;
+      }
     }
     @media screen and (max-width: 400px){
       p{

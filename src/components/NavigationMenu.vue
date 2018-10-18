@@ -9,27 +9,27 @@
           <div class="burgerMenu">
 
             <span class="navbar-toggler-icon" @click.prevent="burgerShow = !burgerShow"></span>
-            <span class="line"></span>
+            <!--<span class="line"></span>-->
 
-            <div class="form-inline">
-              <img :src="getImgUrlSearch" alt="search" @click.prevent="showSearch = !showSearch">
-              <transition
-                name="fade">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"  v-if="showSearch">
-              </transition>
-            </div>
+            <!--<div class="form-inline">-->
+              <!--<img :src="getImgUrlSearch" alt="search" @click.prevent="showSearch = !showSearch">-->
+              <!--<transition-->
+                <!--name="fade">-->
+                <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"  v-if="showSearch">-->
+              <!--</transition>-->
+            <!--</div>-->
 
 
-              <div class="listBurger">
-                  <transition name="slide">
-                      <div class="toggle-menu" v-show="burgerShow" >
-                          <router-link to="/">Home</router-link>
-                          <router-link to="/onsVerhaal">Ons verhaal</router-link>
-                          <router-link to="/onsWerk">Ons werk</router-link>
-                          <router-link to="/contact">Contact</router-link>
-                      </div>
-                  </transition>
-              </div>
+              <!--<div class="listBurger">-->
+                  <!--<transition name="slide">-->
+                      <!--<div class="toggle-menu" v-show="burgerShow" >-->
+                          <!--<router-link to="/">Home</router-link>-->
+                          <!--<router-link to="/onsVerhaal">Ons verhaal</router-link>-->
+                          <!--<router-link to="/onsWerk">Ons werk</router-link>-->
+                          <!--<router-link to="/contact">Contact</router-link>-->
+                      <!--</div>-->
+                  <!--</transition>-->
+              <!--</div>-->
 
           </div>
 
@@ -57,14 +57,14 @@
           <div :class="itemColor">
               <router-link to="/contact">Contact</router-link>
           </div>
-          <div :class="['borderItemDef',borderItem]"></div>
-          <div class="form-inline">
-              <img :src="getImgUrlSearch" alt="search" @click.prevent="showSearch = !showSearch">
-              <transition
-                      name="fade">
-                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"  v-if="showSearch">
-              </transition>
-          </div>
+          <!--<div :class="['borderItemDef',borderItem]"></div>-->
+          <!--<div class="form-inline">-->
+              <!--<img :src="getImgUrlSearch" alt="search" @click.prevent="showSearch = !showSearch">-->
+              <!--<transition-->
+                      <!--name="fade">-->
+                  <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"  v-if="showSearch">-->
+              <!--</transition>-->
+          <!--</div>-->
       </div>
   </nav>
 

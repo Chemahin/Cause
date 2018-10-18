@@ -1,7 +1,7 @@
 <template>
     <div class="benefits-main">
       <div class="benefits-item">
-        <img src="../../assets/registrationSpecialist/obj_1.png" alt="image">
+        <img v-lazy="mysrc1" alt="image">
         <h2>Werken wanneer het jou uitkomt</h2>
         <p>Lorem ipsum dolor sit amet,
           consectetur adipisicing elit,
@@ -10,7 +10,7 @@
           magna aliqua ut enim.</p>
       </div>
       <div class="benefits-item">
-        <img src="../../assets/registrationSpecialist/obj_2.png" alt="image" class="img-money">
+        <img v-lazy="mysrc2" alt="image" class="img-money">
         <h2>Verdien tot €75.000 per jaar</h2>
         <p>Lorem ipsum dolor sit amet,
           consectetur adipisicing elit,
@@ -19,7 +19,7 @@
           magna aliqua ut enim.</p>
       </div>
       <div class="benefits-item">
-        <img src="../../assets/registrationSpecialist/obj_3.png" alt="image" class="img-bag">
+        <img v-lazy="mysrc3" alt="image" class="img-bag">
         <h2>Geen opdrachten, geen probleem</h2>
         <p>Lorem ipsum dolor sit amet,
           consectetur adipisicing elit,
@@ -33,7 +33,13 @@
 
 <script>
     export default {
-
+        data(){
+            return {
+                mysrc1:require(`../../assets/registrationSpecialist/obj_1.png`),
+                mysrc2:require(`../../assets/registrationSpecialist/obj_2.png`),
+                mysrc3:require(`../../assets/registrationSpecialist/obj_3.png`),
+            }
+        },
     }
 </script>
 

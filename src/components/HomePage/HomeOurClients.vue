@@ -5,27 +5,27 @@
                 <div class="ourQuality">
                     <b-row>
                         <b-col md="2" cols="6" class="ourQuality-item">
-                            <img src="../../assets/homepage/profit-image0.png" alt="profit0">
+                            <img v-lazy="mysrc1" alt="profit0">
                             <p>Een groei<br>
                                 in kennis</p>
                         </b-col>
                         <b-col md="2" cols="6" class="ourQuality-item">
-                            <img src="../../assets/homepage/profit-image1.png" alt="profit1">
+                            <img v-lazy="mysrc2" alt="profit1">
                             <p>Een groei<br>
                                 in flexibiliteit</p>
                         </b-col>
                         <b-col md="2" cols="6" class="ourQuality-item">
-                            <img src="../../assets/homepage/profit-image2.png" alt="profit2">
+                            <img v-lazy="mysrc3" alt="profit2">
                             <p>Een groei in<br>
                                 werkcapiciteit</p>
                         </b-col>
                         <b-col md="2" cols="6" class="ourQuality-item">
-                            <img src="../../assets/homepage/profit-image3.png" alt="profit3">
+                            <img v-lazy="mysrc4" alt="profit3">
                             <p>Een groei<br>
                                 in efficiëntie</p>
                         </b-col>
                         <b-col md="2" cols="6" class="ourQuality-item">
-                            <img src="../../assets/homepage/profit-image4.png" alt="profit4">
+                            <img v-lazy="mysrc5" alt="profit4">
                             <p>Een groei<br>
                                 in daadkracht</p>
                         </b-col>
@@ -41,7 +41,7 @@
         </b-row>
         <b-row class="clients">
             <b-col v-for="n in 10" :key="n +Math.random()">
-                <img :src="sourceImages(n)"
+                <img v-lazy="sourceImages(n)"
                      :alt="'client №'+n">
             </b-col>
         </b-row>
@@ -49,6 +49,15 @@
 </template>
 <script>
     export default {
+        data(){
+            return {
+                mysrc1:require(`../../assets/homepage/profit-image0.png`),
+                mysrc2:require(`../../assets/homepage/profit-image1.png`),
+                mysrc3:require(`../../assets/homepage/profit-image2.png`),
+                mysrc4:require(`../../assets/homepage/profit-image3.png`),
+                mysrc5:require(`../../assets/homepage/profit-image4.png`),
+            }
+        },
         methods:{
             sourceImages(n){
                 return require(`../../assets/homepage/client${n}.png`)

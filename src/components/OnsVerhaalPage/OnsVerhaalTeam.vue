@@ -5,16 +5,22 @@
         <hr>
       </div>
       <div class="images-team">
-        <img src="../../assets/Layer_1.png" alt="person">
-        <img src="../../assets/Layer_2.png" alt="person">
-        <img src="../../assets/Layer_3.png" alt="person">
+        <img v-lazy="mysrc1" alt="person">
+        <img v-lazy="mysrc1" alt="person">
+        <img v-lazy="mysrc1" alt="person">
       </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "OnsWerkTeam"
+        data(){
+            return {
+                mysrc1:require(`../../assets/Layer_1.png`),
+                mysrc2:require(`../../assets/Layer_2.png`),
+                mysrc3:require(`../../assets/Layer_3.png`),
+            }
+        },
     }
 </script>
 
