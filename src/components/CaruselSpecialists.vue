@@ -24,7 +24,7 @@
                     nextArrow:'<button type="button" class="slick-next"><img src="'+require('../assets/icons/arrow-carousel-right.png')+'" alt="right"></button>',
                     responsive:[
                         {
-                            breakpoint: 1800,
+                            breakpoint: 1300,
                             settings: {
                                 slidesToShow: 3,
                                 slidesToScroll: 1

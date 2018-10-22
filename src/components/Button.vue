@@ -1,15 +1,15 @@
 <template>
     <button @click="logIn" type="button" :class="btnClass">
         {{btnText}}
-        <img v-lazy="mysrc1"
+        <img :src="mysrc1"
              alt="arrow"
              v-if="arrow==='short'"
              :style="stylesImg!==''?stylesImg:''">
-        <img v-lazy="mysrc2"
+        <img :src="mysrc2"
              alt="arrow"
              v-else-if="btnClass==='btnOrangeNav'"
              :style="stylesImg!==''?stylesImg:''">
-        <img v-lazy="mysrc3"
+        <img :src="mysrc3"
              alt="arrow"
              :style="stylesImg!==''?stylesImg:''"
              v-else>
@@ -60,6 +60,10 @@
         padding: 13px;
         cursor: pointer;
     }
+    .btnOrangeNav:hover {
+        background: white;
+        color: #ff8400;
+    }
     .btnWhite{
         background: white;
         color: #ff8400;
@@ -67,10 +71,19 @@
         padding: 10px;
         cursor: pointer;
     }
+    .btnWhite:hover {
+        background: #ff8400;
+        color: white;
+    }
     .btnOrangeNav[disabled] {
       cursor: not-allowed;
       background: #ff84009c;
       border: 3px solid #ff840024;
+    }
+    @media screen and (max-width: 1440px) {
+      .btnWhite {
+        padding: 10px 0;
+      }
     }
 
 </style>

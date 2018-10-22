@@ -66,11 +66,12 @@
     .btnCustom{
         margin: 4% 0;
         button{
-            width: 451px;
+            width: 75%;
             font-size: 1.24vw;
-            padding: 3% 5%;
+            padding: 3% 0;
         }
     }
+
     @media screen and (max-width: 1405px){
       .leftHome {
         margin-top: 10%;
@@ -89,8 +90,7 @@
       }
       .btnCustom {
         button{
-          padding: 1.5%;
-          width: 60%;
+          width: 80%;
         }
       }
     }
@@ -107,11 +107,19 @@
         text-align: center;
       }
       .btnCustom button{
-        border-radius: 5px;
-        padding: 3% 0;
-        width: 60%;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
       }
+    }
+    @media screen and (max-width: 555px){
+        .btnCustom button{
+            font-size: 1.1rem;
+        }
+    }
+    @media screen and (max-width: 485px){
+        .btnCustom button{
+            width: 90%;
+            font-size: 1.1rem;
+        }
     }
     @media screen and (max-width: 414px){
       h2{
@@ -128,6 +136,14 @@
         font-size: 1rem;
       }
     }
+
+    @media screen and (max-width: 350px){
+        .btnCustom button{
+            width: 100%;
+            font-size: 0.8rem;
+        }
+    }
+
     @media screen and (max-width: 320px){
 
       h2{
@@ -138,10 +154,9 @@
         margin-bottom: 10%;
       }
       .btnCustom button{
-        padding: 5% 0;
-        width: 96%;
-        font-size: 4.2vw;
-        margin-bottom: 3%;
+          padding: 5% 0;
+          margin-bottom: 3%;
+          font-size: 0.9rem;
       }
     }
 </style>

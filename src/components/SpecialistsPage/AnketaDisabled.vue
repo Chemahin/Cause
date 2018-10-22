@@ -117,6 +117,29 @@
 
 
   }
+  @media screen and (max-width: 1780px) {
+    .footer button{
+      font-size: 1rem;
+      padding: 3% 0 !important;
+    }
+  }
+  @media screen and (max-width: 1600px) {
+    .footer button{
+      font-size: 0.8rem;
+    }
+    .body p {
+      font-size: 1.2rem;
+    }
+  }
+  @media screen and (max-width: 1300px) {
+    .footer {
+      flex-direction: column;
+      button {
+        width: 92%;
+        margin-bottom: 3%;
+      }
+    }
+  }
   @media screen and (max-width: 1200px) {
     .footer button{
       font-size: 15px;
@@ -173,9 +196,10 @@
       }
     }
   }
-  @media screen and (max-width: 320px){
+  @media screen and (max-width: 440px){
     .wrapper{
       padding: 0;
     }
   }
+
 </style>

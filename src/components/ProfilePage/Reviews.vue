@@ -170,8 +170,12 @@
       width: 100%;
       padding: 0;
     }
+    .reviews-wrapp {
+      padding: 0;
+    }
     .reviews-items {
-      width: 96%;
+      width: 100%;
+      margin: 0;
     }
     .rating-stars {
       img {

@@ -118,6 +118,7 @@
         margin-top: 4%;
         border: 1px solid #cacaca;
     }
+
     @media screen and (max-width: 767px){
       h2{
         text-align: center;
@@ -133,7 +134,16 @@
         font-size: 1.2rem;
       }
     }
+    @media screen and (max-width: 590px){
+        .btnWhite{
+            width: 70%;
+            font-size: 1rem;
+        }
+    }
     @media screen and (max-width: 414px){
+        .wrappHead {
+            padding: 0;
+        }
       h2{
         font-size: 2.7rem;
       }
@@ -141,14 +151,15 @@
         font-size: 1.7rem;
       }
       .btnWhite{
-        width: 100%;
+        width: 70%;
         font-size: 1rem;
       }
     }
     @media screen and (max-width:320px){
-      .wrappHead {
-        padding: 0;
-      }
+        .btnWhite{
+            width: 90%;
+            font-size: 1rem;
+        }
       .text-center {
         padding: 0 9%;
         h2 {

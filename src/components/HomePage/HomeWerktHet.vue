@@ -67,6 +67,7 @@
         font-size: 1.2vw;
         font-weight: 400;
         line-height: 1.8;
+      padding-left: 10%;
     }
     hr{
         margin-left: 5%;
@@ -142,6 +143,7 @@
       p{
         font-size: 2rem;
         text-align: center;
+        padding: 0;
       }
     }
     @media screen and (max-width: 400px){

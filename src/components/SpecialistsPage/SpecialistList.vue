@@ -46,6 +46,15 @@
             class="input-cast"
           ></vue-single-select>
         </div>
+        <div class="filter-item">
+          <vue-single-select
+            v-model="filterLast"
+            placeholder="Locatie last"
+            :options="['last_1','last_2','last_3','last_4']"
+            :required="true"
+            class="input-cast"
+          ></vue-single-select>
+        </div>
       </div>
       <b-container fluid class="anketa-items">
         <b-row>
@@ -104,6 +113,7 @@
             filterFirst: '',
             filterSecond: '',
             filterThird: '',
+            filterLast: '',
             profiles:[
               {
                 img:'photo1.png',
@@ -240,37 +250,97 @@
   }
   .anketa-items {
     margin-top: 4%;
-    margin-left: 2.5%;
+    margin-left: 1%;
+    width: 84vw;
   }
   .anketa-item {
     margin-bottom: 4%;
   }
-  @media screen and (max-width: 835px){
-    .filters{
-      flex-direction: column;
+  @media screen and (max-width: 1780px) {
+    button{
+      font-size: 0.8rem;
+      padding: 3% 0 !important;
     }
+  }
+  @media screen and (max-width: 1440px) {
+    button{
+      font-size: 0.7rem;
+    }
+  }
+  /*@media screen and (max-width: 1300px) {*/
+    /*button{*/
+      /*font-size: 0.7rem;*/
+    /*}*/
+  /*}*/
+  @media screen and (max-width: 1090px){
+    .input-cast{
+      font-size: 1rem;
+    }
+  }
+  @media screen and (max-width: 900px){
+.filters {
+  flex-direction: column;
+}
     .filter-item {
       width: 100%;
     }
 
   }
-  @media screen and (max-width: 320px){
-    .price-items {
-      margin-bottom: 10%;
-    }
+  @media screen and (max-width: 500px) {
     .price-item {
       img {
         width: 70%;
       }
       h2 {
-        font-size: 20px;
+        font-size: 1.5rem;
       }
       span {
-        font-size: 20px;
+        font-size: 1.2rem;
       }
     }
+  }
+  @media screen  and (max-width: 440px){
+    .anketa-item {
+      padding: 0;
+    }
+  }
+  @media screen  and (max-width: 425px){
+    .filters {
+      margin-left: 0;
+      padding: 3%;
+    }
+    .anketa-items {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 410px) {
+    .price-item {
+      img {
+        width: 60%;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+      span {
+        font-size: 1rem;
+      }
+    }
+  }
+  @media screen and (max-width: 320px){
+    .price-items {
+      margin-bottom: 10%;
+    }
     .filter-item div {
-      width: 95%;
+      width: 100%;
+    }
+    .anketa-items {
+      margin-left: 0;
+      padding: 0;
+      .anketa-item {
+        padding: 0;
+      }
     }
 
   }

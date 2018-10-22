@@ -170,6 +170,9 @@
           border: 5px solid #ffffff70;
         }
     }
+    .div-form button:not([disabled]):hover {
+        background: #00000052;
+    }
     .secondSide{
         padding-left: 4%;
         hr{

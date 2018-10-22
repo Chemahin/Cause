@@ -186,6 +186,9 @@
     .experience-items {
       margin: 0;
     }
+    .experience-video {
+      margin-left: 0;
+    }
     .shout-item {
       display: flex;
       justify-content: center;
@@ -204,10 +207,7 @@
       line-height: 30px;
     }
   }
-  @media screen and (max-width: 720px){
-    h2 {
-      font-size: 3rem;
-    }
+  @media screen and (max-width: 620px){
     .shout-item-img {
       width: 18%;
       height: 75px;
@@ -216,7 +216,7 @@
     }
     .shout-item-img:after {
       top: 4.7rem;
-      left: 3.1rem;
+      left: 2.1rem;
     }
     .experience-video {
       margin: 0;
@@ -226,7 +226,7 @@
       width: 90%;
     }
   }
-  @media screen and (max-width: 500px){
+  @media screen and (max-width: 520px){
     h2 {
       font-size: 2.5rem;
     }
@@ -255,7 +255,7 @@
       align-items: center;
     }
     .video-item {
-      width: 98%;
+      width: 100%;
     }
   }
   @media screen and (max-width: 440px){

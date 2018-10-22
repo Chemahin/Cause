@@ -107,6 +107,8 @@
 
   @media screen and (max-width: 520px){
     .portfolio-main {
+      width: 100%;
+      padding: 0;
       h2{
         margin: 10% 0;
         text-align: center;
@@ -118,11 +120,11 @@
     }
     .portfolio-items {
       display: flex;
-      width: 100;
+      width: 100%;
       flex-direction: column;
     }
     .portfolio-item {
-      width: 92%;
+      width: 100%;
       margin-bottom: 5%;
       img {
         width: 100%;
@@ -134,10 +136,15 @@
       flex-direction: column;
       width: 100%;
       button {
-        width: 96%;
+        width: 90%;
         font-size: 1.1rem;
-        margin-bottom: 5%;
+        margin: 3% auto;
       }
+    }
+  }
+  @media screen and (max-width: 440px){
+    .btnCustom button{
+      font-size: 0.7rem;
     }
   }
   @media screen and (max-width: 320px){

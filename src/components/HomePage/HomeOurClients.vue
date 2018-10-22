@@ -1,5 +1,5 @@
 <template>
-    <b-container fluid>
+    <b-container fluid class="ourQuality-main">
         <b-row>
             <b-col>
                 <div class="ourQuality">
@@ -81,12 +81,7 @@
             text-align: center;
         }
     }
-    .ourQuality-item{
-      cursor: pointer;
-      &:hover{
-        background-color: #2ad0e1;
-      }
-    }
+
     p{
         color: #646464;
         font-family: GolanoSemi;
@@ -140,18 +135,9 @@
             display: none;
         }
     }
-    @media screen and (max-width: 320px){
-      .ourQuality {
-        margin: 0;
-        padding: 0;
-        img{
-          width: 100%;
-        }
-      }
-      p {
-        font-size: 5vw;
-        line-height: 1.1;
-        margin-bottom: 20%;
-      }
+    @media screen and (max-width: 414px){
+     .ourQuality-main {
+         display: none;
+     }
     }
 </style>

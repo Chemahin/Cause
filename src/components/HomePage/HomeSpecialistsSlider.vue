@@ -1,7 +1,7 @@
 <template>
-    <b-container fluid>
+    <b-container fluid class="main-wrap">
         <b-row>
-            <b-col class="caruselMy">
+            <b-col class="caruselMy" >
                 <CaruselSpecialists type="star">
                     <Anketa
                             v-for="profile in profiles"
@@ -94,11 +94,18 @@
         display: none;
         padding: 0px;
     }
+
     @media screen and (max-width: 767px) {
       .btnCenter button{
-        width: 50%;
+        width: 60%;
         font-size: 1.2rem;
-        padding: 2% 3%;
+        padding: 2% 0;
+      }
+    }
+    @media screen and (max-width: 637px) {
+      .btnCenter button{
+        width: 70%;
+        margin-top: 5%;
       }
     }
     @media screen and (max-width:637px ){
@@ -117,17 +124,26 @@
     }
     @media screen and (max-width: 414px) {
       .btnCenter button{
-        width: 80%;
+        width: 90%;
         font-size: 1rem;
       }
     }
+    @media screen and (max-width: 360px) {
+      .btnCenter button{
+        width: 90%;
+        font-size: 0.8rem;
+      }
+    }
+
     @media screen and (max-width: 320px ){
       .btnCenter button{
         padding: 5% 0;
         width: 100%;
         font-size: 4.2vw;
         margin: 12% 0;
-
       }
+        .main-wrap {
+            padding: 0;
+        }
     }
 </style>

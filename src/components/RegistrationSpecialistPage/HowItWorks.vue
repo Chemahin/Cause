@@ -221,9 +221,17 @@
       font-size: 20px;
     }
   }
+  @media screen and (max-width: 767px) {
+    li {
+      margin-left: 10%;
+    }
+    .dot {
+      top: 16px;
+    }
+  }
 
   @media screen and (max-width: 720px) {
-    .content-item {
+    .clicked-item {
       margin-bottom: 10%;
     }
     .item-content h2 {
@@ -248,6 +256,9 @@
     .first h2 {
       font-size: 3rem;
       width: 100%;
+    }
+    .dot {
+      top: 11px;
     }
   }
   @media screen and (max-width: 530px) {

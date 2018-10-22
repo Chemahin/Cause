@@ -48,7 +48,7 @@
     display: flex;
     width: 100%;
     margin-left: 19%;
-    margin-top: 30%;
+    margin-top: 15%;
 
   }
   .benefits-item {

@@ -173,6 +173,17 @@
         justify-content: center;
       }
     }
+    @media screen and (max-width: 555px){
+      .hideButton button {
+        font-size: 1rem;
+      }
+    }
+    @media screen and (max-width: 485px){
+      .hideButton button {
+        width: 80%;
+        font-size: 1rem;
+      }
+    }
     @media screen and (max-width: 414px) {
       h2 {
         font-size: 2.7rem;

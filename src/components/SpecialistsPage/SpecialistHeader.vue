@@ -1,28 +1,7 @@
 <template>
   <b-container class="wrappHead" fluid>
-
-    <!--<div class="log-form-wrap">-->
-
-      <!--<div v-if="logIn" class="log-form">-->
-        <!--<LogIn v-on:closed-form="closedLogForm()"></LogIn>-->
-      <!--</div>-->
-      <!--<div v-if="createAcc" class="log-form">-->
-        <!--<SignUp v-on:closed-form="closedSignForm()"></SignUp>-->
-
-      <!--</div>-->
-    <!--</div>-->
-
-    <!--<b-row>-->
-      <!--<b-col md="4" offset-md="8" xl="3" offset-xl="9">-->
-        <!--<div class="wrapperLink">-->
-          <!--<div class="divBtn" @click="loggedIn">Inloggen</div>-->
-          <!--<span class="lineBetween">|</span>-->
-          <!--<div class="divBtn" @click="createAccIn">Account aanmaken</div>-->
-        <!--</div>-->
-      <!--</b-col>-->
-    <!--</b-row>-->
     <b-row>
-      <b-col>
+      <b-col class="specialist-menu">
         <NavigationMenu itemColor="itemMenuDark" borderItem="borderItemDark" searchItem="searchDark" logoColor="logo" ></NavigationMenu>
       </b-col>
     </b-row>
@@ -208,21 +187,43 @@
       }
     }
   }
-  @media screen and (max-width: 320px){
-    .wrappHead{
-      padding: 2%;
-    }
+  @media screen  and (max-width: 635px){
     .title {
-      margin-top: 10%;
+      width: 90%;
+      margin-top: 15%;
+    }
+
+  }
+  @media screen  and (max-width: 425px){
+    .title {
       width: 100%;
+      margin-left: 0;
+      padding: 0 9%;
       text-align: center;
+    }
+    .wrappHead {
+      padding: 0;
+    }
+    .specialist-menu {
+      padding: 0 11.5%;
+    }
+
+  }
+  @media screen  and (max-width: 380px){
+    .title {
       h2 {
         font-size: 35px;
-        line-height: 40px;
       }
-      hr {
-        margin-left: 0;
-      }
+    }
+  }
+  @media screen and (max-width: 320px){
+    .wrappHead{
+      padding: 0 2%;
+    }
+    .specialist-menu {
+      padding: 0;
+      padding-left: 15px;
+      padding-right: 15px;
     }
   }
 </style>

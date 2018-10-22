@@ -5,37 +5,33 @@
               <img :src="getImgUrlLogo" alt="logo">
           </router-link>
 
-
           <div class="burgerMenu">
-
-            <span class="navbar-toggler-icon" @click.prevent="burgerShow = !burgerShow"></span>
-            <!--<span class="line"></span>-->
-
-            <!--<div class="form-inline">-->
-              <!--<img :src="getImgUrlSearch" alt="search" @click.prevent="showSearch = !showSearch">-->
-              <!--<transition-->
-                <!--name="fade">-->
-                <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"  v-if="showSearch">-->
-              <!--</transition>-->
-            <!--</div>-->
-
-
-              <!--<div class="listBurger">-->
-                  <!--<transition name="slide">-->
-                      <!--<div class="toggle-menu" v-show="burgerShow" >-->
-                          <!--<router-link to="/">Home</router-link>-->
-                          <!--<router-link to="/onsVerhaal">Ons verhaal</router-link>-->
-                          <!--<router-link to="/onsWerk">Ons werk</router-link>-->
-                          <!--<router-link to="/contact">Contact</router-link>-->
-                      <!--</div>-->
-                  <!--</transition>-->
-              <!--</div>-->
-
+            <span class="navbar-toggler-icon" @click.prevent="burgerShow = !burgerShow">
+              <i class="lines-button">
+                <i class="lines"></i>
+              </i>
+              <i class="lines-button">
+                <i class="lines"></i>
+              </i>
+              <i class="lines-button">
+                <i class="lines lines-last"></i>
+              </i>
+            </span>
+            <transition name="slide">
+              <div class="toggle-menu" v-show="burgerShow" >
+                <span @click.prevent="burgerShow = !burgerShow" class="close-menu">
+                  <img v-lazy="imageCl" alt="imageCl">
+                </span>
+                <router-link to="/">Home</router-link>
+                <router-link to="/huurEenSpecialist">Huur Een Specialist</router-link>
+                <router-link to="/onsVerhaal">Ons verhaal</router-link>
+                <router-link to="/onsWerk">Ons werk</router-link>
+                <router-link to="/contact">Contact</router-link>
+              </div>
+            </transition>
           </div>
 
       </div>
-
-
       <div class="collapse navbar-collapse navItem" id="navbarSupportedContent">
           <div class="itemMenuDark">
               <router-link to="/huurEenSpecialist"
@@ -57,14 +53,7 @@
           <div :class="itemColor">
               <router-link to="/contact">Contact</router-link>
           </div>
-          <!--<div :class="['borderItemDef',borderItem]"></div>-->
-          <!--<div class="form-inline">-->
-              <!--<img :src="getImgUrlSearch" alt="search" @click.prevent="showSearch = !showSearch">-->
-              <!--<transition-->
-                      <!--name="fade">-->
-                  <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"  v-if="showSearch">-->
-              <!--</transition>-->
-          <!--</div>-->
+
       </div>
   </nav>
 
@@ -79,6 +68,7 @@
             return {
                 burgerShow:false,
                 showSearch: false,
+              imageCl: require(`../assets/icons/close.png`),
 
             }
         },
@@ -97,9 +87,6 @@
           }
         },
         computed: {
-          getImgUrlSearch() {
-            return require('../assets/icons/'+ this.searchItem + '.png');
-          },
           getImgUrlLogo() {
             return require('../assets/icons/'+ this.logoColor + '.png');
           }
@@ -107,17 +94,102 @@
     }
 </script>
 <style scoped lang="scss">
+  .toggle-menu {
+    position: absolute;
+    width: 300px;
+    height: 100vh;
+    right: -9vw;
+    top: -7vh;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: #00C7D4;
+    padding-top: 10%;
+    a {
+      padding: 10px 5px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      margin-bottom: 5%;
+    }
+    a:hover {
+      background: #a96721;
+    }
+    a::after {
+      transition: transform .3s ease-out,border-color .3s ease-out;
+      position: absolute;
+      display: block;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      -ms-transform: scaleX(0);
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      border-top: 2px solid #000;
+      content: '';
+      padding-bottom: inherit;
+    }
+  }
+  .close-menu {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    display: inline-flex;
+    border: 1px solid wheat;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    background: #ff8400;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .close-menu img {
+    width: 20px !important;
+    height: 20px;
+  }
+
+
+
+
+
   .navbar-toggler-icon {
-    width: 40px;
-    height: 40px;
-    margin-right: 10%;
+    position: relative;
+    overflow: hidden;
+    width: 32px;
+    height: 30px;
+    background: transparent;
   }
-  .line {
-    height: 43px;
-    width: 2px;
-    border-right: 1px solid black;
-    margin-right: 10%;
+  .lines-button {
+    transition: .3s;
+    cursor: pointer;
+    line-height: 0px!important;
+    top: 9px;
+    position: relative;
+    font-size: 0px!important;
+    user-select: none;
+    display: block;
+    margin-bottom: 5px;
   }
+  .lines {
+    display: block;
+    width: 100%;
+    height: 3px;
+    /*background-color: #ecf0f1;*/
+    background-color: #00c8d7 !important;
+    transition: 0.3s;
+    position: relative;
+  }
+  .lines-last {
+    width: 1.4rem;;
+  }
+  /*.line {*/
+    /*height: 43px;*/
+    /*width: 2px;*/
+    /*border-right: 1px solid black;*/
+    /*margin-right: 10%;*/
+  /*}*/
     .slide-enter-active {
         transition: all .3s ease;
     }
@@ -131,6 +203,7 @@
     .burgerMenu{
       display: none;
       width: 20%;
+      justify-content: flex-end;
 
 
     }
@@ -311,51 +384,37 @@
         z-index: 1000;
         margin-top: 20px;
       }
-      .toggle-menu {
-        position: absolute;
-        right: 11px;
-        top: 30px;
-        display: flex;
-        flex-direction: column;
-        width: 150px;
-        text-align: center;
-        background: #ff8400;
-        a {
-          padding: 10px 5px;
-          color: #ffffff;
-          text-decoration: none;
-        }
-        a:hover {
-          background: #a96721;
-        }
-      }
+      /*.toggle-menu {*/
+        /*position: absolute;*/
+        /*right: 11px;*/
+        /*top: 30px;*/
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*width: 150px;*/
+        /*text-align: center;*/
+        /*background: #ff8400;*/
+        /*a {*/
+          /*padding: 10px 5px;*/
+          /*color: #ffffff;*/
+          /*text-decoration: none;*/
+        /*}*/
+        /*a:hover {*/
+          /*background: #a96721;*/
+        /*}*/
+      /*}*/
     }
   @media screen  and (max-width: 650px){
-    .form-inline input {
-      width: 22vw;
-      top: 45px;
-      right: -56px;
-    }
-    .line {
-      height: 39px;
-    }
-  }
-  @media screen  and (max-width: 576px){
-    .form-inline input {
-      right: -41px;
-    }
 
-  }
-  @media screen  and (max-width: 540px){
-    .form-inline input {
-      right: -32px;
-      font-size: 20px;
-
-    }
     .toggle-menu{
-      right: -9px;
+      top: -2rem;
+      padding-top: 20%;
     }
+  }
 
+  @media screen  and (max-width: 420px){
+    .toggle-menu{
+      top: -1rem;
+    }
   }
   @media screen  and (max-width: 320px){
     .line {

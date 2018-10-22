@@ -3,7 +3,7 @@
         <div class="main">
             <div class="header">
                 <img
-                    v-lazy="require(`../assets/profile/${img}`)"
+                    :src="require(`../assets/profile/${img}`)"
                     alt="first">
                 <h3>{{name}}</h3>
                 <p>{{text}}</p>
@@ -13,7 +13,7 @@
                         v-if="type==='stars'"
                         v-for="star in stars"
                         :key="Math.random()+star"
-                        v-lazy="mysrc1"
+                        :src="mysrc1"
                         alt="star">
               <p v-if="type==='text'">
                 {{ textBody }} <span>{{ date }}</span>
@@ -118,6 +118,44 @@
 
 
     }
+    @media screen and (max-width: 1780px) {
+      button{
+        font-size: 0.8rem;
+        padding: 3% 0;
+      }
+    }
+    @media screen and (max-width: 1650px) {
+        button{
+            font-size: 0.8rem;
+        }
+    }
+    @media screen and (max-width: 1430px) {
+        button{
+            font-size: 0.7rem;
+        }
+    }
+    @media screen and (max-width: 1300px) {
+      .footer {
+        flex-direction: column;
+        button {
+          width: 92%;
+          margin-bottom: 3%;
+          padding: 3% 0;
+        }
+      }
+    }
+
+    @media screen and (max-width: 1320px) {
+        button{
+            font-size: 0.67rem;
+            padding: 3% 0;
+        }
+    }
+    @media screen and (max-width: 1300px) {
+        button{
+            font-size: 1rem;
+        }
+    }
     @media screen and (max-width: 1200px) {
       .footer button{
         font-size: 15px;
@@ -132,7 +170,24 @@
         font-size: 2.5vw;
       }
     }
-
+    @media screen and (max-width: 880px) {
+        .footer button{
+            font-size: 1.3rem;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    @media screen and (max-width: 780px) {
+        .footer button{
+            font-size: 1.1rem;
+        }
+    }
+    @media screen and (max-width: 780px) {
+        .footer button{
+            font-size: 1rem;
+        }
+    }
     @media screen and (max-width: 637px) {
         .wrapper{
             margin-bottom: 5%;
@@ -175,9 +230,10 @@
         }
       }
     }
-    @media screen and (max-width: 320px){
-      .wrapper{
-        padding: 0;
-      }
+    @media screen and (max-width: 440px){
+        .wrapper{
+            padding: 0;
+        }
     }
+
 </style>

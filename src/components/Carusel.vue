@@ -6,15 +6,15 @@
             <div v-for="slide in slides"
                  class='slide'
                  :key="slide.id">
-                <img v-lazy="mysrc1" alt="slieImg">
+                <img :src="mysrc1" alt="slieImg">
             </div>
         </transition-group>
         <div class='carousel-controls'>
             <button class='carousel-controls__button' @click="previous">
-                <img v-lazy="mysrc2" alt="left">
+                <img :src="mysrc2" alt="left">
             </button>
             <button class='carousel-controls__button' @click="next">
-                <img v-lazy="mysrc3" alt="left">
+                <img :src="mysrc3" alt="left">
             </button>
         </div>
     </div>

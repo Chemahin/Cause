@@ -258,7 +258,7 @@
   .inputDark{
     color: #646464;
     border-bottom: 2px solid #b7b7b7;
-    font-size: 1.7vw;
+    font-size: 1.6rem;
     padding: 0px 0 0 10px;
     margin-bottom: 20px;
     &::placeholder{
@@ -320,13 +320,13 @@
   .item-title{
     color: #00c8d7;
     font-family: GolanoSemi;
-    font-size: 70px;
+    font-size: 60px;
     font-weight: 400;
     line-height: 70px;
     padding: 8% 19% 7% 8%;
   }
   .input-class{
-    margin-bottom: 58px;
+    margin-bottom: 25px;
 
   }
   .btnCustom{
@@ -370,7 +370,7 @@
       line-height: 1;
     }
     .inputDark {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
     }
   }
   @media screen  and (max-width: 991px){

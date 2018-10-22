@@ -44,7 +44,6 @@
   }
   @media screen and (max-width:320px) {
 
-
     .row {
       margin: 0;
     }

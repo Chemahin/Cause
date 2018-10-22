@@ -6,8 +6,8 @@
       </div>
       <div class="images-team">
         <img v-lazy="mysrc1" alt="person">
-        <img v-lazy="mysrc1" alt="person">
-        <img v-lazy="mysrc1" alt="person">
+        <img v-lazy="mysrc2" alt="person">
+        <img v-lazy="mysrc3" alt="person">
       </div>
     </div>
 </template>
