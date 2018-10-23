@@ -12,7 +12,7 @@
         oplossingen voor MKB bedrijven.</p>
       <b-container fluid class="companies">
         <b-row>
-          <b-col lg="2" md="6" sm="12" v-for="n in 10" :key="n +Math.random()">
+          <b-col lg="3" md="4" sm="6" cols="12" v-for="n in 10" :key="n +Math.random()">
             <img v-lazy="sourceImages(n)"
                  :alt="'portfolio intem №'+n">
           </b-col>
@@ -107,10 +107,22 @@
     width: 100%;
     margin-bottom: 5%;
   }
-
+  @media screen and (max-width: 991px){
+    .main-companies {
+      margin-left: 0;
+    }
+    .middle {
+      padding-left: 0;
+    }
+    p {
+      margin: 0;
+      width: 100%;
+      padding-left: 10%;
+    }
+  }
   @media screen and (max-width: 767px){
     .first h2{
-      font-size: 8vw;
+      font-size: 2.5rem;
       width: 100%;
     }
     .row{
@@ -125,7 +137,7 @@
     }
     p{
       padding-left: 15%;
-      font-size: 3.5vw;
+      font-size: 2rem;
       width: 90%;
     }
     .col-6{

@@ -228,6 +228,12 @@
     .dot {
       top: 16px;
     }
+    .first h2 {
+      font-size: 2.5rem;
+    }
+    .item-content h2 {
+      font-size: 2rem;
+    }
   }
 
   @media screen and (max-width: 720px) {

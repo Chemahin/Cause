@@ -173,6 +173,25 @@
         justify-content: center;
       }
     }
+    @media screen  and (max-width: 670px){
+      h2 {
+        font-size: 3rem;
+      }
+      p{
+        font-size: 1.5rem;
+        margin-bottom: 10%;
+      }
+      hr {
+        margin: 2rem 0;
+        width: 14%;
+      }
+      .hideButton {
+        margin: 10% 0;
+      }
+      h2.headerTwo {
+        margin-left: 0;
+      }
+    }
     @media screen and (max-width: 555px){
       .hideButton button {
         font-size: 1rem;
@@ -184,23 +203,31 @@
         font-size: 1rem;
       }
     }
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 485px){
+      .companies {
+        padding: 0;
+        text-align: center;
+      }
       h2 {
-        font-size: 2.7rem;
+        font-size: 2.5rem;
       }
-      p {
-        font-size: 1.7rem;
+      p{
+        font-size: 1.2rem;
       }
-      hr {
-        margin-left: 1%;
-        width: 14%;
-        height: 0.5vw;
-        max-height: 100%;
-      }
+    }
+    @media screen and (max-width: 414px) {
       .hideButton button {
         width: 100%;
         font-size: 1rem;
         padding: 3% 0;
+      }
+    }
+    @media screen  and (max-width: 360px) {
+      h2 {
+        font-size: 2rem;
+      }
+      p{
+        font-size: 1rem;
       }
     }
 

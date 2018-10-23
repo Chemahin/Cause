@@ -134,11 +134,34 @@
         font-size: 1.2rem;
       }
     }
+    @media screen  and (max-width: 670px){
+      .wrappHead {
+        margin: 10% 0;
+      }
+      h2 {
+        font-size: 3rem;
+      }
+      p{
+        font-size: 1.5rem;
+        margin-bottom: 10%;
+      }
+      hr {
+        margin: 2rem 0;
+      }
+    }
     @media screen and (max-width: 590px){
         .btnWhite{
             width: 70%;
             font-size: 1rem;
         }
+    }
+    @media screen  and (max-width: 450px) {
+      h2 {
+        font-size: 2.5rem;
+      }
+      p{
+        font-size: 1.2rem;
+      }
     }
     @media screen and (max-width: 414px){
         .wrappHead {
@@ -152,6 +175,15 @@
       }
       .btnWhite{
         width: 70%;
+        font-size: 1rem;
+      }
+    }
+    @media screen  and (max-width: 360px) {
+      h2 {
+        font-size: 2rem;
+        padding: 0 4%;
+      }
+      p{
         font-size: 1rem;
       }
     }

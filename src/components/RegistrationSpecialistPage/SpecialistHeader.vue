@@ -3,7 +3,13 @@
 
     <b-row class="menu">
       <b-col>
-        <NavigationMenu itemColor="itemMenuDark" borderItem="borderItemDark" searchItem="searchDark" logoColor="logo" ></NavigationMenu>
+        <NavigationMenu itemColor="itemMenuDark"
+                        borderItem="borderItemWhite"
+                        searchItem="searchWhite"
+                        logoColor="logo"
+                        burgerColor="color-main">
+
+        </NavigationMenu>
       </b-col>
     </b-row>
     <b-row>
@@ -65,7 +71,7 @@ import NavigationMenu from '../NavigationMenu'
       LogIn,
       SignUp
     },
-    // ...
+
   }
 </script>
 <style scoped lang="scss">
@@ -145,6 +151,11 @@ import NavigationMenu from '../NavigationMenu'
     }
     .carusel-wrapp {
       display: none;
+    }
+  }
+  @media screen  and (max-width: 767px){
+    .wrappHead {
+      height: 980px;
     }
   }
   @media screen  and (max-width: 570px) {

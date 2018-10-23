@@ -71,6 +71,23 @@
       }
     }
   }
+  @media screen  and (max-width: 767px){
+    .title{
+      h2{
+        text-align: center;
+        font-size: 4rem;
+        margin-top: 10%;
+      }
+      hr {
+        margin-left: 1%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        width: 13.6%;
+        height: 0.5vw;
+        max-height: 100%;
+      }
+    }
+  }
   @media screen  and (max-width: 670px){
     .images-team {
       text-align: center;
@@ -82,12 +99,18 @@
   }
   @media screen  and (max-width: 320px){
     .title{
+      margin-left: 0;
       h2{
         font-size: 35px;
         line-height: 30px;
       }
       hr {
-        width: 10%;
+        margin-left: 6%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        width: 13.6%;
+        height: 0.5vw;
+        max-height: 100%;
       }
     }
     .images-team {

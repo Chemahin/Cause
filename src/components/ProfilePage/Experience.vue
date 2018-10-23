@@ -260,7 +260,12 @@
   }
   @media screen and (max-width: 440px){
     .shout-item-img:after {
-      left: 42%;
+      left: 41%;
+    }
+  }
+  @media screen and (max-width: 320px){
+    .content {
+      text-align: center;
     }
   }
 

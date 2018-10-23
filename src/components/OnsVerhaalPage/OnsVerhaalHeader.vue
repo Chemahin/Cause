@@ -2,13 +2,13 @@
   <div>
     <div class="wrappHead">
       <div class="fon-filter">
-        <b-container fluid>
-
-          <b-row>
-            <b-col>
-              <NavigationMenu itemColor="itemMenuWhite"  borderItem="borderItemWhite" searchItem="searchWhite" logoColor="logoWhite" ></NavigationMenu>
-            </b-col>
-          </b-row>
+              <NavigationMenu
+                itemColor="itemMenuWhite"
+                borderItem="borderItemWhite"
+                searchItem="searchWhite"
+                logoColor="logoWhite"
+                burgerColor="color-white">
+              </NavigationMenu>
           <div class="content">
             <h2>Communicatie specialisten</h2>
             <hr>
@@ -22,7 +22,6 @@
               beter kennen dan grote ondernemingen. Koppel jouw kennis van jouw markt
               aan onze communicatiekennis. Dan maken we er samen een succes van.</p>
           </div>
-        </b-container>
 
       </div>
     </div>
@@ -95,6 +94,7 @@
 </script>
 
 <style scoped lang="scss">
+
   .mobile-posts {
     display: none;
   }
@@ -109,6 +109,9 @@
     height: 1216px;
     padding: 2% 9%;
     background: #19cddac4;
+    .navbar {
+      padding: 0 15px;
+    }
   }
   .content {
     margin-top: 16%;
@@ -116,7 +119,7 @@
     h2{
       color: #ffffff;
       font-family: GolanoSemi;
-      font-size: 70px;
+      font-size: 3.5vw;
       font-weight: 400;
       line-height: 70px;
 
@@ -193,6 +196,7 @@
       padding-left: 22%;
     }
   }
+
   @media screen  and (max-width: 1536px){
     .content p {
       margin-right: 0;
@@ -230,7 +234,16 @@
   }
   @media screen  and (max-width: 991px){
     .fon-filter{
-      padding: 2% 9%;
+      padding: 2% 7.4%;
+    }
+    .content {
+    margin-left: 2%;
+      p {
+        font-size: 1.5rem;
+      }
+      hr {
+        height: 0.5vw;
+      }
     }
   }
   @media screen  and (max-width: 840px){
@@ -238,11 +251,15 @@
       margin: 0;
       line-height: 30px;
     }
-  }
-  @media screen  and (max-width: 770px){
-    .fon-filter{
-      padding: 0 10%;
+    .content hr {
+      margin-left: 1%;
+      width: 8%;
+      height: 0.5vw;
+      max-height: 100%;
     }
+  }
+
+  @media screen  and (max-width: 770px){
     .content h2 {
       font-size: 50px;
       line-height: 50px;
@@ -250,23 +267,39 @@
     .middle-img {
       margin-right: 5%;
     }
+    .fon-filter {
+      padding: 2% 7.1%;
+    }
+  }
+  @media screen  and (max-width: 767px){
+    .content h2 {
+      text-align: center;
+      font-size: 4rem;
+      margin-top: 10%;
+    }
+    .content p {
+      margin-top: 0;
+      font-size: 2rem;
+      text-align: center;
+    }
+    .content hr {
+      margin-left: 1%;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      width: 13.6%;
+      height: 0.5vw;
+      max-height: 100%;
+    }
   }
   @media screen  and (max-width: 670px){
-    .fon-filter{
-      padding: 0 10%;
+    .content h2 {
+      font-size: 3rem;
     }
-    .content {
-      margin-top: 15%;
-      h2 {
-        font-size: 35px;
-        line-height: 30px;
-      }
-      p {
-        font-size: 25px;
-        line-height: 34px;
-        padding: 2%;
-        margin-top: 2%;
-      }
+    .content p {
+      font-size: 1.5rem;
+    }
+    .fon-filter {
+      padding: 2% 7%;
     }
 
     .middle-img, .empty, .posts {
@@ -288,12 +321,32 @@
         text-align: center;
       }
     }
-
   }
-  @media screen  and (max-width: 670px){
+
+  @media screen  and (max-width: 540px) {
+    .fon-filter{
+      padding: 2% 6.3%;
+    }
+  }
+  @media screen  and (max-width: 450px) {
+    .content h2 {
+      font-size: 2.5rem;
+    }
     .content p {
-      font-size: 20px;
-      line-height: 30px;
+      font-size: 1.2rem;
+    }
+  }
+  @media screen  and (max-width: 440px){
+    .fon-filter {
+      padding: 2% 6%;
+    }
+  }
+  @media screen  and (max-width: 360px) {
+    .content h2 {
+      font-size: 2rem;
+    }
+    .content p {
+      font-size: 1rem;
     }
   }
   @media screen  and (max-width: 320px){
@@ -301,15 +354,12 @@
       padding: 2%;
     }
     .fon-filter {
-      padding: 0;
+      padding: 2% 2.1%;
     }
-    .content hr {
-      width: 10%;
-      height: 5px;
+    .content h2 {
+      line-height: 1;
     }
-    .navbar {
-      margin-top: 4%;
-    }
+
     .container-fluid {
       padding-right: 0;
     }

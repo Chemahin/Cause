@@ -257,15 +257,24 @@
         padding-top: 10%;
       }
       .div-form input {
-        font-size: 8.4vw;
+        font-size: 1.5rem;
       }
       .div-form button{
-        font-size: 8vw;
+        font-size: 1.3rem;
+        margin: 10% auto;
       }
       p {
         text-align: center;
         font-size: 6vw;
         margin-bottom: 5%;
+      }
+      hr {
+        width: 14%;
+        height: 0.5vw;
+      }
+      .secondSide hr {
+        width: 14%;
+        height: 0.5vw;
       }
     }
 </style>

@@ -1,28 +1,13 @@
 <template>
   <b-container class="wrappHead" fluid>
-
-    <!--<div class="log-form-wrap">-->
-
-      <!--<div v-if="logIn" class="log-form">-->
-        <!--<LogIn v-on:closed-form="closedLogForm()"></LogIn>-->
-      <!--</div>-->
-      <!--<div v-if="createAcc" class="log-form">-->
-        <!--<SignUp v-on:closed-form="closedSignForm()"></SignUp>-->
-      <!--</div>-->
-    <!--</div>-->
-
-    <!--<b-row>-->
-      <!--<b-col md="4" offset-md="8" xl="3" offset-xl="9">-->
-        <!--<div class="wrapperLink">-->
-          <!--<div class="divBtn" @click="loggedIn">Inloggen</div>-->
-          <!--<span class="lineBetween">|</span>-->
-          <!--<div class="divBtn" @click="createAccIn">Account aanmaken</div>-->
-        <!--</div>-->
-      <!--</b-col>-->
-    <!--</b-row>-->
     <b-row>
         <b-col>
-            <NavigationMenu itemColor="itemMenuDark" borderItem="borderItemDark" searchItem="searchDark" logoColor="logo" ></NavigationMenu>
+            <NavigationMenu
+              itemColor="itemMenuDark"
+              borderItem="borderItemDark"
+              searchItem="searchDark"
+              logoColor="logo"
+              burgerColor="color-main"></NavigationMenu>
         </b-col>
     </b-row>
     <b-row>
@@ -123,7 +108,7 @@
   }
   .wrappHead{
     padding: 2% 9%;
-      background: #f5f4f2;
+    background: #f5f4f2;
   }
   .lineBetween{
     width: 1px;

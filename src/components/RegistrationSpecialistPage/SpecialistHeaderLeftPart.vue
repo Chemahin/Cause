@@ -379,6 +379,9 @@
       width: 100%;
        margin-left: 0;
     }
+    .input-class {
+      margin-bottom: 3%;
+    }
     .item-title {
       text-align: center;
     }
@@ -390,8 +393,23 @@
       font-size: 1.7rem;
       padding: 2% 5%;
     }
+    .upload-items {
+      justify-content: center;
+    }
+    .upload-item {
+      padding-top: 4%;
+    }
     .upload-item p {
       font-size: 1.2rem;
+      padding-bottom: 15%;
+    }
+  }
+  @media screen  and (max-width: 767px){
+    .item-title {
+      font-size: 2.5rem;
+    }
+    .checkbox-item {
+      margin-top: 3%;
     }
   }
   @media screen  and (max-width: 570px){

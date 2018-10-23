@@ -110,6 +110,18 @@
         font-size: 1.3rem;
       }
     }
+    @media screen  and (max-width: 670px){
+      h2 {
+        font-size: 3rem;
+      }
+      p{
+        font-size: 1.5rem;
+        margin-bottom: 10%;
+      }
+      hr {
+        margin: 2rem 0;
+      }
+    }
     @media screen and (max-width: 555px){
         .btnCustom button{
             font-size: 1.1rem;
@@ -121,18 +133,28 @@
             font-size: 1.1rem;
         }
     }
-    @media screen and (max-width: 414px){
-      h2{
-        font-size: 2.7rem;
+    @media screen  and (max-width: 450px) {
+      h2 {
+        font-size: 2.5rem;
       }
       p{
-        font-size: 1.7rem;
+        font-size: 1.2rem;
       }
+    }
+    @media screen and (max-width: 414px){
       .btnCustom {
         margin-top: 20px;
       }
       .btnCustom button {
         width: 100%;
+        font-size: 1rem;
+      }
+    }
+    @media screen  and (max-width: 360px) {
+      h2 {
+        font-size: 2rem;
+      }
+      p{
         font-size: 1rem;
       }
     }

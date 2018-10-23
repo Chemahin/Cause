@@ -252,13 +252,23 @@
       margin-top: 3%;
     }
   }
+  @media screen  and (max-width: 360px){
+    .item-title {
+      font-size: 2rem;
+    }
+    .input-class {
+      margin-bottom: 7%;
+    }
+    .inputDark {
+      font-size: 1.4rem;
+    }
+  }
   @media screen  and (max-width: 320px){
     .card-body {
       padding: 0;
     }
     .item-title{
-      padding: 6%;
-      font-size: 2.3rem;
+      font-size: 2rem;
       line-height: 45px;
     }
     .form-close {

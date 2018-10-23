@@ -8,13 +8,14 @@
             <NavigationMenu itemColor="itemMenuWhite"
                             borderItem="borderItemWhite"
                             searchItem="searchWhite"
-                            logoColor="logoWhite" >
+                            logoColor="logoWhite"
+                            burgerColor="color-white">
 
             </NavigationMenu>
           </b-col>
         </b-row>
 
-        <b-row>
+        <b-row class="contact-left-items">
           <b-col lg="7" sm="12" class="part-wrapp" v-show="!closed">
             <ContactLeft v-on:closed-form="closedForm()"></ContactLeft>
           </b-col>
@@ -70,9 +71,10 @@
   }
   @media screen  and (max-width: 991px){
     .fon-filter{
-      padding-top: 2% 9%;
+      padding: 2% 9%;
     }
   }
+
   @media screen  and (max-width: 540px){
     .wrappHead {
       height: 1080px;
@@ -82,20 +84,30 @@
       padding: 0;
     }
     .mav-menu {
-      padding: 0 9%;
+      padding: 2% 9%;
       margin-bottom: 8%;
     }
     .part-wrapp{
       padding: 0;
     }
+    .contact-left-items {
+       margin-left: 0;
+      width: 100%;
+    }
 
   }
-  @media screen  and (max-width: 320px){
-    .wrappHead {
-      height: 830px;
+  @media screen  and (max-width: 360px) {
+    .fon-filter, .wrappHead {
+      height: 825px;
     }
-    .fon-filter{
-      height: 830px;
+  }
+
+  @media screen  and (max-width: 320px){
+    .mav-menu {
+      padding: 2%;
+    }
+    .fon-filter, .wrappHead{
+      height: 790px;
     }
   }
 

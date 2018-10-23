@@ -124,7 +124,7 @@
         }
         hr{
             width: 10%;
-            height: 6px;
+            height: 0.5vw;
         }
         .col-md-3:first-child{
             padding-left: 0%;
@@ -146,9 +146,37 @@
         padding: 0;
       }
     }
-    @media screen and (max-width: 400px){
+    @media screen  and (max-width: 670px){
+      h2 {
+        font-size: 3rem;
+        margin: 10% 0 5% 0;
+      }
+      .main {
+        padding: 0 9%;
+      }
       p{
-        font-size: 3.5vw;
+        font-size: 1.5rem;
+        margin-bottom: 10%;
+      }
+      hr {
+        margin: 2rem 0;
+        width: 14%;
+      }
+    }
+    @media screen  and (max-width: 450px) {
+      h2 {
+        font-size: 2.5rem;
+      }
+      p{
+        font-size: 1.2rem;
+      }
+    }
+    @media screen  and (max-width: 360px) {
+      h2 {
+        font-size: 2rem;
+      }
+      p{
+        font-size: 1rem;
       }
     }
     @media screen and (max-width: 320px){
@@ -157,6 +185,10 @@
         .col {
           padding: 0;
         }
+      }
+      hr {
+        margin-left: 9%;
+        height: 0.5vw;
       }
       h2 {
         width: 100%;

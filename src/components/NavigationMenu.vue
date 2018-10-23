@@ -8,13 +8,13 @@
           <div class="burgerMenu">
             <span class="navbar-toggler-icon" @click.prevent="burgerShow = !burgerShow">
               <i class="lines-button">
-                <i class="lines"></i>
+                <i :class="[lines, burgerColor]"></i>
               </i>
               <i class="lines-button">
-                <i class="lines"></i>
+                <i :class="[lines, burgerColor]"></i>
               </i>
               <i class="lines-button">
-                <i class="lines lines-last"></i>
+                <i :class="[lines,linesLast, burgerColor]"></i>
               </i>
             </span>
             <transition name="slide">
@@ -66,9 +66,13 @@
         },
         data: function () {
             return {
-                burgerShow:false,
-                showSearch: false,
+              burgerShow:false,
+              showSearch: false,
               imageCl: require(`../assets/icons/close.png`),
+              lines: 'lines',
+              linesLast: 'lines-last'
+
+
 
             }
         },
@@ -83,6 +87,12 @@
             type: String,
           },
           logoColor: {
+            type: String,
+          },
+          burgerColor: {
+            type: String,
+          },
+          menuColor: {
             type: String,
           }
         },
@@ -176,10 +186,14 @@
     display: block;
     width: 100%;
     height: 3px;
-    /*background-color: #ecf0f1;*/
-    background-color: #00c8d7 !important;
     transition: 0.3s;
     position: relative;
+  }
+  .color-main {
+    background-color: #00c8d7 !important;
+  }
+  .color-white {
+    background-color: white !important;
   }
   .lines-last {
     width: 1.4rem;;

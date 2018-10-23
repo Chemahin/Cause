@@ -74,6 +74,27 @@
             display: none;
         }
     }
+    @media screen  and (max-width: 670px){
+      p {
+        font-size: 1.5rem;
+      }
+    }
+    @media screen  and (max-width: 450px) {
+      h2 {
+        font-size: 2.5rem;
+      }
+      p{
+        font-size: 1.2rem;
+      }
+    }
+    @media screen  and (max-width: 360px) {
+      h2 {
+        font-size: 2rem;
+      }
+      p{
+        font-size: 1rem;
+      }
+    }
     @media screen and (max-width: 320px){
       .cellScill {
         padding: 0 2%;

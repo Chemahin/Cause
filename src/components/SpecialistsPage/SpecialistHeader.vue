@@ -2,7 +2,7 @@
   <b-container class="wrappHead" fluid>
     <b-row>
       <b-col class="specialist-menu">
-        <NavigationMenu itemColor="itemMenuDark" borderItem="borderItemDark" searchItem="searchDark" logoColor="logo" ></NavigationMenu>
+        <NavigationMenu itemColor="itemMenuDark" borderItem="borderItemDark" searchItem="searchDark" logoColor="logo" burgerColor="color-main"></NavigationMenu>
       </b-col>
     </b-row>
     <div class="title">
@@ -180,20 +180,39 @@
       display: none;
     }
     .title {
-      margin-top: 6%;
+      margin-top: 10%;
       h2 {
         font-size: 45px;
         line-height: 55px;
       }
     }
   }
-  @media screen  and (max-width: 635px){
+  @media screen  and (max-width: 767px){
     .title {
-      width: 90%;
-      margin-top: 15%;
+      width: 100%;
+      margin-left: 0;
+      h2 {
+        text-align: center;
+        font-size: 4rem;
+      }
+      hr {
+        width: 13.6%;
+        margin-bottom: 2rem;
+      }
     }
-
   }
+  @media screen  and (max-width: 670px){
+    .title h2 {
+      font-size: 3rem;
+    }
+  }
+  @media screen  and (max-width: 450px){
+    .title h2 {
+      font-size: 2.5rem;
+      line-height: 50px;
+    }
+  }
+
   @media screen  and (max-width: 425px){
     .title {
       width: 100%;

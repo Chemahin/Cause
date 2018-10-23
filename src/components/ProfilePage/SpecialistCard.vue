@@ -540,6 +540,10 @@
     }
   }
   @media screen and (max-width: 320px){
+    .wrapp {
+      padding: 0;
+      width: 100%;
+    }
     .specialty {
       display: flex;
       flex-direction: column;
@@ -554,6 +558,12 @@
     .name-first {
       width: 100%;
       justify-content: center;
+    }
+    .availability-first p {
+      margin: 2% 0;
+    }
+    .skills {
+      margin-left: 0;
     }
   }
 </style>

@@ -157,9 +157,10 @@
       width: 96%;
     }
     .btnCustom button {
-      width: 93%;
+      width: 96%;
       font-size: 13px;
       margin-bottom: 5%;
+      margin-left: 0;
       padding: 5% 0;
     }
   }

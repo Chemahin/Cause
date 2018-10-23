@@ -64,6 +64,9 @@
       .footer-wrapp {
         padding: 0;
       }
+      .social-item {
+        height: 60px;
+      }
     }
 
 </style>

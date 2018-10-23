@@ -161,4 +161,13 @@
             font-size: 7vw;
         }
     }
+  @media screen and(max-width: 320px) {
+    .qItem{
+      margin-left: 0;
+    }
+    .clicked-item {
+      margin-left: 0;
+      font-size: 1rem;
+    }
+  }
 </style>
