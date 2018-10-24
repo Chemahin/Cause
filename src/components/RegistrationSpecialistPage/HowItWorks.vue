@@ -220,6 +220,14 @@
     li {
       font-size: 20px;
     }
+    /*.first {*/
+      /*margin-left: 0;*/
+      /*text-align: center;*/
+    /*}*/
+    .first hr {
+      width: 10%;
+      height: 0.5vw;
+    }
   }
   @media screen and (max-width: 767px) {
     li {
@@ -267,12 +275,13 @@
       top: 11px;
     }
   }
+
   @media screen and (max-width: 530px) {
     .first {
       margin-left: 0;
       text-align: center;
       hr {
-        width: 100%;
+        margin-left: 11%;
       }
     }
     li {
@@ -310,7 +319,7 @@
       line-height: 1.5;
     }
   }
-  @media screen and (max-width: 440px) {
+  @media screen and (max-width: 450px) {
     .item-content h2 {
       font-size: 1.4rem;
     }

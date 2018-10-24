@@ -349,6 +349,7 @@
     .item-title {
       padding: 0;
       margin-top: 10%;
+      margin-left: 5%;
       font-size: 3rem;
     }
     .input-class {
@@ -384,6 +385,7 @@
     }
     .item-title {
       text-align: center;
+      margin-left: 0;
     }
     .form-close {
       display: none;
@@ -404,14 +406,18 @@
       padding-bottom: 15%;
     }
   }
+
+
   @media screen  and (max-width: 767px){
-    .item-title {
-      font-size: 2.5rem;
-    }
     .checkbox-item {
       margin-top: 3%;
     }
+    .item-title {
+      font-size: 2.5rem;
+    }
+
   }
+
   @media screen  and (max-width: 570px){
     .col-lg-6 {
       padding: 0;

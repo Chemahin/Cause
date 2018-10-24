@@ -102,7 +102,7 @@
     font-size: 1.7rem;
   }
   .first{
-    margin: 8.3% 0 5% 11%;
+    margin: 5% 0 5% 11%;
     h2{
       word-break: break-word;
       color: #00c8d7;
@@ -137,11 +137,29 @@
     padding: 0px;
   }
 
+  @media screen  and (max-width: 991px){
+
+  }
+  @media screen  and (max-width: 767px){
+    .first h2 {
+      font-size: 2.5rem;
+    }
+    .first hr {
+      width: 10%;
+      height: 0.5vw;
+    }
+  }
+
 
   @media screen and (max-width:720px ){
     .first h2{
       font-size: 3rem;
       width: 100%;
+    }
+  }
+  @media screen and (max-width:670px ){
+    .first h2 {
+      padding-right: 4%;
     }
   }
   @media screen and (max-width:637px ){
@@ -163,11 +181,11 @@
       margin: 10% 0;
       text-align: center;
       h2{
-        font-size: 8vw;
-        width: 100%;
+        font-size: 3rem;
+        padding: 0;
       }
       hr {
-        width: 100%;
+        margin-left: 11%;
       }
     }
   }

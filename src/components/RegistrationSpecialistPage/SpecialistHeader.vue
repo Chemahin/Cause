@@ -145,6 +145,11 @@ import NavigationMenu from '../NavigationMenu'
       }
     }
   }
+  @media screen  and (max-width: 1150px){
+    .wrappHead{
+      height: 1000px;
+    }
+  }
   @media screen  and (max-width: 991px){
     .wrapperLink{
       display: none;
@@ -167,7 +172,7 @@ import NavigationMenu from '../NavigationMenu'
       height: auto;
     }
     .menu {
-      padding: 0 22px 0 9%;
+      padding: 2% 9%;
     }
   }
 </style>

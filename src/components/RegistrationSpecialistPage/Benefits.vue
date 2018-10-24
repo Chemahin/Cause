@@ -139,9 +139,14 @@
       margin-top: 20%;
     }
   }
-  @media screen and (max-width: 991px){
+  @media screen and (max-width: 770px){
     .benefits-main {
-      margin-top: 8%;
+      margin-top: 10%;
+    }
+  }
+  @media screen and (max-width: 450px){
+    .benefits-item {
+      width: 80%;
     }
   }
   @media screen and (max-width: 320px){
