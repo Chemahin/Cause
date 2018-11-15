@@ -9,7 +9,12 @@ import Vuex from 'vuex';
 import store from './store/'
 import VueLazyload from 'vue-lazyload'
 
+import vueVimeoPlayer from 'vue-vimeo-player'
 
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+
+Vue.use(vueVimeoPlayer)
 Vue.use(Vuex);
 Vue.use(uiv);
 
@@ -20,6 +25,7 @@ Vue.use(BootstrapVue);
 
 Vue.use(VueLazyload);
 
+Vue.use(VueAwesomeSwiper)
 
 const router = new VueRouter({
     routes:Routes,

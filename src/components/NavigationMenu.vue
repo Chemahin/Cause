@@ -4,7 +4,6 @@
           <router-link to="/" class="navbar-brand">
               <img :src="getImgUrlLogo" alt="logo">
           </router-link>
-
           <div class="burgerMenu">
             <span class="navbar-toggler-icon" @click.prevent="burgerShow = !burgerShow">
               <i class="lines-button">
@@ -25,7 +24,7 @@
                 <router-link to="/">Home</router-link>
                 <router-link to="/huurEenSpecialist">Huur Een Specialist</router-link>
                 <router-link to="/onsVerhaal">Ons verhaal</router-link>
-                <router-link to="/onsWerk">Ons werk</router-link>
+                <!--<router-link to="/onsWerk">Ons werk</router-link>-->
                 <router-link to="/contact">Contact</router-link>
               </div>
             </transition>
@@ -47,9 +46,9 @@
           <div :class="itemColor">
               <router-link to="/onsVerhaal">Ons verhaal</router-link>
           </div>
-          <div :class="itemColor">
-              <router-link to="/onsWerk">Ons werk</router-link>
-          </div>
+          <!--<div :class="itemColor">-->
+              <!--<router-link to="/onsWerk">Ons werk</router-link>-->
+          <!--</div>-->
           <div :class="itemColor">
               <router-link to="/contact">Contact</router-link>
           </div>
@@ -71,9 +70,6 @@
               imageCl: require(`../assets/icons/close.png`),
               lines: 'lines',
               linesLast: 'lines-last'
-
-
-
             }
         },
         props: {
@@ -398,24 +394,6 @@
         z-index: 1000;
         margin-top: 20px;
       }
-      /*.toggle-menu {*/
-        /*position: absolute;*/
-        /*right: 11px;*/
-        /*top: 30px;*/
-        /*display: flex;*/
-        /*flex-direction: column;*/
-        /*width: 150px;*/
-        /*text-align: center;*/
-        /*background: #ff8400;*/
-        /*a {*/
-          /*padding: 10px 5px;*/
-          /*color: #ffffff;*/
-          /*text-decoration: none;*/
-        /*}*/
-        /*a:hover {*/
-          /*background: #a96721;*/
-        /*}*/
-      /*}*/
     }
   @media screen  and (max-width: 650px){
 
@@ -431,6 +409,9 @@
     }
   }
   @media screen  and (max-width: 320px){
+    body {
+      overflow-x: hidden;
+    }
     .line {
       display: none;
     }

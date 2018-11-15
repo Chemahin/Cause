@@ -1,5 +1,6 @@
 <template>
   <b-container class="wrappHead" fluid>
+
     <b-row>
         <b-col>
             <NavigationMenu
@@ -11,6 +12,7 @@
         </b-col>
     </b-row>
     <b-row>
+
         <b-col>
             <HomeLeft></HomeLeft>
         </b-col>
@@ -60,12 +62,13 @@
             HomeLeft,
             Carusel,
             LogIn,
-            SignUp
+            SignUp,
         },
 
     }
 </script>
 <style scoped lang="scss">
+
   .log-form {
     width: 100%;
     display: flex;
@@ -108,6 +111,7 @@
   }
   .wrappHead{
     padding: 2% 9%;
+    padding-bottom: 0;
     background: #f5f4f2;
   }
   .lineBetween{

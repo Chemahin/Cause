@@ -7,7 +7,7 @@
                 </h2>
                 <hr>
                 <b-container fluid>
-                    <b-row>
+                    <b-row class="block-items">
                         <b-col  lg="3" md="4" cols="12">
                             <h3>Aanvraag</h3>
                             <p>Via onze website kan je gemakkelijk en snel een online specialist inhuren. Je kan duidelijk aangeven waar je de specialist wilt inzetten, waarvoor en hoe lang. Met enkele muisklikken haal jij de juiste werkkrachten en kennis in huis!</p>
@@ -45,7 +45,7 @@
     h2{
         margin-top: 4.3%;
         margin-left: 4.6%;
-        letter-spacing: 0.3px;
+        letter-spacing: 2px;
         color: #00c8d7;
         font-family: GolanoSemi;
         font-size: 3.6vw;
@@ -64,7 +64,7 @@
         word-break: break-word;
         color: #969696;
         font-family: GolanoRegular;
-        font-size: 1.2vw;
+        font-size: 1.4rem;
         font-weight: 400;
         line-height: 1.8;
       padding-left: 10%;
@@ -118,6 +118,29 @@
             }
         }
     }
+    .block-items {
+      padding-left: 4%;
+    }
+    @media screen and (max-width: 1200px){
+      p {
+        font-size: 1.1rem;
+      }
+
+    }
+    @media screen and (max-width: 1070px){
+      p {
+        font-size: 1rem;
+      }
+    }
+    @media screen and (max-width: 995px){
+      p {
+        font-size: 0.8rem;
+      }
+      hr {
+        height: 3px;
+        width: 14%;
+      }
+    }
     @media screen and (max-width: 767px){
         .square{
             border: none;
@@ -133,24 +156,21 @@
             padding-left: 4%;
         }
         h3{
-            font-size: 2.8rem;
+          font-size: 1.8rem;
           text-align: center;
         }
       h2{
-        text-align: center;
-        font-size: 4rem;
+        text-align: left;
+        font-size: 2rem;
       }
       p{
-        font-size: 2rem;
+        font-size: 1.5rem;
         text-align: center;
         padding: 0;
       }
     }
     @media screen  and (max-width: 670px){
-      h2 {
-        font-size: 3rem;
-        margin: 10% 0 5% 0;
-      }
+
       .main {
         padding: 0 9%;
       }
@@ -159,26 +179,18 @@
         margin-bottom: 10%;
       }
       hr {
-        margin: 2rem 0;
+        margin: 5% 0;
+        margin-left: 5%;
         width: 14%;
       }
-    }
-    @media screen  and (max-width: 450px) {
-      h2 {
-        font-size: 2.5rem;
+      h3 {
+        font-size: 1.7rem;
       }
-      p{
-        font-size: 1.2rem;
+      p {
+        font-size: 1.1rem;
       }
     }
-    @media screen  and (max-width: 360px) {
-      h2 {
-        font-size: 2rem;
-      }
-      p{
-        font-size: 1rem;
-      }
-    }
+
     @media screen and (max-width: 320px){
       .main {
         padding: 0;
@@ -186,20 +198,15 @@
           padding: 0;
         }
       }
+      h2 {
+        padding-left: 4%;
+      }
       hr {
         margin-left: 9%;
         height: 0.5vw;
+
       }
-      h2 {
-        width: 100%;
-        font-size: 9.5vw;
-      }
-      h3 {
-        font-size: 7.5vw;
-      }
-      p {
-        font-size: 5.5vw;
-      }
+
     }
 
 </style>

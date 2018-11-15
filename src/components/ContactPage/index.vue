@@ -18,6 +18,7 @@
   import ContactHeader from './ContactHeader';
 
 
+
   export default {
       data(){
           return {
@@ -82,15 +83,23 @@
       font-size: 3.5rem;
     }
   }
+  @media screen  and (max-width: 767px){
+    h2 {
+      font-size: 2rem;
+      margin-left: 0;
+      line-height: 1.3;
+    }
+    hr {
+      width: 10%;
+      margin-left: 0;
+      height: 0.5vw;
+    }
+  }
   @media screen  and (max-width: 540px){
     .address-item {
       padding: 0;
+      padding-left: 9%;
       margin-top: 10%;
-    }
-    h2{
-      font-size: 2.5rem;
-      line-height: 45px;
-      text-align: center;
     }
     .map-item {
       padding-left: 0;
@@ -98,11 +107,6 @@
         width: 100%;
       }
     }
-    hr {
-      width: 10%;
-      font-size: 1vw;
-    }
-
   }
   @media screen  and (max-width: 320px){
     h2{
@@ -111,13 +115,10 @@
       margin-bottom: 0;
     }
     hr {
-      width: 79.4%;
-      height: 4px;
-      margin-top: 30px;
+      width: 14%;
+      height: 0.5vw;
     }
-    .address-item {
-      padding: 10% 0 0 0%;
-    }
+
     .map-item {
       margin-top: 40px;
       padding-left: 3%;

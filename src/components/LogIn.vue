@@ -43,7 +43,7 @@
         activLogIn(){
           // console.log('-----------Email------------', this.logInEmail);
           // console.log('-----------Pass------------', this.logInPass);
-          console.log('-----------STORE------------', this.$store.state.login.authenticated);
+          // console.log('-----------STORE------------', this.$store.state.login.authenticated);
 
           this.$store.dispatch('login/checkoutLog',{
             email: this.logInEmail,

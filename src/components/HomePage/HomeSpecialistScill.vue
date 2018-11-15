@@ -1,31 +1,62 @@
 <template>
-    <b-container class="wrappHead" fluid>
-        <b-row>
-            <b-col class="text-center">
-                <h2>Diverse specialisten staan voor u klaar</h2>
-                <p>Specialisten al vanaf <b>€27,50</b> per uur</p>
-                <Button
-                        btnClass="btnWhite"
-                        btnText="BEKIJK SPECIALISTEN">
-                </Button>
-            </b-col>
-        </b-row>
-        <b-row class="cellMargin">
-            <HomeCellScill v-for="(cell,index) in cells"
+  <div class="wrappHead">
+      <div class="text-center">
+          <h2>Diverse communicatie specialisten staan voor je klaar</h2>
+          <p>Copywriters al vanaf  <b>€27,50 </b> per uur</p>
+          <Button
+                  btnClass="btnWhite"
+                  btnText="BEKIJK ALLE SPECIALISTEN">
+          </Button>
+      </div>
+      <div class="cellMargin">
+        <HomeCellScill v-for="(cell,index) in cells"
                            :key="Math.random()+index"
                            :src="cell.src"
                            :text="cell.text"
                            :hover="cell.hover">
             </HomeCellScill>
-        </b-row>
-    </b-container>
+        </div>
+      <div class="carousel">
+        <!-- swiper -->
+        <div class="slider-wrap-main">
+          <swiper :options="swiperOption" class="slider-swiper-main">
+            <swiper-slide v-for="(cell,index) in cells" :key="Math.random()+index">
+              <HomeCellScill
+                :src="cell.src"
+                :text="cell.text"
+                :hover="cell.hover">
+              </HomeCellScill>
+            </swiper-slide>
+          </swiper>
+          <div class="swiper-button-prev scill-left" slot="button-prev"></div>
+          <div class="swiper-button-next scill-right" slot="button-next"></div>
+        </div>
+      </div>
+  </div>
 </template>
 <script>
     import Button from '../Button';
     import HomeCellScill from './HomeCellScill';
+    import { swiper, swiperSlide } from 'vue-awesome-swiper'
     export default {
         data(){
             return {
+              swiperOption: {
+                slidesPerView: 2,
+                loop: true,
+                setWrapperSize: true,
+                spaceBetween: 40,
+                breakpoints: {
+                  575: {
+                    slidesPerView: 1,
+                    spaceBetween: 2
+                  },
+                },
+                navigation: {
+                  nextEl: '.scill-right',
+                  prevEl: '.scill-left'
+                }
+              },
                 cells:[
                     {
                         src:'service-image-basic0.png',
@@ -45,7 +76,7 @@
                     {
                         src:'service-image-basic3.png',
                         hover:'service-image-hover3.png',
-                        text:'SEO specialists'
+                        text:'SEA specialists'
                     },
                     {
                         src:'service-image-basic4.png',
@@ -83,13 +114,37 @@
     }
 </script>
 <style scoped lang="scss">
+  .slider-wrap-main {
+    width: 100%;
+  }
+  .slider-swiper-main {
+    width: 90%;
+  }
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+  .swiper-button-prev {
+    width: 45px;
+    height: 85px;
+    left: 80px;
+    background: url("../../assets/icons/arrow-carousel-left.png") no-repeat;
+
+  }
+  .swiper-button-next {
+    width: 45px;
+    height: 85px;
+    right: 80px;
+    background: url("../../assets/icons/arrow-carousel-right.png") no-repeat;
+
+  }
     h2{
         word-break: break-word;
         text-align: center;
         font-size: 3.5vw;
         font-weight: 400;
         line-height: 0.9;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
         color: #00c8d7;
         font-family:GolanoSemi ;
         margin-bottom: 0px;
@@ -106,44 +161,77 @@
         line-height: 1.8;
         letter-spacing: -1px;
     }
-    button{
-        padding: 1.5% 2%;
-        border-width: 5px;
-        margin-top: 1%;
-        font-family: GolanoSemi;
-        font-size: 1.6vw;
-        font-weight: 400;
-    }
     .cellMargin{
-        margin-top: 4%;
-        border: 1px solid #cacaca;
+      margin-top: 4%;
+      display: flex;
+      flex-wrap: wrap;
     }
-
+    .carousel {
+      display: none;
+      margin-top: 10%;
+      justify-content: center;
+    }
+    @media screen and (max-width: 1440px){
+      .btnWhite {
+        width: 40%;
+        font-size: 1.4rem;
+      }
+    }
+    @media screen  and (max-width: 1200px){
+      p {
+        font-size: 1.4rem;
+      }
+      .btnWhite {
+        width: 50%;
+        font-size: 1.2rem;
+      }
+    }
+    @media screen and (max-width: 850px){
+      .btnWhite {
+        font-size: 1.1rem;
+      }
+    }
     @media screen and (max-width: 767px){
+      .wrappHead {
+        padding-left: 9%;
+      }
       h2{
-        text-align: center;
-        font-size: 4rem;
+        text-align: left;
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+        line-height: 1;
       }
       p{
-        font-size: 2rem;
-        text-align: center;
+        font-size: 1.5rem;
+        text-align: left;
       }
       .btnWhite{
         width: 60%;
         padding: 3% 0;
-        font-size: 1.2rem;
+        margin-bottom: 10%;
+      }
+      .text-center {
+        padding: 0;
+        button {
+          margin: 8% 0;
+        }
+      }
+      .row {
+        padding: 0;
+        margin: 0;
+      }
+    }
+    @media screen and (max-width: 690px){
+      .btnWhite {
+        width: 80%;
       }
     }
     @media screen  and (max-width: 670px){
       .wrappHead {
         margin: 10% 0;
       }
-      h2 {
-        font-size: 3rem;
-      }
-      p{
-        font-size: 1.5rem;
-        margin-bottom: 10%;
+      h2{
+        font-size: 2.7rem;
       }
       hr {
         margin: 2rem 0;
@@ -155,68 +243,116 @@
             font-size: 1rem;
         }
     }
+    @media screen and (max-width: 575px){
+      .wrappHead {
+        padding: 0;
+      }
+      h2{
+        padding-left: 9%;
+      }
+      p {
+        padding-left: 9%;
+      }
+      .cellMargin {
+        display: none;
+      }
+      .carousel {
+        display: flex;
+        margin-top: 5%;
+      }
+      .swiper-button-prev {
+        background-size: contain;
+        width: 35px;
+        height: 65px;
+        left: 30px;
+      }
+      .swiper-button-next {
+        background-size: contain;
+        width: 35px;
+        height: 65px;
+        right: 30px;
+      }
+
+
+    }
+    @media screen and (max-width: 540px){
+      .btnWhite {
+        width: 90%;
+      }
+    }
     @media screen  and (max-width: 450px) {
       h2 {
         font-size: 2.5rem;
       }
       p{
         font-size: 1.2rem;
+        margin-top: 5%;
       }
     }
     @media screen and (max-width: 414px){
         .wrappHead {
             padding: 0;
         }
-      h2{
-        font-size: 2.7rem;
-      }
-      p{
-        font-size: 1.7rem;
+      p {
+        margin-top: 5%;
       }
       .btnWhite{
-        width: 70%;
+        width: 80%;
         font-size: 1rem;
+      }
+      .slider-swiper-main {
+        width: 100%;
+      }
+      .swiper-button-prev {
+        left: 0;
+      }
+      .swiper-button-next {
+        right: 0;
+      }
+    }
+    @media screen and (max-width: 380px){
+      .btnWhite {
+        width: 95%;
       }
     }
     @media screen  and (max-width: 360px) {
       h2 {
-        font-size: 2rem;
-        padding: 0 4%;
+        font-size: 2.3rem;
       }
-      p{
-        font-size: 1rem;
+      p {
+        font-size: 1.4rem;
       }
     }
     @media screen and (max-width:320px){
         .btnWhite{
-            width: 90%;
-            font-size: 1rem;
+            width: 100%;
         }
       .text-center {
-        padding: 0 9%;
         h2 {
-          font-size: 9.5vw;
+          font-size: 2rem;
+          text-align: left;
           margin: 0;
-          text-align: center;
         }
         p {
-          font-size: 6.5vw;
+          font-size: 1.5rem;
+          text-align: left;
+          margin-top: 5%;
           margin-bottom: 10%;
           b {
             font-size: 9vw;
           }
         }
       }
-      button {
-        width: 100%;
-        font-size: 5vw;
-        padding: 2% 0;
+      .text-center button {
+        width: 90%;
+        font-size: 1rem;
+        padding: 5% 0;
       }
       .cellMargin {
         margin-top: 10%;
       }
       p {
-        font-size: 8.3vw;
+        font-size: 1.5rem;
         margin: 0 2%;
       }
     }

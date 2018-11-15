@@ -1,17 +1,14 @@
 <template>
   <div class="wrapper">
-
     <div class="main">
       <div class="header">
-        <img
-            v-lazy="require(`../../assets/profile/${img}`)"
-          alt="first">
-        <h3>{{name}}</h3>
+        <img :src="personBg" alt="first" class="logo-img">
+        <h3>{{name}} {{ lastName }}</h3>
         <p>{{text}}</p>
       </div>
       <div class="body">
         <p>
-          {{ textBody }} <span>{{ date }}</span>
+          Beschikbaar vanaf <span>{{ date }}</span>
 
         </p>
       </div>
@@ -38,10 +35,15 @@
 <script>
   import Button from '../Button';
   export default {
+    data() {
+      return {
+        personBg: require(`../../assets/person.png`)
+      }
+    },
     components:{
       Button
     },
-    props:['name','text','img','textBody','date',],
+    props:['name', 'lastName', 'text','img', 'date',],
   }
 </script>
 <style scoped lang="scss">
@@ -58,7 +60,7 @@
     top: 0;
     bottom: 0;
     width: 100%;
-    background: #ffffff99;
+    background: #ffffff45;
     cursor: not-allowed;
   }
   img{
@@ -67,8 +69,14 @@
   }
   .header{
     padding: 4% 8% 0 8%;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border-bottom: 2px solid #d7d7d7;
+    .logo-img {
+      width: 55%;
+      border-radius: 50%;
+    }
   }
   .body{
     text-align: center;
@@ -162,7 +170,7 @@
       padding: 2%;
     }
     h3{
-      font-size: 4vw;
+      font-size: 3vw;
     }
     p{
       font-size: 3vw;
@@ -189,11 +197,16 @@
     }
     .header {
       h3 {
-        font-size: 6vw;
+        font-size: 1.7rem;
       }
       p{
-        font-size: 5vw;
+        font-size: 1.3rem;
       }
+    }
+  }
+  @media screen and (max-width: 490px){
+    .header h3 {
+      font-size: 1.4rem;
     }
   }
   @media screen and (max-width: 440px){

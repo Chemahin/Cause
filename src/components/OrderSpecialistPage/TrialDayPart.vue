@@ -6,13 +6,17 @@
     <hr>
     <div class="time-items">
       <div class="time-group">
-        <p class="time-text" @click="getStartTime('start')">Begintijd</p>
+        <div class="time-group-text">
+          <p class="time-text" @click="getStartTime('start')">Begintijd</p>
+        </div>
         <div class="time-selected">
           <TimePicker class="time-item" v-model="timeStart" :show-meridian="false"></TimePicker>
         </div>
       </div>
       <div class="time-group">
-        <p class="time-text" @click="getStartTime('end')">Eindtijd</p>
+        <div class="time-group-text">
+          <p class="time-text" @click="getStartTime('end')">Eindtijd</p>
+        </div>
         <div class="time-selected">
           <TimePicker class="time-item" v-model="timeEnd" :show-meridian="false"></TimePicker>
         </div>
@@ -22,18 +26,20 @@
     </div>
     <hr>
     <div class="footer">
-
-      <Button
-        btnText="BEVESTIG"
-        btnClass="btnOrangeNav"
-        stylesImg="width:35px">
-      </Button>
-
-      <Button
-        btnText="BEKIJK PROFIEL"
-        btnClass="btnWhite"
-        stylesImg="width:35px">
-      </Button>
+      <div class="btn-wrap" @click="onNextPopUp">
+        <Button
+          btnText="BEVESTIG"
+          btnClass="btnOrangeNav"
+          stylesImg="width:25px">
+        </Button>
+      </div>
+      <div class="btn-wrap">
+        <Button
+          btnText="BEKIJK PROFIEL"
+          btnClass="btnWhite"
+          stylesImg="width:25px">
+        </Button>
+      </div>
     </div>
   </div>
 </template>
@@ -68,12 +74,19 @@
           let tt = String(mi) +':' + String(se) ;
           console.log('---------------end------------', tt)
         }
+      },
+      onNextPopUp(){
+        this.$store.dispatch('specialistPopUp/partPopUpAct', 2);
       }
     }
   }
 </script>
 
 <style scoped lang="scss">
+  .btn-wrap {
+    width: 40%;
+    margin: 0 5%;
+  }
   h2 {
     color: #646464;
     font-family: GolanoSemi;
@@ -88,7 +101,7 @@
   p {
     color: #646464;
     font-family: GolanoRegular;
-    font-size: 30px;
+    font-size: 1.5rem;
     font-weight: 400;
   }
 
@@ -100,7 +113,7 @@
   }
   .calendar-part {
     margin-top: 7%;
-    padding-left: 9%;
+    padding-left: 5%;
     margin-bottom: 62%;
   }
 
@@ -117,19 +130,19 @@
   .time-items {
     display: flex;
     margin: 7% 0;
-    padding: 0 20%;
+    padding: 0 4%;
     width: 100%;
   }
   .time-item {
     border-radius: 10px;
     border: 2px solid #d7d7d7;
-    padding: 4px 10px;
+    padding: 4px 20px;
   }
   .time-selected {
     margin-right: 10%;
   }
   .time-text {
-    margin-right: 4%;
+    margin-right: 2%;
   }
   .footer {
     width: 100%;
@@ -138,19 +151,32 @@
     justify-content: center;
     button{
       font-size: 1.2rem;
-      width: 30%;
-      padding: 2% 0;
-      margin-right: 4%;
+      width: 100%;
+      padding: 5% 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
   @media screen  and (max-width: 1630px){
     .time-items {
-      padding: 0;
       justify-content: center;
     }
     .time-group {
-      width: 30%;
-      margin-right: 2%;
+      width: 50%;
+    }
+  }
+  @media screen  and (max-width: 1550px){
+    .time-items {
+      flex-direction: column;
+      align-items: center;
+    }
+    .time-group {
+      margin-bottom: 5%;
+      width: 70%;
+    }
+    .time-group-text {
+      width: 50%;
     }
   }
   @media screen  and (max-width: 1500px){
@@ -159,46 +185,107 @@
       justify-content: space-around;
     }
   }
+  @media screen  and (max-width: 1320px){
+    .footer {
+      justify-content: space-around;
+    }
+    .btn-wrap {
+      margin: 0;
+    }
+    .footer button {
+      font-size: 1rem;
+    }
+  }
+
   @media screen  and (max-width: 1260px){
     h2 {
       font-size: 2rem;
     }
     p {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
     }
-    .footer button {
-      font-size: 1rem;
+    .btn-wrap {
       width: 40%;
+      margin: 0 1%;
     }
   }
+
   @media screen  and (max-width: 1100px){
-    .time-group {
-      width: 40%;
-    }
     .time-item {
       padding: 0;
     }
   }
-  @media screen  and (max-width: 960px){
-    p {
-      font-size: 1.5rem;
+  @media screen  and (max-width: 1030px){
+    .btn-wrap {
+      width: 47%;
     }
   }
-  @media screen  and (max-width: 460px){
-    h2 {
-      font-size: 1.7rem;
+
+  @media screen  and (max-width: 600px){
+    .footer button {
+      font-size: 1rem;
     }
-    .time-group {
-      flex-direction: column;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1.2rem;
     }
     .footer {
       flex-direction: column;
       align-items: center;
-      button {
-        width: 70%;
-        margin-bottom: 3%;
-        font-size: 1.3rem;
-      }
+    }
+    .btn-wrap {
+      width: 80%;
+      margin-bottom: 5%;
+    }
+  }
+
+  @media screen  and (max-width: 540px){
+    .time-group {
+      width: 90%;
+    }
+  }
+  @media screen  and (max-width: 510px){
+    p {
+      font-size: 1rem;
+    }
+    .time-text {
+      font-size: 1.3rem;
+    }
+  }
+  @media screen  and (max-width: 460px){
+    .active-hour p {
+      font-size: 1.2rem;
+    }
+    .direct-items {
+      padding: 0 2%;
+    }
+
+    .time-group-text {
+      display: flex;
+      align-items: center;
+    }
+  }
+  @media screen  and (max-width: 380px){
+    .hour-items {
+      flex-wrap: wrap;
+    }
+    p {
+      font-size: 1.3rem;
+    }
+    .time-text {
+      font-size: 1.2rem;
+    }
+    .active-hour p {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media screen  and (max-width: 325px){
+    .btn-wrap {
+      width: 85%;
     }
   }
 

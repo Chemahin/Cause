@@ -48,9 +48,6 @@
         font-family: GolanoSemi;
         border-radius: 10px;
         outline:none;
-        &:focus{
-            box-shadow: 0 0 0 2pt #b97700;
-        }
     }
 
     .btnOrangeNav{
@@ -68,7 +65,7 @@
         background: white;
         color: #ff8400;
         border: 3px solid #ff8400;
-        padding: 10px;
+        padding: 13px;
         cursor: pointer;
     }
     .btnWhite:hover {
@@ -81,9 +78,10 @@
       border: 3px solid #ff840024;
     }
     @media screen and (max-width: 1440px) {
-      .btnWhite {
+      .btnWhite, .btnOrangeNav {
         padding: 10px 0;
       }
     }
+
 
 </style>

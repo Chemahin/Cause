@@ -216,14 +216,18 @@
         }
       }
     }
-  @media screen and (max-width: 991px) {
+  @media screen and (max-width: 1200px) {
     li {
-      font-size: 20px;
+      font-size: 1.5rem;
     }
-    /*.first {*/
-      /*margin-left: 0;*/
-      /*text-align: center;*/
-    /*}*/
+    .left ul li {
+      font-size: 1.5rem;
+    }
+    .item-content h2 {
+      font-size: 2rem;
+    }
+  }
+  @media screen and (max-width: 991px) {
     .first hr {
       width: 10%;
       height: 0.5vw;
@@ -232,24 +236,22 @@
   @media screen and (max-width: 767px) {
     li {
       margin-left: 10%;
+      line-height: 1.6;
     }
     .dot {
       top: 16px;
     }
     .first h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
     .item-content h2 {
-      font-size: 2rem;
+      font-size: 1.7rem;
     }
   }
 
   @media screen and (max-width: 720px) {
     .clicked-item {
       margin-bottom: 10%;
-    }
-    .item-content h2 {
-      font-size: 2.3rem;
     }
     .content-title-arrow{
       display: inline-block;
@@ -268,7 +270,6 @@
       line-height: 1.5;
     }
     .first h2 {
-      font-size: 3rem;
       width: 100%;
     }
     .dot {
@@ -279,7 +280,9 @@
   @media screen and (max-width: 530px) {
     .first {
       margin-left: 0;
-      text-align: center;
+      h2 {
+        padding-left: 10%;
+      }
       hr {
         margin-left: 11%;
       }
@@ -306,9 +309,6 @@
       width: 100%;
       margin-left: 0;
       order: 1;
-      h2 {
-        font-size: 1.7rem;
-      }
     }
     .clicked-item {
       padding: 1% 0 0 5%;
@@ -319,18 +319,5 @@
       line-height: 1.5;
     }
   }
-  @media screen and (max-width: 450px) {
-    .item-content h2 {
-      font-size: 1.4rem;
-    }
-    .first h2 {
-      font-size: 2.5rem;
-    }
-  }
 
-  @media screen and (max-width: 370px) {
-    .item-content h2 {
-      font-size: 1.2rem;
-    }
-  }
 </style>

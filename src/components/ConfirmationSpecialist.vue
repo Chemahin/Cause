@@ -1,6 +1,5 @@
 <template>
   <div class="wrapp">
-    <span class="form-close"><img v-lazy="mysrc1" alt="close" @click="closeForm"></span>
     <div class="img">
       <img
           v-lazy="require(`../assets/profile/${img}`)"
@@ -56,7 +55,7 @@
     <div class="btnCustom">
       <Button btnText="BEVESTIG"
               btnClass="btnOrangeNav"
-              v-on:click-login="activContactForm()"
+              @click-login="activContactForm()"
               :disabled="((companyName && contactName && contactEmail && contactPhone && contactAddress && contactPostcode
               && contactKvkAddress) === '') || !checked"></Button>
     </div>
@@ -69,10 +68,7 @@
   import Button from './Button';
 
   export default {
-    props: ['name', 'img'],
-    components: {
-      Button,
-    },
+
     data(){
       return {
           mysrc1:require(`../assets/icons/close.png`),
@@ -97,10 +93,11 @@
         },
       }
     },
+    props: ['name', 'img'],
+    components: {
+      Button,
+    },
     methods: {
-      closeForm() {
-        this.$emit('closed-form');
-      },
       activContactForm(){
 
         const patternEmail =/.+@.+\..+/i;
@@ -164,6 +161,16 @@
         };
 
         if (Object.keys(this.valid).length === 7) {
+          this.$store.dispatch('specialistPopUp/specialistFormSend',{
+            name: this.contactName,
+            contact_person: this.companyName,
+            email: this.contactEmail,
+            phone: this.contactPhone,
+            address: this.contactAddress,
+            postal_location: this.contactPostcode,
+            kvk: this.contactKvkAddress,
+          });
+          this.$store.dispatch('specialistPopUp/partPopUpAct', 3);
           this.contactName = '';
           this.contactEmail = '';
           this.contactPhone = '';
@@ -181,11 +188,10 @@
 <style scoped lang="scss">
   .wrapp {
     background: white;
-    width: 55%;
+    width: 100%;
     text-align: center;
     padding-top: 2%;
     position: relative;
-    margin-bottom: 10%;
     padding-bottom: 5%;
   }
   .confirmation {
@@ -246,9 +252,8 @@
     user-select: none;
     color: #646464;
     font-family: GolanoRegular;
-    font-size: 25px;
+    font-size: 1.5rem;
     font-weight: 400;
-    line-height: 60px;
   }
 
   /* Hide the browser's default checkbox */
@@ -305,13 +310,13 @@
 
   }
   .container p {
-    margin-left: -37%;
+    margin-left: 0;
   }
   .input-item-wrapp {
     width: 95%;
   }
   .input-class {
-    margin-bottom: 7%;
+    margin-bottom: 1%;
     text-align: left;
   }
   .inputDark{
@@ -368,6 +373,12 @@
       margin-left: -10%;
     }
   }
+  @media screen  and (max-width: 1530px){
+    .container p {
+      margin-left: 1%;
+      font-size: 1.3rem;
+    }
+  }
   @media screen  and (max-width: 1355px){
     .container p {
       margin-left: 0;
@@ -381,19 +392,26 @@
   }
   @media screen  and (max-width: 880px){
     .confirmation h2 {
-      font-size: 1.7rem;
+      font-size: 1.5rem;
     }
     .confirmation span {
-      font-size: 1.9rem;
+      font-size: 1.6rem;
     }
     .confirmation p {
-      font-size: 1.7rem;
+      font-size: 1.5rem;
     }
     .inputDark {
       font-size: 1.5rem;
     }
     .btnCustom button {
       font-size: 1.3rem;
+    }
+    .container p {
+      font-size: 1.2rem;
+      margin-left: 7%;
+    }
+    .img img {
+      width: 50%;
     }
   }
   @media screen  and (max-width: 620px){
@@ -405,9 +423,24 @@
       padding: 7% 0 0 6%;
     }
   }
+  @media screen  and (max-width: 535px){
+    .container p {
+      font-size: 1.1rem;
+      margin-left: 10%;
+    }
+  }
+  @media screen  and (max-width: 415px){
+    .container p {
+      font-size: 1rem;
+      margin-left: 15%;
+    }
+    .btnCustom button {
+      width: 90%;
+    }
+  }
   @media screen  and (max-width: 340px){
     .container p {
-      margin-left: 10%;
+      margin-left: 16%;
     }
     .confirmation h2 {
       font-size: 1.5rem;

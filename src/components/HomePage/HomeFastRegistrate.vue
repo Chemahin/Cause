@@ -34,7 +34,7 @@
                 <p>020 26 11 813</p>
                 <ul>
 
-                    <li><router-link to="/registrationSpecialist" @click="onScroll">Vacatures</router-link></li>
+                    <li><router-link to="/" @click="onScroll">Vacatures</router-link></li>
                     <li><router-link to="/onsWerk" @click="onScroll">Ons werk</router-link></li>
                     <li><router-link to="/onsVerhaal" @click="onScroll">Ons verhaal</router-link></li>
                     <li><router-link to="/contact" @click="onScroll">Contact</router-link></li>
@@ -137,6 +137,7 @@
     }
     .backgroundImage{
         padding: 6% 5% 6% 9.5%;
+      margin-top: 5%;
         background-image: url("../../assets/homepage/footer-background.png");
         background-repeat:no-repeat;
         background-size:cover;
@@ -156,7 +157,7 @@
             padding: 2% 9%;
             background: transparent;
             border-radius: 10px;
-            border: 5px solid white;
+            border: 3px solid white;
             color: white;
             font-family: GolanoSemi;
             font-size: 1.55vw;
@@ -167,7 +168,7 @@
         button[disabled] {
           cursor: not-allowed;
           background: #f3f3f396;
-          border: 5px solid #ffffff70;
+          border: 3px solid #ffffff70;
         }
     }
     .div-form button:not([disabled]):hover {
@@ -244,6 +245,7 @@
       .main {
         margin: 0;
         padding: 0;
+
       }
       .backgroundImage {
         padding: 0;
@@ -252,15 +254,16 @@
       }
       h2 {
         padding-right: 0px;
-        font-size: 8vw;
-        text-align: center;
+        font-size: 2rem;
+        text-align: left;
         padding-top: 10%;
       }
       .div-form input {
         font-size: 1.5rem;
       }
       .div-form button{
-        font-size: 1.3rem;
+        width: 80%;
+        font-size: 1rem;
         margin: 10% auto;
       }
       p {

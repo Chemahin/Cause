@@ -1,6 +1,5 @@
 <template>
   <div class="wrapp">
-    <span class="form-close"><img v-lazy="mysrc" alt="close"></span>
     <div class="img">
       <img
           v-lazy="require(`../assets/profile/${img}`)"
@@ -65,11 +64,10 @@
 <style scoped lang="scss">
   .wrapp {
     background: white;
-    width: 55%;
+    width: 100%;
     text-align: center;
     padding-top: 2%;
     position: relative;
-    margin-bottom: 10%;
 
   }
   .confirmation {
@@ -133,17 +131,15 @@
     }
   }
   .btn {
-    width: 100%;
+    width: 70%;
     margin-top: 3%;
     margin-bottom: 7%;
     button {
-      width: 43%;
+      width: 100%;
       font-size: 1.5rem;
       font-weight: 400;
-      line-height: 60.72px;
-      letter-spacing: 1px;
       text-transform: uppercase;
-      padding: 8px;
+      padding: 5% 0;
       img {
         width: 7%;
       }
@@ -157,35 +153,33 @@
       cursor: pointer;
     }
   }
-  @media screen  and (max-width: 1400px){
-    .btn button {
-      width: 55%;
-      font-size: 1.2rem;
+  @media screen  and (max-width: 1400px) {
+    .btn {
+      width: 80%;
+      button {
+        font-size: 1.2rem;
+      }
     }
   }
   @media screen  and (max-width: 930px){
-    .btn button {
-      width: 60%;
-      font-size: 1.2rem;
-    }
     .confirmation h2 {
       font-size: 1.7rem;
       line-height: 1;
     }
     .confirmation span {
-      font-size: 2rem;
+      font-size: 1.6rem;
     }
     .information-item p {
       line-height: 1.5;
     }
     .information-item h2 {
-      font-size: 2rem;
+      font-size: 1.7rem;
     }
     img {
       width: 20%;
     }
     .gratitude h2 {
-      font-size: 2rem;
+      font-size: 1.7rem;
     }
     .img img {
       width: 45%;
@@ -195,25 +189,20 @@
       width: 20%;
     }
   }
-  @media screen  and (max-width: 830px){
-    .btn button {
-      width: 85%;
-      padding: 1%;
-    }
 
-  }
-  @media screen  and (max-width: 690px){
-    .wrapp {
+  @media screen  and (max-width: 600px){
+    .btn {
       width: 100%;
     }
-    .btn button {
-      width: 60%;
-    }
-
   }
-  @media screen  and (max-width: 460px){
-    .btn button {
-      width: 93%;
+  @media screen  and (max-width: 600px){
+    .btn button{
+      font-size: 1rem;
+    }
+  }
+  @media screen  and (max-width: 600px){
+    .btn button{
+      font-size: 1rem;
     }
   }
 

@@ -9,7 +9,6 @@
         <HomeWerktHet></HomeWerktHet>
         <HomeOurClients></HomeOurClients>
         <HomeFastRegistrate></HomeFastRegistrate>
-        <HomeFooter></HomeFooter>
     </div>
 </template>
 <script>
@@ -22,7 +21,6 @@
     import HomeWerktHet from './HomeWerktHet';
     import HomeOurClients from './HomeOurClients';
     import HomeFastRegistrate from './HomeFastRegistrate';
-    import HomeFooter from './HomeFooter';
     export default {
         components:{
             HomeHeader,
@@ -34,16 +32,16 @@
             HomeWerktHet,
             HomeOurClients,
             HomeFastRegistrate,
-            HomeFooter
+
         }
     }
 </script>
 <style lang="scss">
-  html, body {
-    overflow-x: hidden;
-  }
-  @media screen and (max-width:320px) {
 
+  @media screen and (max-width:320px) {
+    body {
+      overflow-x: hidden;
+    }
     .row {
       margin: 0;
     }

@@ -3,35 +3,30 @@
       <div class="benefits-item">
         <img v-lazy="mysrc1" alt="image">
         <h2>Werken wanneer het jou uitkomt</h2>
-        <p>Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit,
-          sed do eiusmod tempor inci
-          didunt ut labore et dolore
-          magna aliqua ut enim.</p>
+        <p>
+          Je kunt zelf aangeven wanneer je wel en niet kunt werken. Zo blijf je de baas over je eigen agenda en behoud je je flexibiliteit.
+        </p>
       </div>
       <div class="benefits-item">
         <img v-lazy="mysrc2" alt="image" class="img-money">
-        <h2>Verdien tot €75.000 per jaar</h2>
-        <p>Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit,
-          sed do eiusmod tempor inci
-          didunt ut labore et dolore
-          magna aliqua ut enim.</p>
+        <h2>Verdien tot 75.000 euro per jaar</h2>
+        <p>
+          Causeffect doet alle onderhandelingen met de opdrachtgever. Zo weet jij altijd waar je aan toe bent en hoef je je niet druk te maken over salarisonderhandelingen en dergelijke. Wij houden het transparant.
+        </p>
       </div>
       <div class="benefits-item">
         <img v-lazy="mysrc3" alt="image" class="img-bag">
-        <h2>Geen opdrachten, geen probleem</h2>
-        <p>Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit,
-          sed do eiusmod tempor inci
-          didunt ut labore et dolore
-          magna aliqua ut enim.</p>
+        <h2>Geen gedoe met papierwerk</h2>
+        <p>
+          Nooit meer stress van zoeken naar een nieuwe job. Je volgende opdracht staat al klaar!
+        </p>
       </div>
 
     </div>
 </template>
 
 <script>
+
     export default {
         data(){
             return {
@@ -46,8 +41,8 @@
 <style scoped lang="scss">
   .benefits-main {
     display: flex;
+    justify-content: center;
     width: 100%;
-    margin-left: 19%;
     margin-top: 15%;
 
   }
@@ -102,10 +97,10 @@
   @media screen and (max-width: 1690px){
     .benefits-item{
       h2 {
-        font-size: 25px;
+        font-size: 2rem;
       }
       p {
-        font-size: 18px;
+        font-size: 1.5rem;
         line-height: 30px;
       }
       .img-bag {

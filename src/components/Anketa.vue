@@ -2,60 +2,87 @@
     <div class="wrapper">
         <div class="main">
             <div class="header">
-                <img
-                    :src="require(`../assets/profile/${img}`)"
-                    alt="first">
-                <h3>{{name}}</h3>
-                <p>{{text}}</p>
+                <img :src=" img || personBg" alt="first">
+                <h3>{{name || '...'}} {{ lastName  || '...' }}</h3>
+                <p>{{text || '...'}}</p>
             </div>
             <div class="body">
                 <img
-                        v-if="type==='stars'"
-                        v-for="star in stars"
-                        :key="Math.random()+star"
-                        :src="mysrc1"
-                        alt="star">
+                  v-if="type==='stars'"
+                  v-for="star in stars"
+                  :key="Math.random()+star"
+                  :src="mysrc1"
+                  alt="star">
               <p v-if="type==='text'">
-                {{ textBody }} <span>{{ date }}</span>
+                {{ textBody || '...' }} <span>{{ date || '...' }}</span>
 
               </p>
             </div>
             <div class="footer">
-
-                <Button
-
-                        v-if="type == 'stars' || type == 'text'"
-                        btnText="VRAAG AAN"
-                        btnClass="btnOrangeNav"
-                        stylesImg="width:15px">
-                </Button>
-
+              <div class="btn-wrap" @click="onOpenPopUp">
                 <Button
                   v-if="type == 'stars' || type == 'text'"
-                        btnText="BEKIJK PROFIEL"
-                        btnClass="btnWhite"
-                        stylesImg="width:15px">
+                  btnText="VRAAG AAN"
+                  btnClass="btnOrangeNav"
+                  stylesImg="width:15px">
                 </Button>
+              </div>
+              <div class="btn-wrap" @click="ss">
 
+                  <Button
+                    v-if="type == 'stars' || type == 'text'"
+                    btnText="BEKIJK PROFIEL"
+                    btnClass="btnWhite"
+                    stylesImg="width:15px">
+                  </Button>
+
+              </div>
             </div>
         </div>
+
     </div>
 </template>
 <script>
     import Button from './Button';
     export default {
-        data(){
-            return {
-                mysrc1:require(`../assets/icons/star-active.png`),
-            }
+      props: {
+        name: String,
+        lastName: String,
+        text: String,
+        type: String,
+        img: String,
+        textBody: String,
+        date: String,
+        stars: Number,
+        specialistId: Number,
+      },
+      data(){
+          return {
+            clickedPopUp: false,
+            mysrc1:require(`../assets/icons/star-active.png`),
+            personBg: require(`../assets/person.png`)
+          }
+      },
+      methods: {
+        onOpenPopUp(){
+          this.$store.dispatch('specialistPopUp/statePopUpAct', true);
+          this.$store.dispatch('specialistList/selecteSpecialist', this.specialistId);
+          const elBody = document.getElementsByTagName('body')[0];
+          elBody.style.overflow= 'hidden';
         },
-        components:{
-            Button
-        },
-        props:['name','text','type','img','stars', 'textBody', 'date'],
+        ss(){
+          this.$store.dispatch('specialistList/selecteSpecialist', this.specialistId);
+          this.$router.push({ path:'onsWerk' });
+        }
+      },
+      components:{
+        Button,
+      },
+
     }
 </script>
 <style scoped lang="scss">
+
     .wrapper{
         padding: 0 7.5px;
     }
@@ -67,12 +94,19 @@
         display: inline-block;
     }
     .header{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
         padding: 4% 8% 0 8%;
-        text-align: center;
         border-bottom: 2px solid #d7d7d7;
+      img {
+        width: 55%;
+        border-radius: 50%;
+      }
     }
     .body{
-        text-align: center;
+      display: flex;
+      justify-content: center;
         border-bottom: 2px solid #d7d7d7;
         padding: 6% 0px;
       p {
@@ -88,9 +122,9 @@
     }
     .footer{
       width: 100%;
-        padding: 7% 0px;
-        display: flex;
-        justify-content: center;
+      padding: 7% 0px;
+      display: flex;
+      justify-content: space-around;
     }
     h3{
         font-size: 2vw;
@@ -107,15 +141,15 @@
         font-weight: 400;
         line-height: 1.5;
     }
-    button{
+    .btn-wrap {
       width: 45%;
+    }
+    button{
+      width: 100%;
       padding: 1% 7%;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-right: 3%;
-      margin-left: 4%;
-
 
     }
     @media screen and (max-width: 1780px) {
@@ -129,6 +163,7 @@
             font-size: 0.8rem;
         }
     }
+
     @media screen and (max-width: 1430px) {
         button{
             font-size: 0.7rem;
@@ -137,14 +172,18 @@
     @media screen and (max-width: 1300px) {
       .footer {
         flex-direction: column;
-        button {
-          width: 92%;
+        align-items: center;
+        .btn-wrap {
+          width: 90%;
           margin-bottom: 3%;
+
+        }
+        button {
+          width: 100%;
           padding: 3% 0;
         }
       }
     }
-
     @media screen and (max-width: 1320px) {
         button{
             font-size: 0.67rem;
@@ -183,12 +222,8 @@
             font-size: 1.1rem;
         }
     }
-    @media screen and (max-width: 780px) {
-        .footer button{
-            font-size: 1rem;
-        }
-    }
-    @media screen and (max-width: 637px) {
+
+    @media screen and (max-width: 640px) {
         .wrapper{
             margin-bottom: 5%;
         }
@@ -196,22 +231,17 @@
           padding: 2%;
         }
         h3{
-            font-size: 4vw;
+            font-size: 3vw;
         }
         p{
             font-size: 3vw;
         }
-      .footer {
-        flex-direction: column;
-      }
+
         .footer button{
-          font-size: 1.5vw;
+          font-size: 1rem;
           border-radius: 5px;
           border-width: 2px;
           padding: 10px 5px;
-          width: 92%;
-          font-size: 15px;
-          margin-bottom: 3%;
             img{
                 width: 50% !important;
             }
@@ -220,14 +250,23 @@
     @media screen and (max-width: 575px){
       .wrapper{
         padding: 0 10%;
+        width: 100%;
       }
       .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         h3 {
-          font-size: 6vw;
+          font-size: 1.7rem;
         }
         p{
-          font-size: 5vw;
+          font-size: 1.3rem;
         }
+      }
+    }
+    @media screen and (max-width: 490px){
+      .header h3 {
+        font-size: 1.4rem;
       }
     }
     @media screen and (max-width: 440px){

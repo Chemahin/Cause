@@ -1,12 +1,12 @@
 <template>
-    <b-col md="4" sm="6" cols="12" class="cellScill"
+    <div class="cellScill"
          @mouseenter="isHover = ! isHover"
          @mouseleave="isHover = ! isHover">
-        <img v-lazy="isHover ? hoverImg : mysrc"
+        <img :src="isHover ? hoverImg : mysrc"
              :alt="text">
         <hr>
         <p>{{text}}</p>
-    </b-col>
+    </div>
 </template>
 <script>
     export default {
@@ -35,9 +35,10 @@
         img{
             max-width: 100%;
         }
-        padding-top: 2%;
-        border: 1px solid #cacaca;
-        text-align: center;
+      width: 33.3%;
+      padding-top: 2%;
+      border: 1px solid #cacaca;
+      text-align: center;
         &:hover{
             hr{
                 border-color: white;
@@ -63,20 +64,25 @@
         line-height: 1.5;
         margin-bottom: 6%;
     }
-    @media screen and (max-width: 767px){
-        p{
-          font-size: 2rem;
-        }
-        .cellScill img{
-            max-width: 40%;
-        }
-        .cellScill:last-child{
-            display: none;
-        }
-    }
-    @media screen  and (max-width: 670px){
+    @media screen  and (max-width: 1200px){
       p {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+      }
+    }
+    @media screen and (max-width: 790px){
+      p{
+        font-size: 1.2rem;
+      }
+    }
+    @media screen and (max-width: 767px){
+      .cellScill img{
+          max-width: 40%;
+      }
+    }
+    @media screen and (max-width: 575px){
+      .cellScill {
+        width: 70%;
+        padding: 5% 0;
       }
     }
     @media screen  and (max-width: 450px) {
@@ -87,18 +93,18 @@
         font-size: 1.2rem;
       }
     }
+    @media screen and (max-width: 414px){
+      .cellScill {
+        width: 100%;
+      }
+    }
     @media screen  and (max-width: 360px) {
       h2 {
         font-size: 2rem;
       }
       p{
-        font-size: 1rem;
+        font-size: 1.5rem;
       }
     }
-    @media screen and (max-width: 320px){
-      .cellScill {
-        padding: 0 2%;
-      }
 
-    }
 </style>

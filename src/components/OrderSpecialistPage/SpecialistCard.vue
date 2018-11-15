@@ -1,28 +1,24 @@
 <template>
     <div>
       <div class="order-left">
-        <span class="form-close"><img v-lazy="mysrc1" alt="close" @click="closeForm"></span>
         <div class="left-up">
           <div class="up-left">
-            <img v-lazy="mysrc2" alt="photo">
+            <img v-lazy="mysrc2 || selecteSpecialist.user_image" alt="photo">
           </div>
           <div class="up-right">
             <div class="wrap-item">
               <div class="name-first">
-                <p>Lionel</p>
+                <p> {{ selecteSpecialist.firstname }} {{ selecteSpecialist.lastname }}</p>
               </div>
               <div class="name-last">
                 <p><span>€30,- </span> per uur</p>
               </div>
             </div>
             <div class="specialty">
-              <p>Grafisch vormgever</p>
+              <p> {{ selecteSpecialist.role_name }}</p>
               <div class="rating-stars">
-                <img v-lazy="mysrc3" alt="">
-                <img v-lazy="mysrc3" alt="">
-                <img v-lazy="mysrc3" alt="">
-                <img v-lazy="mysrc3" alt="">
-                <img v-lazy="mysrc3" alt="">
+                <img v-for="n in calcRating(selecteSpecialist.rating) || 1" :key="n + Math.random()" :src="mysrc3" alt="star">
+
               </div>
             </div>
             <hr>
@@ -31,7 +27,7 @@
                 <p><span>Beschikbaar</span> 30 uur p/w</p>
               </div>
               <div class="availability-last">
-                <p> <span>Rating</span>  8/10</p>
+                <p> <span>Rating</span>  {{ selecteSpecialist.rating }}/10 </p>
               </div>
             </div>
             <div class="point-items">
@@ -47,19 +43,28 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
     export default {
         data(){
             return {
                 mysrc1:require(`../../assets/icons/close.png`),
-                mysrc2:require(`../../assets/profile/photo2.png`),
+                mysrc2:require(`../../assets/person.png`),
                 mysrc3:require(`../../assets/icons/star-active.png`),
             }
         },
       methods: {
-        closeForm() {
-          this.$emit('closed-form');
-        },
-      }
+        calcRating(num){
+          let quantity = 1;
+          (num == 0 || num == 1) ? quantity : quantity = Math.floor(num/2);
+          return quantity;
+        }
+      },
+      computed: {
+        ...mapGetters({
+          selecteSpecialist: 'specialistList/getSelecteSpecialist',
+        }),
+      },
+
     }
 </script>
 
@@ -77,9 +82,13 @@
     display: flex;
   }
   .up-left {
-    width: 29%;
-    text-align: center;
+    width: 30%;
     padding-top: 3%;
+    text-align: center;
+    img {
+      width: 85%;
+      border-radius: 50%;
+    }
   }
   .up-right {
     width: 67%;
@@ -103,10 +112,9 @@
     margin-top: 10%;
     p {
       font-family: GolanoSemi;
-      font-size: 2.2vw;
+      font-size: 1.8rem;
       font-weight: 600;
       margin-bottom: 0;
-      width: 25%;
       line-height: 35px;
     }
   }
@@ -115,7 +123,7 @@
     display: flex;
     justify-content: flex-end;
     p{
-      font-size: 25px;
+      font-size: 1.5rem;
       line-height: 35px;
       color: #646464;
       margin-bottom: 0;
@@ -131,7 +139,7 @@
     justify-content: space-between;
     width: 100%;
     p{
-      font-size: 27px;
+      font-size: 1.5rem;
       line-height: 20px;
       color: #646464;
       margin-top: 1px;
@@ -139,7 +147,7 @@
     }
   }
   .rating-stars {
-    width: 23%;
+    width: 34%;
     img {
       width: 15%;
     }
@@ -152,7 +160,7 @@
     display: flex;
     width: 70%;
     p {
-      font-size: 24px;
+      font-size: 1.5rem;
       line-height: 35px;
       color: #646464;
       margin-top: 1px;
@@ -207,14 +215,7 @@
     width: 93%;
     margin-top: 3%;
   }
-  .form-close{
-    position: absolute;
-    right: 25px;
-    top: 25px;;
-    img {
-      cursor: pointer;
-    }
-  }
+
   @media screen  and (max-width: 1410px){
     .left-up {
       flex-direction: column;
@@ -222,6 +223,9 @@
     }
     .up-left {
       width: 100%;
+      img {
+        width: 40%;
+      }
     }
     .up-right {
       width: 100%;
@@ -249,7 +253,30 @@
       justify-content: flex-end;
     }
   }
-  @media screen  and (max-width: 520px){
+  @media screen  and (max-width: 680px){
+    .wrap-item, .specialty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 5%;
+    }
+    .name-first, .name-last {
+      justify-content: center;
+      width: 100%;
+    }
+    .availability-first {
+      width: 100%;
+      text-align: center;
+    }
+    .availability-last {
+      width: 100%;
+      justify-content: center;
+      p {
+        margin-left: 0;
+      }
+    }
+  }
+  @media screen  and (max-width: 530px){
     .name-last {
       display: none;
     }
@@ -273,13 +300,46 @@
     }
     .availability-first {
       width: 100%;
+      p {
+        font-size: 1.3rem;
+      }
     }
     .availability-last {
       width: 100%;
       justify-content: center;
       p {
         margin: 0;
+        font-size: 1.3rem;
       }
+    }
+    .up-left img {
+      width: 50%;
+    }
+  }
+  @media screen  and (max-width: 390px){
+    .availability-first {
+      p {
+        font-size: 1.1rem;
+      }
+      span {
+        margin-right: 1%;
+      }
+    }
+    .availability-last {
+      p {
+        font-size: 1.1rem;
+      }
+    }
+    .point-items {
+      justify-content: space-around;
+    }
+    .point {
+      width: 45px;
+      height: 45px;
+      font-size: 1rem;
+    }
+    .rating-stars img {
+      width: 12%;
     }
   }
 </style>

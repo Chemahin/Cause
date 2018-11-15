@@ -3,25 +3,25 @@
     <div class="main">
       <div class="header">
         <img src="../../assets/tape.png" alt="tape" class="tape">
-        <img
-            v-lazy="require(`../../assets/profile/${img}`)"
-          alt="first">
+        <img :src="personBg" alt="first" class="logo-img">
         <h3>{{name}}</h3>
         <p>{{text}}</p>
       </div>
-      <div class="body">
+      <div class="body-items">
         <img
           v-for="star in stars"
           :key="Math.random()+star"
-          v-lazy="mysrc1"
+          :src="mysrc1"
           alt="star">
       </div>
       <div class="footer">
-        <Button
-          btnText="VRAAG AAN"
-          btnClass="btnOrangeNav"
-          stylesImg="width:15px">
-        </Button>
+
+          <Button
+            btnText="VRAAG AAN"
+            btnClass="btnOrangeNav"
+            stylesImg="width:15px">
+          </Button>
+
         <Button
           btnText="BEKIJK PROFIEL"
           btnClass="btnWhite"
@@ -30,6 +30,7 @@
       </div>
     </div>
     <div class="wrapp-disabled"></div>
+
   </div>
 </template>
 <script>
@@ -39,10 +40,12 @@
       data(){
           return {
               mysrc1: require(`../../assets/icons/star-active.png`),
+            personBg: require(`../../assets/person.png`)
           }
       },
     components:{
-      Button
+      Button,
+
     },
     props:['name','text','img','stars'],
   }
@@ -50,29 +53,37 @@
 <style scoped lang="scss">
   .wrapper{
     padding: 0 7.5px;
+    position: relative;
   }
   div.main{
     border: 2px solid #d7d7d7;
   }
   img{
     max-width: 100%;
-    display: inline-block;
   }
   .header{
     padding: 4% 8% 0 8%;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border-bottom: 2px solid #d7d7d7;
     position: relative;
+    .logo-img {
+      width: 55%;
+      border-radius: 50%;
+    }
   }
   .tape {
+    width: 65%;
     position: absolute;
     top: 0;
     right: 0;
     z-index: 300;
   }
 
-  .body{
-    text-align: center;
+  .body-items{
+    display: flex;
+    justify-content: center;
     border-bottom: 2px solid #d7d7d7;
     padding: 6% 0px;
     p {
@@ -84,6 +95,7 @@
       span {
         font-family: GolanoSemi;
       }
+
     }
   }
   .footer{
@@ -123,7 +135,7 @@
     top: 0;
     bottom: 0;
     width: 100%;
-    background: #ffffff99;
+    background: #ffffff45;
     cursor: not-allowed;
   }
   @media screen and (max-width: 1780px) {
@@ -168,7 +180,7 @@
       padding: 2%;
     }
     h3{
-      font-size: 4vw;
+      font-size: 3vw;
     }
     p{
       font-size: 3vw;

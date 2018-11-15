@@ -1,7 +1,7 @@
 <template>
     <div>
       <b-card  class="card-wrapp">
-        <span @click="closeForm" class="form-close"><img v-lazy="mysrc1" alt="close"></span>
+        <!--<span @click="closeForm" class="form-close"><img v-lazy="mysrc1" alt="close"></span>-->
         <p class="card-text item-title">Neem contact met ons op!</p>
         <hr>
         <div class="div-form">
@@ -60,11 +60,8 @@
       Button
     },
     methods: {
-      closeForm() {
-        this.$emit('closed-form');
-      },
+
       activContactForm(){
-        console.log('--------activ------------');
         const patternEmail =/.+@.+\..+/i;
         const patternPhone = /^\d+$/;
 
@@ -232,6 +229,9 @@
   @media screen  and (max-width: 767px){
     .card-wrapp {
       margin-top: 10%;
+    }
+    .item-title {
+      font-size: 3rem;
     }
   }
   @media screen  and (max-width: 540px){

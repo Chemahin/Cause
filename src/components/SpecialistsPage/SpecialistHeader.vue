@@ -192,8 +192,7 @@
       width: 100%;
       margin-left: 0;
       h2 {
-        text-align: center;
-        font-size: 4rem;
+        font-size: 2rem;
       }
       hr {
         width: 13.6%;
@@ -218,7 +217,6 @@
       width: 100%;
       margin-left: 0;
       padding: 0 9%;
-      text-align: center;
     }
     .wrappHead {
       padding: 0;

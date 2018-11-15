@@ -1,14 +1,16 @@
 <template>
     <div class="wrapp">
+
       <div class="left-part">
         <div class="up">
           <div class="up-left">
-            <img v-lazy="mysrc1" alt="photo">
+            <img v-lazy="selecteSpecialist.user_image || mysrc1 " alt="photo">
           </div>
           <div class="up-right">
             <div class="wrap-item">
               <div class="name-first">
-                <p>Lionel</p>
+
+                <p>{{ selecteSpecialist.firstname }} {{ selecteSpecialist.lastname }}</p>
                 <span>In-house</span>
                 <span>Remote</span>
               </div>
@@ -17,13 +19,9 @@
               </div>
             </div>
             <div class="specialty">
-              <p>Grafisch vormgever</p>
+              <p>{{ selecteSpecialist.role_name }}</p>
               <div class="rating-stars">
-                <img v-lazy="mysrc2" alt="rating">
-                <img v-lazy="mysrc2" alt="rating">
-                <img v-lazy="mysrc2" alt="rating">
-                <img v-lazy="mysrc2" alt="rating">
-                <img v-lazy="mysrc2" alt="rating">
+                <img v-for="n in calcRating(selecteSpecialist.rating) || 1" :key="n + Math.random()" :src="mysrc2" alt="star">
               </div>
             </div>
             <hr>
@@ -37,10 +35,10 @@
 
               </div>
                 <div class="availability-last">
-                  <p> <span>Rating</span>  8/10</p>
+                  <p> <span>Rating</span>  {{ selecteSpecialist.rating }}/10</p>
                 </div>
             </div>
-            <div class="btnCustom">
+            <div class="btnCustom" @click="onOpenPopUp">
 
                 <Button btnText="VRAAG DEZE SPECIALIST AAN"
                         btnClass="btnOrangeNav">
@@ -75,13 +73,14 @@
 
 <script>
   import Button from '../Button';
+  import { mapGetters } from 'vuex';
     export default {
         components: {
           Button
         },
       data() {
           return {
-              mysrc1:require(`../../assets/profile/photo2.png`),
+              mysrc1:require(`../../assets/person.png`),
               mysrc2:require(`../../assets/icons/star-active.png`),
               skillList: [
                 'Photoshop',
@@ -102,7 +101,25 @@
 
               ]
           }
-      }
+      },
+      methods: {
+        calcRating(num){
+          let quantity = 1;
+          (num == 0 || num == 1) ? quantity : quantity = Math.floor(num/2);
+          return quantity;
+        },
+        onOpenPopUp(){
+          this.$store.dispatch('specialistPopUp/statePopUpAct', true);
+          this.$store.dispatch('specialistList/selecteSpecialist', this.specialistId);
+          const elBody = document.getElementsByTagName('body')[0];
+          elBody.style.overflow= 'hidden';
+        },
+      },
+      computed: {
+        ...mapGetters({
+          selecteSpecialist: 'specialistList/getSelecteSpecialist',
+        }),
+      },
 
     }
 </script>
@@ -142,6 +159,10 @@
     width: 29%;
     text-align: center;
     padding-top: 3%;
+    img {
+      width: 85%;
+      border-radius: 50%;
+    }
   }
   .up-right {
     width: 70%;
@@ -168,7 +189,7 @@
       font-size: 2.2vw;
       font-weight: 600;
       margin-bottom: 0;
-      width: 25%;
+      width: 50%;
       line-height: 35px;
     }
     span {
@@ -341,6 +362,7 @@
   }
   .mbo-items {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     margin-top: 4%;
     margin-bottom: 35%;
@@ -349,9 +371,8 @@
     margin-top: 27%;
   }
   .mbo-item {
-    width: 28%;
-    margin-right: 5%;
-    padding: 13% 0;
+    margin-right: 2%;
+    padding: 2%;
     border-radius: 5px;
     border: 1px solid #d7d7d7;
     color: #484755;
@@ -413,6 +434,9 @@
     .up * {
       font-size: 1.5rem;
     }
+    .name-first p {
+      width: 100%;
+    }
     .point {
       width: 45px;
       height: 45px;
@@ -460,6 +484,8 @@
     }
     .specialty {
       width: 100%;
+      display: flex;
+      align-items: center;
       p {
         width: 60%;
       }
@@ -468,7 +494,7 @@
       }
     }
   }
-  @media screen and (max-width: 720px){
+    @media screen and (max-width: 720px){
     hr {
       width: 100%;
     }
@@ -513,11 +539,21 @@
     .skills-item {
       width: 49%;
     }
+      .name-first {
+        width: 100%;
+        text-align: center;
+      }
     .specialty p {
       width: 50%;
     }
     .specialty .rating-stars {
       width: 45%;
+    }
+    .rating-stars {
+      text-align: right;
+      img {
+        width: 11%;
+      }
     }
     .mbo-item {
       font-size: 20px;
@@ -537,6 +573,17 @@
     .mbo-item {
       width: 23%;
       font-size: 17px;
+    }
+    .specialty {
+      flex-direction: column;
+      p {
+        width: 100%;
+        text-align: center;
+      }
+      .rating-stars {
+        width: 100%;
+        text-align: center;
+      }
     }
   }
   @media screen and (max-width: 320px){

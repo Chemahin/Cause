@@ -5,26 +5,87 @@
         <hr>
       </div>
       <div class="images-team">
-        <img v-lazy="mysrc1" alt="person">
-        <img v-lazy="mysrc2" alt="person">
-        <img v-lazy="mysrc3" alt="person">
+        <img v-for="n in 3" v-lazy="sourceImages(n)" :key="n + Math.random()" alt="person">
+      </div>
+
+      <div class="team-slider">
+        <!-- swiper -->
+        <div class="slider-wrap-main">
+          <swiper :options="swiperOption" class="slider-swiper-main">
+            <swiper-slide v-for="n in 3" :key="n + Math.random()">
+              <img :src="sourceImages(n)" alt="portfolio_item">
+            </swiper-slide>
+
+          </swiper>
+          <div class="swiper-button-prev comp-left" slot="button-prev"></div>
+          <div class="swiper-button-next comp-right" slot="button-next"></div>
+        </div>
       </div>
     </div>
 </template>
 
 <script>
+
+  import { swiper, swiperSlide } from 'vue-awesome-swiper'
     export default {
         data(){
             return {
-                mysrc1:require(`../../assets/Layer_1.png`),
-                mysrc2:require(`../../assets/Layer_2.png`),
-                mysrc3:require(`../../assets/Layer_3.png`),
+              swiperOption: {
+                slidesPerView: 1,
+                loop: true,
+                setWrapperSize: true,
+                spaceBetween: 0,
+                breakpoints: {
+                  575: {
+                    slidesPerView: 1,
+                    spaceBetween: 2
+                  },
+                },
+                navigation: {
+                  nextEl: '.comp-right',
+                  prevEl: '.comp-left'
+                }
+              },
             }
         },
+      methods:{
+        sourceImages(n){
+          return require(`../../assets/Layer_${n}.png`)
+        }
+      },
     }
 </script>
 
 <style scoped lang="scss">
+  .slider-wrap-main {
+    width: 100%;
+    position: relative;
+  }
+  .slider-swiper-main {
+    width: 90%;
+    text-align: center;
+  }
+  .swiper-button-prev {
+    width: 35px;
+    height: 65px;
+    left: 10px;
+    background: url("../../assets/icons/arrow-carousel-left.png") no-repeat;
+    background-size: contain;
+
+  }
+  .swiper-button-next {
+    width: 35px;
+    height: 65px;
+    right: 10px;
+    background: url("../../assets/icons/arrow-carousel-right.png") no-repeat;
+    background-size: contain;
+
+  }
+  .swiper-slide {
+    img {
+      width: 90%;
+    }
+  }
   .wrapp {
     margin-top: 20px;
     background-image: url("../../assets/bigArrow.png");
@@ -60,6 +121,24 @@
       width: 30%;
     }
   }
+  .team-slider {
+    display: none;
+  }
+  @media screen  and (max-width: 1080px){
+    .wrapp {
+      margin-top: 17%;
+    }
+  }
+  @media screen  and (max-width: 920px){
+    .wrapp {
+      margin-top: 25%;
+    }
+  }
+  @media screen  and (max-width: 840px){
+    .wrapp {
+      margin-top: 15%;
+    }
+  }
   @media screen  and (max-width: 770px){
     .title{
       h2{
@@ -72,10 +151,13 @@
     }
   }
   @media screen  and (max-width: 767px){
+    .wrapp {
+      margin-top: 20%;
+    }
     .title{
       h2{
-        text-align: center;
-        font-size: 4rem;
+        text-align: left;
+        font-size: 2rem;
         margin-top: 10%;
       }
       hr {
@@ -88,12 +170,46 @@
       }
     }
   }
+  @media screen  and (max-width: 690px) {
+    .wrapp {
+      margin-top: 30%;
+    }
+  }
   @media screen  and (max-width: 670px){
     .images-team {
-      text-align: center;
+      display: none;
+    }
+    .team-slider {
+      display: block;
+    }
+    .wrapp {
+      margin-top: 0;
+    }
+    .title h2 {
+      font-size: 3rem;
+    }
+  }
+  @media screen  and (max-width: 480px){
+    .swiper-button-prev {
+      left: 0;
+
+    }
+    .swiper-button-next {
+      right: 0;
+    }
+  }
+  @media screen  and (max-width: 450px){
+    .title h2 {
+      font-size: 2.5rem;
+    }
+  }
+  @media screen  and (max-width: 414px){
+    .slider-swiper-main {
+      width: 100%;
+    }
+    .swiper-slide {
       img {
-        width: 50%;
-        margin-bottom: 2%;
+        width: 100%;
       }
     }
   }

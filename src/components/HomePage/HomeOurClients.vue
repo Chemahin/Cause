@@ -40,7 +40,7 @@
             </b-col>
         </b-row>
         <b-row class="clients">
-            <b-col v-for="n in 10" :key="n +Math.random()">
+            <b-col md="2" sm="4" cols="12" v-for="n in 10" :key="n +Math.random()">
                 <img v-lazy="sourceImages(n)"
                      :alt="'client №'+n">
             </b-col>
@@ -75,9 +75,6 @@
             justify-content: center;
         }
         .col-md-2{
-            &:last-child{
-                padding: 0px;
-            }
             text-align: center;
         }
     }
@@ -89,7 +86,7 @@
         font-weight: 400;
         line-height: 1.5;
         margin-top: 7%;
-        width: 90%;
+        width: 100%;
     }
     h2{
         color: #00c8d7;
@@ -98,7 +95,7 @@
         font-weight: 400;
         line-height: 1.7;
         word-break: break-word;
-        letter-spacing: 0px;
+        letter-spacing: 2px;
     }
     .hText{
         margin-top: 5.2%;
@@ -112,14 +109,27 @@
         background-color: #00c8d7;
     }
     .clients {
-        margin-top: 3%;
-        margin-bottom: 5.7%;
-        padding: 0px 10%;
-        .col{
-            text-align: center;
-            padding: 0px;
-            margin-bottom: 10px;
+      margin-top: 3%;
+      padding-left: 9.5%;
+        img{
+          width: 275px;
+          max-width: 100%;
         }
+      .col-md-2 {
+        padding: 0px;
+        flex-grow: 0;
+        margin: 0px 0px 20px 15px;
+      }
+    }
+    @media screen  and (max-width: 880px){
+      .ourQuality {
+        img {
+          width: 100%;
+        }
+        p {
+          width: 100%;
+        }
+      }
     }
     @media screen  and (max-width: 767px){
         .ourQuality img{

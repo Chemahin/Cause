@@ -6,15 +6,8 @@ const Specialist = () => import('../components/SpecialistsPage/index.vue');
 const Profile = () => import('../components/ProfilePage/index.vue');
 const OrderSpecialist = () => import('../components/OrderSpecialistPage/index.vue');
 const HuurEenSpecialist = () => import('../components/HuurEenSpecialist.vue');
+// const ConfirmationSpecialist = () => import('../components/ConfirmationSpecialist.vue');
 
-// import Home from '../components/HomePage/index';
-// import OnsVerhaal from '../components/OnsVerhaalPage/index';
-// import Contact from '../components/ContactPage/index';
-// import RegistrationSpecialist from '../components/RegistrationSpecialistPage/index';
-// import Specialist from '../components/SpecialistsPage/index';
-// import Profile from '../components/ProfilePage/index';
-// import OrderSpecialist from '../components/OrderSpecialistPage/index';
-// import HuurEenSpecialist from '../components/HuurEenSpecialist.vue';
 
 export default [
     { path: '/', component: Home },
@@ -24,5 +17,6 @@ export default [
     { path: '/contact', component: Contact },
     { path: '/specialist', component: RegistrationSpecialist },
     { path: '/profile', component: OrderSpecialist },
-    // { path: '/registrationSpecialist', component: HuurEenSpecialist },
+    { path: '/registrationSpecialist', component: HuurEenSpecialist },
+    { path: '/confirmationSpecialist', component: HuurEenSpecialist },
 ];

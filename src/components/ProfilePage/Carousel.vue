@@ -1,48 +1,70 @@
 <template>
     <div class="portfolio-main">
       <h2>Portfolio</h2>
-      <Carousel class="catousel-pos">
-        <div class="carousel-portfolio">
-          <img v-lazy="images[0]" alt="item">
-        </div>
-        <div class="carousel-portfolio">
-          <img v-lazy="images[1]" alt="item">
-        </div>
-        <div class="carousel-portfolio">
-          <img v-lazy="images[2]" alt="item">
-        </div>
-        <div class="carousel-portfolio">
-          <img v-lazy="images[3]" alt="item">
-        </div>
-        <div class="carousel-portfolio">
-          <img v-lazy="images[4]" alt="item">
-        </div>
-      </Carousel>
-      <div class="portfolio-items">
-        <div class="portfolio-item" v-for="image in images">
-          <img v-lazy="image" alt="item">
-        </div>
-        <div class="btnCustom">
 
-          <Button btnText="VRAAG DEZE SPECIALIST AAN"
-                  btnClass="btnOrangeNav">
-          </Button>
-          <Button btnText="VERGELIJK MET ANDERE SPECIALIST"
-                  btnClass="btnOrangeNav">
-          </Button>
-        </div>
+
+      <!-- swiper -->
+      <div class="slider-wrap-main">
+        <swiper :options="swiperOption" class="slider-swiper-main">
+          <swiper-slide v-for="(image,index) in images" :key="Math.random()+index">
+            <div class="carousel-portfolio">
+              <img :src="image" alt="item">
+            </div>
+          </swiper-slide>
+        </swiper>
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
       </div>
 
+
+
+      <!--<Carousel class="catousel-pos">-->
+        <!--<div class="carousel-portfolio">-->
+          <!--<img :src="images[0]" alt="item">-->
+        <!--</div>-->
+        <!--<div class="carousel-portfolio">-->
+          <!--<img :src="images[1]" alt="item">-->
+        <!--</div>-->
+        <!--<div class="carousel-portfolio">-->
+          <!--<img :src="images[2]" alt="item">-->
+        <!--</div>-->
+        <!--<div class="carousel-portfolio">-->
+          <!--<img :src="images[3]" alt="item">-->
+        <!--</div>-->
+        <!--<div class="carousel-portfolio">-->
+          <!--<img :src="images[4]" alt="item">-->
+        <!--</div>-->
+      <!--</Carousel>-->
     </div>
 </template>
 
 <script>
-  import Carousel from '../CaruselSpecialists';
   import Button from '../Button';
+  import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
     export default {
       data() {
         return {
+          swiperOption: {
+            slidesPerView: 3,
+            loop: true,
+            setWrapperSize: true,
+            spaceBetween: 0,
+            breakpoints: {
+              768: {
+                slidesPerView: 1,
+                spaceBetween: 10
+              },
+              1107: {
+                slidesPerView: 2,
+                spaceBetween: 10
+              },
+            },
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev'
+            }
+          },
           images: [
             require('../../assets/profile/portfolio_images1.png'),
             require('../../assets/profile/portfolio_images2.png'),
@@ -52,35 +74,54 @@
             require('../../assets/profile/portfolio_images2.png'),
             require('../../assets/profile/portfolio_images3.png'),
           ],
-          isLoad: false,
         }
       },
-      methods: {
-      },
       components: {
-        Carousel,
-        Button
+       Button
       },
     }
 </script>
 
 <style scoped lang="scss">
+  .slider-wrap-main {
+    width: 100%;
+    position: relative;
+  }
+  .slider-swiper-main {
+    width: 81%;
+  }
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+  .swiper-button-prev {
+    width: 45px;
+    height: 85px;
+    left: 80px;
+    background: url("../../assets/icons/arrow-carousel-left.png") no-repeat;
+
+  }
+  .swiper-button-next {
+    width: 45px;
+    height: 85px;
+    right: 80px;
+    background: url("../../assets/icons/arrow-carousel-right.png") no-repeat;
+
+  }
   h2 {
     font-family: GolanoSemi;
     color: #00c8d7;
     font-size: 50px;
     font-weight: 400;
     line-height: 35px;
-    padding-left: 2%;
+    padding-left: 11%;
   }
   .portfolio-main {
-    padding-left: 9%;
     margin-top: 4%;
     width: 100%
   }
   .carousel-portfolio {
     margin-top: 10%;
-    margin-left: 2%;
     img {
       width: 95%;
     }
@@ -92,16 +133,47 @@
     margin-left: -4%;
 
   }
-  .portfolio-items {
-    display: none;
+  @media screen and (max-width: 1400px){
+    .swiper-button-prev {
+      background-size: contain;
+      width: 35px;
+      height: 65px;
+      left: 30px;
+    }
+    .swiper-button-next {
+      background-size: contain;
+      width: 35px;
+      height: 65px;
+      right: 30px;
+    }
+  }
+  @media screen and (max-width: 767px){
+    .carousel-portfolio img {
+      width: 100%;
+    }
+    h2 {
+      font-size: 2rem;
+    }
   }
   @media screen and (max-width: 720px){
-    h2{
-      text-align: center;
+    h2 {
+      padding-left: 9%;
+    }
+    .slick-slider {
+      margin-left: 0;
     }
     .portfolio-main {
       margin-top: 10%;
-      width: 90%;
+      padding-left: 0;
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 625px){
+    .swiper-button-prev {
+      left: 0;
+    }
+    .swiper-button-next {
+      right: 0;
     }
   }
 
@@ -111,12 +183,7 @@
       padding: 0;
       h2{
         margin: 10% 0;
-        text-align: center;
-        font-size: 2.5rem;
       }
-    }
-    .catousel-pos {
-      display: none;
     }
     .portfolio-items {
       display: flex;
@@ -147,10 +214,14 @@
       font-size: 0.7rem;
     }
   }
+  @media screen and (max-width: 414px){
+    .slider-swiper-main {
+      width: 100%;
+    }
+  }
   @media screen and (max-width: 320px){
     .portfolio-main {
       padding: 0;
-      margin-left: 2%;
       width: 100%;
     }
     .portfolio-item {

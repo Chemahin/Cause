@@ -23,10 +23,6 @@
         return {
           activeFirst: true,
           activeLast: false,
-          selectedDate: {
-            start: new Date(2018, 0, 9),
-            end: new Date(2018, 0, 18)
-          }
         }
       },
       methods: {
@@ -61,16 +57,18 @@
     margin-bottom: 8%;
     margin-top: 5%;
     div {
+      width: 45%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border-radius: 10px;
       border: 3px solid transparent;
       color: #646464;
       font-family: GolanoRegular;
-      font-size: 30px;
+      font-size: 1.5rem;
       font-weight: 400;
-      line-height: 35.24px;
+      line-height: 1;
       cursor: pointer;
-      padding: 2%;
-      padding: 2% 4%;
       &:hover {
         color: black;
       }
@@ -91,37 +89,42 @@
     width: 93%;
     margin-top: 3%;
   }
-  @media screen  and (max-width: 1230px){
-    .btn-items div {
-      font-size: 1.5rem;
-    }
-  }
-  @media screen  and (max-width: 990px){
-    .btn-items div {
-      font-size: 1.3rem;
-      padding: 1% 2%;
-    }
-  }
-  @media screen  and (max-width: 820px){
+  @media screen  and (max-width: 1540px){
     .btn-items div {
       font-size: 1.2rem;
-      padding: 1%;
     }
   }
-  @media screen  and (max-width: 410px){
+  @media screen  and (max-width: 1235px){
     .btn-items div {
       font-size: 1.1rem;
-      padding: 1%;
     }
   }
-  @media screen  and (max-width: 380px){
+  @media screen  and (max-width: 1030px){
     .btn-items {
       flex-direction: column;
-      padding: 2%;
-      div {
-        text-align: center;
-        margin-bottom: 5%;
-        font-size: 1.5rem;
+      align-items: center;
+      div, :first-child  {
+        font-size: 1.3rem;
+        width: 75%;
+        padding: 4% 0%;
+        margin-bottom: 3%;
+        margin-right: 0;
+      }
+    }
+  }
+
+  @media screen  and (max-width: 500px){
+    .btn-items div {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media screen  and (max-width: 380px){
+    .btn-items {
+      div,:first-child {
+        width: 90%;
+        font-size: 1.2rem;
+        padding: 5% 0;
       }
     }
   }

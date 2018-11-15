@@ -10,17 +10,9 @@
                 burgerColor="color-white">
               </NavigationMenu>
           <div class="content">
-            <h2>Communicatie specialisten</h2>
+            <h2>Waarom Causeffect?</h2>
             <hr>
-            <p>Veel communicatieadvies is gericht op de korte termijn. Ja, je scoort snel,
-              maar word je er uiteindelijk beter van? Nee. Daarom doen wij het anders.
-              Bij ons staat jouw succes op de lange termijn voorop. Ons communicatie-
-              advies is niet gericht op het binnenhalen van zo veel mogelijk leads in een
-              zo kort mogelijke tijd. Causeffect wil samen met jou bouwen aan duurzame
-              relaties met klanten. Want duurzame communicatie is op de lange termijn
-              het meest winstgevend. Zeker voor mkb-bedrijven, die hun klanten toch al
-              beter kennen dan grote ondernemingen. Koppel jouw kennis van jouw markt
-              aan onze communicatiekennis. Dan maken we er samen een succes van.</p>
+            <p>Wij zijn de Causeffect On Demand service begonnen vanwege een probleem dat we steeds vaker tegenkwamen bij onze klanten. Ze bezaten niet de expertise of creativiteit die nodig was voor een specifieke taak die niet tot hun core business behoorde. Het inhuren van freelancers kan bovendien veel tijd in beslag nemen. Wij hebben ervoor gekozen hierop in te spelen door specialisten op locatie te plaatsen.</p>
           </div>
 
       </div>
@@ -31,7 +23,9 @@
         <div class="post-item pos-right">
           <span>2016</span>
           <h2>De vorderingen</h2>
-          <p class="pos-text-left">Veel communicatieadvies is gericht op de korte termijn. Ja, je scoort snel, maar word je er uiteindelijk beter van? Nee. Daarom doen wij het anders. Bij ons staat jouw succes op de lange termijn voorop.</p>
+          <p class="pos-text-left">
+            Met meer dan 30 succesvolle klanten met top resultaten in ons portfolio waren wij nog niet spreken over de impact die wij maakten. Bovendien viel het ons op dat ondernemers vaak beperkte mogelijkheden hadden om iemand op de werkvloer te krijgen voor een tijdelijke, specifieke klus die buiten hun core business valt. Dat was onze motivatie om Causeffect On Demand te beginnen.
+          </p>
         </div>
       </div>
       <div class="middle-img">
@@ -41,14 +35,17 @@
         <div class="post-item">
           <span>2015</span>
           <h2>Start van Causeffect</h2>
-          <p class="pos-text-right">Veel communicatieadvies is gericht op de korte termijn. Ja, je scoort snel, maar word je er uiteindelijk beter van? Nee. Daarom doen wij het anders. Bij ons staat jouw succes op de lange termijn voorop.</p>
+          <p class="pos-text-right">
+            Causeffect bestaat sinds 1 januari 2015. Wij merkten dat er te weinig service en kwaliteit werd verleend aan MKB-bedrijven op het gebied van online marketing. Dat is zonde, want zo wordt er veel geld verspilt aan losse producten die slechts een tijdelijk effect hebben. Wij zetten daarom in op duurzame communicatie.
+          </p>
         </div>
         <div class="post-item empty"></div>
         <div class="post-item">
           <span>2017</span>
-          <h2>Waar staan wij nu</h2>
-          <p class="pos-text-right">Veel communicatieadvies is gericht op de korte termijn. Ja, je scoort snel, maar word je er uiteindelijk beter van? Nee. Daarom doen wij het anders. Bij ons staat jouw succes op de lange termijn voorop.</p>
-
+          <h2>Nieuwe koers</h2>
+          <p class="pos-text-right">
+            Het succes van onze on demand service liet ons beseffen dat er een vrij grote markt is voor deze dienst. Vanuit onze filosofie vanaf de eerste stap in het proces mee te denken met bedrijven om hun communicatie-uitdagingen te tackelen, hebben we toen besloten ons volledig te richten op het on demand aanbieden van specialisten.
+          </p>
         </div>
 
       </div>
@@ -58,18 +55,25 @@
       <div class="post-item">
         <span>2015</span>
         <h2>Start van Causeffect</h2>
-        <p>Veel communicatieadvies is gericht op de korte termijn. Ja, je scoort snel, maar word je er uiteindelijk beter van? Nee. Daarom doen wij het anders. Bij ons staat jouw succes op de lange termijn voorop.</p>
+        <p>
+          Causeffect bestaat sinds 1 januari 2015. Wij merkten dat er te weinig service en kwaliteit werd verleend aan MKB-bedrijven op het gebied van online marketing. Dat is zonde, want zo wordt er veel geld verspilt aan losse producten die slechts een tijdelijk effect hebben. Wij zetten daarom in op duurzame communicatie.
+
+        </p>
       </div>
       <div class="post-item">
         <span>2016</span>
         <h2>De vorderingen</h2>
-        <p>Veel communicatieadvies is gericht op de korte termijn. Ja, je scoort snel, maar word je er uiteindelijk beter van? Nee. Daarom doen wij het anders. Bij ons staat jouw succes op de lange termijn voorop.</p>
+        <p>
+          Met meer dan 30 succesvolle klanten met top resultaten in ons portfolio waren wij nog niet spreken over de impact die wij maakten. Bovendien viel het ons op dat ondernemers vaak beperkte mogelijkheden hadden om iemand op de werkvloer te krijgen voor een tijdelijke, specifieke klus die buiten hun core business valt. Dat was onze motivatie om Causeffect On Demand te beginnen.
+
+        </p>
       </div>
       <div class="post-item">
         <span>2017</span>
-        <h2>Waar staan wij nu</h2>
-        <p>Veel communicatieadvies is gericht op de korte termijn. Ja, je scoort snel, maar word je er uiteindelijk beter van? Nee. Daarom doen wij het anders. Bij ons staat jouw succes op de lange termijn voorop.</p>
-
+        <h2>Nieuwe koers</h2>
+        <p>
+          Het succes van onze on demand service liet ons beseffen dat er een vrij grote markt is voor deze dienst. Vanuit onze filosofie vanaf de eerste stap in het proces mee te denken met bedrijven om hun communicatie-uitdagingen te tackelen, hebben we toen besloten ons volledig te richten op het on demand aanbieden van specialisten.
+        </p>
       </div>
     </div>
     <OnsWerkTeam></OnsWerkTeam>
@@ -109,12 +113,10 @@
     height: 1216px;
     padding: 2% 9%;
     background: #19cddac4;
-    .navbar {
-      padding: 0 15px;
-    }
+
   }
   .content {
-    margin-top: 16%;
+    margin-top: 10%;
     margin-left: 1%;
     h2{
       color: #ffffff;
@@ -273,14 +275,14 @@
   }
   @media screen  and (max-width: 767px){
     .content h2 {
-      text-align: center;
-      font-size: 4rem;
+      text-align: left;
+      font-size: 2rem;
       margin-top: 10%;
     }
     .content p {
       margin-top: 0;
-      font-size: 2rem;
-      text-align: center;
+      font-size: 1.5rem;
+      text-align: left;
     }
     .content hr {
       margin-left: 1%;
@@ -350,14 +352,20 @@
     }
   }
   @media screen  and (max-width: 320px){
-    wrappHead {
-      padding: 2%;
+    .content p {
+      font-size: 1.3rem;
     }
     .fon-filter {
-      padding: 2% 2.1%;
+      padding: 2%;
+    }
+    .post-item p {
+      font-size: 1.3rem;
     }
     .content h2 {
       line-height: 1;
+    }
+    .navbar {
+      padding: 0 15px !important;
     }
 
     .container-fluid {

@@ -11,25 +11,20 @@
                 </div>
                 <div>
                     <h2>
-                        Grafisch ontwerp
+                      Diverse designers, ongelofelijke resultaten
                     </h2>
                     <hr>
                     <p>
-                        Bij het ontwerpen of aanpassen van het grafisch ontwerp is het van belang om met drie aspecten rekening te houden:
-                        De identiteit van jouw onderneming, de herkenbaarheid voor jouw consumenten en de toepasbaarheid binnen
-                        verschillende uitingen zoals social media, flyers, nieuwsbrieven en websites. Wij denken altijd actief mee met jou mee
-                        over wat de beste opties zijn.
+                      Onze specialisten zijn op de hoogte van de laatste trends op het gebied van grafisch ontwerp en gaan graag creatief voor jou aan de slag. Wat je ook wilt uitstralen, onze on demand specialisten zorgen voor het perfecte design.
                     </p>
                 </div>
             </b-col>
         </b-row>
         <b-row>
             <b-col class="secondRow" md="6">
-                <h2>Ontwikkeling</h2>
+                <h2>Online marketeers</h2>
                 <hr>
-                <p>Het internet speelt een onmisbare rol in de digitaliserende wereld. Niet alleen in de manier waarop we met elkaar
-                    communiceren, maar ook de manier waarop we consumeren. Het aantal online aankopen neemt steeds verder toe. Causeffect
-                    heeft veel ervaring met webshops en helpt jou om online te groeien.</p>
+                <p>Geen enkele vorm van online marketing is onze marketeers vreemd. Of het nu gaat om online zichtbaarheid of vindbaarheid, wij hebben voor elke uitdaging iemand in huis.</p>
             </b-col>
             <b-col md="6">
                 <div class="wrapImage">
@@ -68,12 +63,11 @@
     }
     .main{
         margin-top: 5%;
-        margin-bottom: 11.5%;
     }
     h2{
         word-break: break-word;
         margin-left: 15px;
-        letter-spacing: -4px;
+        letter-spacing: 2px;
         color: #00c8d7;
         font-family: GolanoSemi;
         font-size: 4vw;
@@ -111,12 +105,18 @@
         padding: 6% 0 0 10%;
     }
     .wrapImage{
-        position: relative;
         img{
-            position: absolute;
-            top:-50px;
-            max-width: 100%;
+
         }
+    }
+    @media screen and (max-width: 1200px){
+      p {
+        font-size: 1.5rem;
+      }
+      hr {
+        height: 3px;
+        width: 14%;
+      }
     }
     @media screen and (max-width: 767px){
         .main{

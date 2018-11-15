@@ -6,7 +6,7 @@
             <div v-for="slide in slides"
                  class='slide'
                  :key="slide.id">
-                <img :src="mysrc1" alt="slieImg">
+                <img :src="slide.img" alt="slieImg">
             </div>
         </transition-group>
         <div class='carousel-controls'>
@@ -28,25 +28,17 @@
                 mysrc3:require(`../assets/icons/right.png`),
                 slides: [
                     {
-                        img: 'development.png',
+                        img: require(`../assets/CauseffectSl1.png`),
                         id: 1
                     },
                     {
-                        img: 'development.png',
+                        img: require(`../assets/CauseffectSl2.png`),
                         id: 2
                     },
                     {
-                        img: 'development.png',
+                        img: require(`../assets/CauseffectSl1.png`),
                         id: 3
                     },
-                    {
-                        img: 'development.png',
-                        id: 4
-                    },
-                    {
-                        img: 'development.png',
-                        id: 5
-                    }
                 ]
             }
         },

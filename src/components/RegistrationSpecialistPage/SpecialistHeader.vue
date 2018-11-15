@@ -175,4 +175,9 @@ import NavigationMenu from '../NavigationMenu'
       padding: 2% 9%;
     }
   }
+  @media screen  and (max-width: 320px) {
+    .menu {
+      padding: 2%;
+    }
+  }
 </style>

@@ -31,19 +31,12 @@
                             }
                         },
                         {
-                            breakpoint: 980,
+                            breakpoint: 780,
                             settings: {
                                 slidesToShow: 2,
                                 slidesToScroll: 1
                             }
                         },
-                        {
-                          breakpoint: 480,
-                          settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                      }
                     ]
                 },
             };
@@ -73,6 +66,7 @@
     .slick-slider{
         display: flex;
         align-items: center;
+
     }
     button.slick-arrow{
         background-color: white;
@@ -89,6 +83,33 @@
     }
     .slick-list {
       width: 100%;
+    }
+    @media screen and (max-width: 575px){
+      .slick-slider{
+        width: 100%;
+        position: relative;
+      }
+
+      button.slick-arrow {
+        position: absolute;
+        background: transparent;
+        z-index: 1;
+        img {
+          width: 70%;
+        }
+      }
+      .slick-prev {
+        left: 0;
+      }
+      .slick-next {
+        right: 0;
+      }
+      .header img {
+        width: 50%;
+      }
+      .slick-track {
+        text-align: center;
+      }
     }
 
 </style>

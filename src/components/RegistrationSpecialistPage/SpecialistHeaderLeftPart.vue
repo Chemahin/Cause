@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-card  class="card-wrapp">
-      <span @click="closeForm" class="form-close"><img v-lazy="mysrc1" alt="close"></span>
+      <!--<span @click="closeForm" class="form-close"><img v-lazy="mysrc1" alt="close"></span>-->
       <p class="card-text item-title">Meld je aan als specialist!</p>
       <hr>
       <div class="div-form">
@@ -239,6 +239,9 @@
     }
 
   }
+  .row {
+    margin: 0;
+  }
   .checkbox-item {
     display: flex;
     width: 100%;
@@ -337,9 +340,10 @@
 
     button{
       cursor: pointer;
-      width: 280px;
+      width: 55%;
       font-size: 1.24vw;
       padding: 3% 5%;
+      border-radius: 10px;
     }
   }
   @media screen and (max-width:1440px ){
@@ -373,6 +377,14 @@
     .inputDark {
       font-size: 1.5rem;
     }
+    .btnCustom button{
+      width: 60%;
+      font-size: 1.2rem;
+    }
+    .card-wrapp {
+      margin-right: 0;
+      width: 100%;
+    }
   }
   @media screen  and (max-width: 991px){
     .card-wrapp {
@@ -392,7 +404,7 @@
     }
     .btnCustom button {
       width: 65%;
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       padding: 2% 5%;
     }
     .upload-items {
@@ -402,7 +414,6 @@
       padding-top: 4%;
     }
     .upload-item p {
-      font-size: 1.2rem;
       padding-bottom: 15%;
     }
   }
@@ -414,6 +425,9 @@
     }
     .item-title {
       font-size: 2.5rem;
+    }
+    .btnCustom button {
+      font-size: 1.2rem;
     }
 
   }
@@ -446,9 +460,7 @@
         font-size: 1rem;
       }
     }
-    .btnCustom button {
-      font-size: 1rem;
-    }
+
     .container {
       font-size: 1.3rem;
       padding-left: 20%;

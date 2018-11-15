@@ -8,7 +8,7 @@
                @click="getVal(index)"
                :class="{'active-hour': count===index}"
                >
-            <p >{{item.val}} uur</p>
+            <p class="hour-item-text">{{item.val}} uur</p>
           </div>
         </div>
       </div>
@@ -19,13 +19,17 @@
       <hr>
       <div class="time-items">
         <div class="time-group">
-          <p class="time-text" @click="getStartTime('start')">Begintijd</p>
+          <div class="time-group-text">
+            <p class="time-text" @click="getStartTime('start')">Begintijd</p>
+          </div>
           <div class="time-selected">
             <TimePicker class="time-item" v-model="timeStart" :show-meridian="false"></TimePicker>
           </div>
         </div>
         <div class="time-group">
-          <p class="time-text" @click="getStartTime('end')">Eindtijd</p>
+          <div class="time-group-text">
+            <p class="time-text" @click="getStartTime('end')">Eindtijd</p>
+          </div>
           <div class="time-selected">
             <TimePicker class="time-item" v-model="timeEnd" :show-meridian="false"></TimePicker>
           </div>
@@ -35,18 +39,20 @@
       </div>
       <hr>
       <div class="footer">
-
-        <Button
-          btnText="BEVESTIG"
-          btnClass="btnOrangeNav"
-          stylesImg="width:35px">
-        </Button>
-
-        <Button
-          btnText="BEKIJK PROFIEL"
-          btnClass="btnWhite"
-          stylesImg="width:35px">
-        </Button>
+        <div class="btn-wrap" @click="onNextPopUp">
+          <Button
+            btnText="BEVESTIG"
+            btnClass="btnOrangeNav"
+            stylesImg="width:25px">
+          </Button>
+        </div>
+        <div class="btn-wrap">
+          <Button
+            btnText="BEKIJK PROFIEL"
+            btnClass="btnWhite"
+            stylesImg="width:25px">
+          </Button>
+        </div>
       </div>
     </div>
 </template>
@@ -90,12 +96,16 @@
               let tt = String(h) +':' + String(m) ;
               console.log('---------------end------------', tt)
             }
+        },
+        onNextPopUp(){
+          this.$store.dispatch('specialistPopUp/partPopUpAct', 2);
         }
       }
     }
 </script>
 
 <style scoped lang="scss">
+
   h2 {
     color: #646464;
     font-family: GolanoSemi;
@@ -116,7 +126,10 @@
     margin-bottom: 8%;
   }
   .hour-item {
-    padding: 2% 4% 1px 3%;
+    width: 17%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 3px solid transparent;
     margin-right: 5%;
     cursor: pointer;
@@ -124,8 +137,10 @@
   p {
     color: #646464;
     font-family: GolanoRegular;
-    font-size: 30px;
+    font-size: 1.5rem;
     font-weight: 400;
+    margin: 0;
+    padding: 2% 0;
   }
   .active-hour {
     border-radius: 10px;
@@ -152,12 +167,10 @@
     display: flex;
     margin-top: 5%;
   }
-
-
   .time-items {
     display: flex;
     margin: 7% 0;
-    padding: 0 20%;
+    padding: 0 4%;
     width: 100%;
   }
   .time-group {
@@ -167,13 +180,17 @@
   .time-item {
     border-radius: 10px;
     border: 2px solid #d7d7d7;
-    padding: 4px 10px;
+    padding: 4px 20px;
   }
   .time-selected {
     margin-right: 10%;
   }
   .time-text {
-    margin-right: 4%;
+    margin-right: 2%;
+  }
+  .btn-wrap {
+    width: 40%;
+    margin: 0 5%;
   }
   .footer {
     width: 100%;
@@ -182,19 +199,33 @@
     justify-content: center;
     button{
       font-size: 1.2rem;
-      width: 30%;
-      padding: 2% 0;
-      margin-right: 4%;
+      width: 100%;
+      padding: 5% 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
     }
   }
   @media screen  and (max-width: 1630px){
     .time-items {
-      padding: 0;
       justify-content: center;
     }
     .time-group {
-      width: 30%;
-      margin-right: 2%;
+      width: 50%;
+    }
+  }
+  @media screen  and (max-width: 1550px){
+    .time-items {
+      flex-direction: column;
+      align-items: center;
+    }
+    .time-group {
+      margin-bottom: 5%;
+      width: 70%;
+    }
+    .time-group-text {
+      width: 50%;
     }
   }
   @media screen  and (max-width: 1500px){
@@ -203,53 +234,139 @@
       justify-content: space-around;
     }
   }
+  @media screen  and (max-width: 1320px){
+    .footer {
+      justify-content: space-around;
+    }
+    .btn-wrap {
+      margin: 0;
+    }
+    .footer button {
+      font-size: 1rem;
+    }
+  }
+
   @media screen  and (max-width: 1260px){
     .hour-item {
-      padding: 3% 2% 1px 1%;
+      padding: 2% 0;
     }
     h2 {
       font-size: 2rem;
     }
-    p {
-      font-size: 1.6rem;
+    p{
+      font-size: 1.5rem;
     }
-    .footer button {
-      font-size: 1rem;
+    .hour-item-text {
+      font-size: 1.3rem;
+    }
+    .btn-wrap {
       width: 40%;
+      margin: 0 1%;
     }
+
   }
+
   @media screen  and (max-width: 1100px){
     .time-item {
       padding: 0;
     }
-    .time-group {
-      width: 40%;
+  }
+  @media screen  and (max-width: 1030px){
+    .btn-wrap {
+      width: 47%;
     }
   }
-  @media screen  and (max-width: 960px){
-    p {
+  @media screen  and (max-width: 815px){
+    .hour-item {
+      width: 20%;
+    }
+  }
+  @media screen  and (max-width: 600px){
+    .footer button {
+      font-size: 1rem;
+    }
+    .hour-item {
+      width: 22%;
+    }
+    h2 {
       font-size: 1.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    .footer {
+      flex-direction: column;
+      align-items: center;
+    }
+    .btn-wrap {
+      width: 80%;
+      margin-bottom: 5%;
+    }
+  }
+  @media screen  and (max-width: 815px){
+    .hour-item {
+      width: 25%;
+      margin-right: 2%;
+    }
+  }
+  @media screen  and (max-width: 540px){
+    .form-control {
+      font-size: 1.3rem;
+    }
+    .time-group {
+      width: 90%;
+    }
+  }
+  @media screen  and (max-width: 510px){
+    p {
+      font-size: 1rem;
+    }
+    .time-text {
+      font-size: 1.3rem;
+    }
+    .hour-item-text {
+      font-size: 1.2rem;
     }
   }
   @media screen  and (max-width: 460px){
     .hour-item {
       text-align: center;
-      padding: 2%;
+      padding: 1% 0;
     }
-    h2 {
-      font-size: 1.7rem;
+    .active-hour p {
+      font-size: 1.2rem;
     }
-    .time-group {
-      flex-direction: column;
+    .direct-items {
+      padding: 0 2%;
     }
-    .footer {
-      flex-direction: column;
+
+    .time-group-text {
+      display: flex;
       align-items: center;
-      button {
-        width: 70%;
-        margin-bottom: 3%;
-        font-size: 1.3rem;
-      }
+    }
+  }
+  @media screen  and (max-width: 380px){
+    .hour-items {
+      flex-wrap: wrap;
+    }
+    .hour-item {
+      width: 40%;
+      margin-bottom: 5%;
+    }
+    p {
+      font-size: 1.3rem;
+    }
+    .time-text {
+      font-size: 1.2rem;
+    }
+    .active-hour p {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media screen  and (max-width: 325px){
+    .btn-wrap {
+      width: 85%;
     }
   }
 </style>

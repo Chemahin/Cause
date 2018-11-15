@@ -1,16 +1,19 @@
 <template>
     <div class="leftHome">
         <h2>
-            On demand communicatie specialisten
+          Onze specialisten
+          bij jou op locatie!
+
         </h2>
         <hr>
-        <p>Wat kunnen onze specialisten voor jou
-            betekenen? Behaal jouw communicatie-
-            doelstellingen met de on demand
-            specialisten van Causeffect.</p>
+        <p>Wat kunnen onze communicatie specialisten voor jou
+          betekenen? Behaal jouw communicatie-
+          doelstellingen met de on demand specialisten
+          van Causeffect.
+        </p>
         <div class="btnCustom">
-          <router-link to="/profile">
-            <Button btnText="VRAAG EEN SPECIALIST ANN"
+          <router-link to="/">
+            <Button btnText="VRAAG EEN SPECIALIST AAN"
                     btnClass="btnOrangeNav">
             </Button>
           </router-link>
@@ -83,6 +86,7 @@
       p {
         padding: 0;
         margin: 0;
+        margin-bottom: 8%;
       }
       .btnCustom {
         margin: 2%;
@@ -94,20 +98,56 @@
         }
       }
     }
+    @media screen  and (max-width: 1200px){
+      p {
+        font-size: 1.4rem;
+      }
+    }
+    @media screen and (max-width: 950px){
+      .btnCustom {
+        button{
+          width: 100%;
+          font-size: 1rem;
+        }
+      }
+    }
+    @media screen and (max-width: 910px){
+      .btnCustom {
+        button{
+          width: 100%;
+          font-size: 0.9rem;
+        }
+      }
+    }
+    @media screen and (max-width: 850px){
+      .btnCustom {
+        button{
+          width: 100%;
+          font-size: 0.8rem;
+        }
+      }
+    }
     @media screen and (max-width: 767px){
       .leftHome {
         text-align: center;
       }
       h2{
-        text-align: center;
-        font-size: 4rem;
+        text-align: left;
+        font-size: 2rem;
       }
       p{
-        font-size: 2rem;
-        text-align: center;
+        font-size: 1.5rem;
+        text-align: left;
+        margin-bottom: 10%;
       }
       .btnCustom button{
+        width: 80%;
         font-size: 1.3rem;
+      }
+    }
+    @media screen  and (max-width: 630px){
+      .btnCustom button{
+        width: 90%;
       }
     }
     @media screen  and (max-width: 670px){
@@ -155,7 +195,7 @@
         font-size: 2rem;
       }
       p{
-        font-size: 1rem;
+        font-size: 1.4rem;
       }
     }
 
@@ -169,10 +209,12 @@
     @media screen and (max-width: 320px){
 
       h2{
-        font-size: 9.5vw;
+        font-size: 2rem;
+        text-align: left;
       }
       p{
-        font-size: 6.5vw;
+        font-size: 1.5rem;
+        text-align: left;
         margin-bottom: 10%;
       }
       .btnCustom button{
